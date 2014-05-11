@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <CheckBoxPreference 
+        android:key="settings_preserve_state" 
+        android:title="@string/pref_title_preserve"/>
+    
+    
+    
+    <CheckBoxPreference 
+        android:key="settings_show_keyboard_on_delete" 
+        android:title="@string/pref_title_activate_keyboard" 
+        android:summaryOn="@string/pref_summary_on_activate_keyboard" 
+        android:summaryOff="@string/pref_summary_off_activate_keyboard" 
+        android:defaultValue="true"/>
+    
+    <ListPreference 
+        android:title="@string/pref_title_default_currency" 
+        android:key="settings_currency" 
+        android:entryValues="@array/currencies" 
+        android:entries="@array/currency_names"/>
+    
+    <Preference 
+        android:title="@string/pref_title_about" 
+        android:key="settings_about" 
+        android:summary="@string/pref_summary_about"/>
+       
+
+</PreferenceScreen>

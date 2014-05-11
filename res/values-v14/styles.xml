@@ -1,0 +1,39 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    -->
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
+        <!-- API 14 theme customizations can go here. -->
+        <item name="android:actionBarStyle">@style/ActionBarSlevnicek</item>
+        <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
+    </style>
+    
+    <!-- @Override – Default ActionBar style -->
+    <style name="ActionBarSlevnicek"
+           parent="@android:style/Widget.Holo.Light.ActionBar">
+        	<item name="android:background">@color/theme_red</item>
+        	<item name="android:titleTextStyle">@style/TitleTextStyle</item>
+        	<item name="android:displayOptions"></item>
+    </style>
+ 
+ 	<!-- 
+    <style name="TitleTextStyle"
+           parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>  
+    -->
+    
+    <!-- @Override - Settings screen style  -->
+    <style name="SettingsTheme" parent="@style/AppTheme">
+        <item name="android:actionBarStyle">@style/ActionBarSettings</item>
+    </style>
+    
+    <style name="ActionBarSettings"
+           parent="@style/ActionBarSlevnicek">
+        <item name="android:displayOptions">homeAsUp|showTitle</item>
+    </style>
+
+</resources>
