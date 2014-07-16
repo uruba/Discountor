@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <dimen name="editPriceTextSize">50sp</dimen>
+    <dimen name="editPriceInlineTextSize">40sp</dimen>
+    <dimen name="editDiscountTextSize">75sp</dimen>
+    <dimen name="editDiscountInlineTextSize">60sp</dimen>
+    
+</resources>

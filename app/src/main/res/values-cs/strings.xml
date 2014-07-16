@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">Slevkulačka</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Nastavení</string>
+    
+    <string name="toast_settings">Toto je nastavení</string>
+    <string name="before_discount">Před slevou</string>
+    <string name="after_discount">Po slevě</string>
+    <string name="discount_percentage">Výše slevy</string>
+    
+    <string name="price">Cena</string>
+    <string name="price_formatted">Cena %s</string>
+    <string name="price_before">před slevou</string>
+    <string name="price_after">po slevě</string>
+    <string name="zero">0</string>
+    <string name="na">–</string>
+    <string name="you_save">Ušetříte</string>
+
+    
+</resources>
