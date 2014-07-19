@@ -21,7 +21,11 @@ public class CurrencyProvider {
 	
 	// returns formatted price amount
 	public String getFormattedAmount(double price, boolean with_currency){
-		NumberFormat currencyFormatter;
+        if (Double.isNaN(price)){
+            return "N/A";
+        }
+
+                NumberFormat currencyFormatter;
 		
 		if(with_currency){
 			currencyFormatter = NumberFormat.getCurrencyInstance(Locale.getDefault());
