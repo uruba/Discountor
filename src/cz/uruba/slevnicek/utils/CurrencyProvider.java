@@ -21,6 +21,11 @@ public class CurrencyProvider {
 	
 	// returns formatted price amount
 	public String getFormattedAmount(double price, boolean with_currency){
+        if (Double.isNaN(price)){
+            return "N/A";
+        }
+
+
 		NumberFormat currencyFormatter;
 		
 		if(with_currency){
@@ -30,7 +35,7 @@ public class CurrencyProvider {
 			currencyFormatter.setMaximumFractionDigits(2);
 			currencyFormatter.setMinimumFractionDigits(2);
 		}
-		
+
 		return currencyFormatter.format(price);
 	}
 	
