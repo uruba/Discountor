@@ -3,10 +3,12 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="inline_symbol_margin">8dp</dimen>
     
-    <dimen name="editPriceTextSize">25sp</dimen>
-    <dimen name="editPriceInlineTextSize">20sp</dimen>
-    <dimen name="editDiscountTextSize">50sp</dimen>
-    <dimen name="editDiscountInlineTextSize">40sp</dimen>
+    <dimen name="editPriceTextSize">25dp</dimen>
+    <dimen name="editPriceInlineTextSize">20dp</dimen>
+    <dimen name="editDiscountTextSize">40dp</dimen>
+    <dimen name="editDiscountInlineTextSize">32dp</dimen>
 
 </resources>

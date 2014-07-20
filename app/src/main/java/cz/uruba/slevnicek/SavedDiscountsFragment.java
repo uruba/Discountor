@@ -55,7 +55,7 @@ public class SavedDiscountsFragment extends Fragment {
         this.listAll();
 
         final InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
+        imm.hideSoftInputFromWindow(rootView.getWindowToken(), 0);
 
         return rootView;
     }
