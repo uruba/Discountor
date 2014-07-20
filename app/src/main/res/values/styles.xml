@@ -17,7 +17,7 @@
            parent="@style/Widget.AppCompat.Light.ActionBar">
         	<item name="background">@color/theme_red</item>
         	<item name="titleTextStyle">@style/TitleTextStyle</item>
-        	<item name="displayOptions"></item>
+        	<item name="displayOptions">showHome|useLogo</item>
     </style>
     
     <style name="TitleTextStyle"

@@ -16,7 +16,7 @@
            parent="@android:style/Widget.Holo.Light.ActionBar">
         	<item name="android:background">@color/theme_red</item>
         	<item name="android:titleTextStyle">@style/TitleTextStyle</item>
-        	<item name="android:displayOptions"></item>
+        	<item name="android:displayOptions">showTitle|useLogo</item>
     </style>
  
  	<!-- 
