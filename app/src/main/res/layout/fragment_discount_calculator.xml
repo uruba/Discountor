@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/layout_first_row"
-        android:layout_marginBottom="@dimen/activity_vertical_margin">
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        >
 
          <Spinner
             android:id="@+id/textPrice"
@@ -23,6 +24,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
+            android:layout_marginLeft="-4dp"
              />
 
         <FrameLayout

@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import cz.uruba.slevnicek.adapters.DiscountBeforeAfterAdapter;
 import cz.uruba.slevnicek.filters.discountEditInputFilter;
 import cz.uruba.slevnicek.filters.priceEditInputFilter;
 import cz.uruba.slevnicek.listeners.ListenerEditTextChange;
@@ -62,7 +63,8 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
         for(String[] item: Values.price_before_after){
             itemList.add(this.getString(getResources().getIdentifier(item[1], "string", this.getActivity().getPackageName())));
         }
-        SpinnerAdapter spinAdapt = new ArrayAdapter<String>(this.getActivity(), R.layout.spinner_item_price_before_after, R.id.spinner_item_price_before_after_text, itemList);
+        DiscountBeforeAfterAdapter spinAdapt = new DiscountBeforeAfterAdapter(this.getActivity(), R.layout.spinner_item_price_before_after, itemList);
+        spinAdapt.setDropDownViewResource(R.layout.spinner_item_price_before_after_dropdown);
 
         selectBeforeAfterDiscount = (Spinner) rootView.findViewById(R.id.textPrice);
         selectBeforeAfterDiscount.setAdapter(spinAdapt);
@@ -89,12 +91,11 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		editDiscountValue.addTextChangedListener(new ListenerEditTextChange(this));
 		editDiscountValue.setFilters(new InputFilter[]{ new discountEditInputFilter() });
 
-		resetEditValues(false);
-		
+		resetEditValues(true);
+
 		return rootView;
 	}
 
-	
 	//----- START Text Before/After Discount manipulation
 	
 	private String formatTextBeforeAfter(long id){
