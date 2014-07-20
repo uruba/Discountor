@@ -62,7 +62,7 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
         for(String[] item: Values.price_before_after){
             itemList.add(this.getString(getResources().getIdentifier(item[1], "string", this.getActivity().getPackageName())));
         }
-        SpinnerAdapter spinAdapt = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1, itemList);
+        SpinnerAdapter spinAdapt = new ArrayAdapter<String>(this.getActivity(), R.layout.spinner_item_price_before_after, R.id.spinner_item_price_before_after_text, itemList);
 
         selectBeforeAfterDiscount = (Spinner) rootView.findViewById(R.id.textPrice);
         selectBeforeAfterDiscount.setAdapter(spinAdapt);

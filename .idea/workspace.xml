@@ -32,7 +32,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28d0be2f-7b03-409d-9ff3-0e884f1f4e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/Values.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/Values.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/spinner_item_price_before_after.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/DiscountCalculatorFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/DiscountCalculatorFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="slevkulacka.iws" />
@@ -66,24 +68,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SavedDiscountsFragment.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java">
+      <file leaf-file-name="spinner_item_price_before_after.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item_price_before_after.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3169643" vertical-offset="365" max-vertical-offset="1666">
-              <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+            <state vertical-scroll-proportion="-1.8888888" vertical-offset="0" max-vertical-offset="221">
+              <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_discount_calculator.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_discount_calculator.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.296296" vertical-offset="698" max-vertical-offset="2465">
-              <caret line="59" column="52" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="52" />
-              <folding>
-                <element signature="e#3299#3313#0" expanded="true" />
-              </folding>
             </state>
           </provider>
           <provider editor-type-id="android-designer">
@@ -91,15 +81,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DiscountCalculatorFragment.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="807" max-vertical-offset="1581">
+              <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DiscountCalculatorFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/DiscountCalculatorFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="757" max-vertical-offset="3009">
-              <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+            <state vertical-scroll-proportion="-0.23958333" vertical-offset="1215" max-vertical-offset="3009">
+              <caret line="64" column="163" selection-start-line="64" selection-start-column="163" selection-end-line="64" selection-end-column="163" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1805#1813#0" expanded="true" />
+                <element signature="e#3704#3740#0" expanded="true" />
+                <element signature="e#3748#3785#0" expanded="true" />
+                <element signature="e#3811#3851#0" expanded="true" />
+                <element signature="e#4956#4983#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simple_list_item_1.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-19/data/res/layout/simple_list_item_1.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,16 +133,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1207">
               <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SettingsActivityAPI11plus.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SettingsActivityAPI11plus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -1157,7 +1161,6 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/CurrencyProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/DisCalc.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/DiscountCalculatorFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/listeners/ListenerSelectDiscount.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_list_saved_discounts.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/MainActivity.java" />
@@ -1167,6 +1170,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/Values.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/spinner_item_price_before_after.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/DiscountCalculatorFragment.java" />
       </list>
     </option>
   </component>
@@ -1734,12 +1739,16 @@
       <created>1405858916324</created>
       <updated>1405858916324</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- tweaked values identifiers for price_before_after">
+      <created>1405862892292</created>
+      <updated>1405862892292</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1755,7 +1764,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32821497" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917467" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32821497" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32821497" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917467" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1790,7 +1799,8 @@
     <MESSAGE value="- fixed calculating original price when discount percentage is one hundred" />
     <MESSAGE value="- reworked radio buttons as a spinner on DiscountCalculatorFragmen" />
     <MESSAGE value="- commented out the navigation spinner for the main activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="- commented out the navigation spinner for the main activity" />
+    <MESSAGE value="- tweaked values identifiers for price_before_after" />
+    <option name="LAST_COMMIT_MESSAGE" value="- tweaked values identifiers for price_before_after" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1904,14 +1914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7589286" vertical-offset="0" max-vertical-offset="1581">
-          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v14/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45535713" vertical-offset="0" max-vertical-offset="765">
@@ -1936,42 +1938,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_discount_calculator.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.296296" vertical-offset="698" max-vertical-offset="2465">
-          <caret line="59" column="52" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="52" />
-          <folding>
-            <element signature="e#3299#3313#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/DiscountCalculatorFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="757" max-vertical-offset="3009">
-          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1805#1813#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1207">
           <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1986,9 +1956,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3169643" vertical-offset="365" max-vertical-offset="1666">
-          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.39285713" vertical-offset="569" max-vertical-offset="1751">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="e#900#901#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="807" max-vertical-offset="1581">
+          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-19/android/widget/ArrayAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="2139" max-vertical-offset="8228">
+          <caret line="164" column="11" selection-start-line="164" selection-start-column="11" selection-end-line="164" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-19/data/res/layout/simple_list_item_1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-19/data/res/values/ids.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4047619" vertical-offset="408" max-vertical-offset="1547">
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_discount_calculator.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4728682" vertical-offset="698" max-vertical-offset="2465">
+          <caret line="59" column="52" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="52" />
+          <folding>
+            <element signature="e#3299#3313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item_price_before_after.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8888888" vertical-offset="0" max-vertical-offset="221">
+          <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/DiscountCalculatorFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.23958333" vertical-offset="1215" max-vertical-offset="3009">
+          <caret line="64" column="163" selection-start-line="64" selection-start-column="163" selection-end-line="64" selection-end-column="163" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1805#1813#0" expanded="true" />
+            <element signature="e#3704#3740#0" expanded="true" />
+            <element signature="e#3748#3785#0" expanded="true" />
+            <element signature="e#3811#3851#0" expanded="true" />
+            <element signature="e#4956#4983#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
