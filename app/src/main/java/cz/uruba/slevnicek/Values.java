@@ -8,5 +8,11 @@ public class Values {
 		{ "multipack"	, "mode_multipack" },
 		{ "percentage"	, "mode_percentage" }
 	};
-	
+
+    // price before and after for the spinner on the fragment_discount_calculator
+	public static String[][] price_before_after = {
+            { "price before"    , "price_before" },
+            { "price after"     , "price_after" }
+    };
+
 }

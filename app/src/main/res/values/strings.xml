@@ -29,6 +29,10 @@
     <string name="mode_multipack">Multipack mode</string>
     <string name="mode_percentage">Percentage mode</string>
 
+    <!-- Price before/after strings -->
+    <string name="spinner_price_before">Price before discount</string>
+    <string name="spinner_price_after">Price after discount</string>
+
     <!-- Preference strings -->
     <string name="toast_settings">This is Settings</string>
     <string name="currency_category">Application defaults</string>

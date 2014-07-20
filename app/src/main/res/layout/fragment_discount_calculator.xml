@@ -10,150 +10,130 @@
     android:descendantFocusability="beforeDescendants"
 	android:focusableInTouchMode="true" >
 
-     <TextView
-        android:id="@+id/textPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/price"
-         />
-    
-    <FrameLayout 
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-	    android:layout_toRightOf="@+id/textPrice"
-	    android:id="@+id/editPriceLayout">
-        
-        <EditText
-	        android:id="@+id/editPrice"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:textSize="@dimen/editPriceTextSize"
-	        android:inputType="numberDecimal"
-	        android:hint="@string/zero_float">
-	    </EditText>
+        android:id="@+id/layout_first_row">
 
-	    <TextView
-	        android:id="@+id/textCurrency1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="right|center_vertical"
-	        android:layout_marginRight="@dimen/activity_horizontal_margin"
-	        android:textSize="@dimen/editPriceInlineTextSize"
-	        android:textColor="@color/light_grey" />
-        
-    </FrameLayout> 
-
-
-    <RadioGroup
-        android:id="@+id/selectBeforeAfterDiscount"
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editPriceLayout" >
-
-        <RadioButton
-            android:id="@+id/radioBeforeDiscount"
+         <Spinner
+            android:id="@+id/textPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/before_discount" />
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+             />
 
-        <RadioButton
-            android:id="@+id/radioAfterDiscount"
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/after_discount" />
+            android:layout_toRightOf="@+id/textPrice"
+            android:id="@+id/editPriceLayout">
+
+            <EditText
+                android:id="@+id/editPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/editPriceTextSize"
+                android:inputType="numberDecimal"
+                android:hint="@string/zero_float">
+            </EditText>
+
+            <TextView
+                android:id="@+id/textCurrency1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:textSize="@dimen/editPriceInlineTextSize"
+                android:textColor="@color/light_grey" />
+
+        </FrameLayout>
+    </RelativeLayout>
         
-    </RadioGroup>
-    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/selectBeforeAfterDiscount"
-        android:baselineAligned="false" >
-        
-        
-        <LinearLayout 
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:layout_weight="1"
-	        android:orientation="vertical" >
-	        
-            <TextView
-		        android:id="@+id/textDiscountValue"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text="@string/discount_percentage"
-		         />
-            
-            <FrameLayout 
-                android:layout_width="match_parent"
-			    android:layout_height="wrap_content" >
-                
-                <EditText
-			        android:id="@+id/editDiscountValue"
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:ems="10"
-			        android:textSize="@dimen/editDiscountTextSize"
-			        android:hint="@string/zero"
-			        android:inputType="number" >
-			    </EditText>
-		    
-	           	<TextView
-			        android:id="@+id/textPercent"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:layout_gravity="right|center_vertical"
-			        android:layout_marginRight="@dimen/activity_horizontal_margin"
-			        android:text="@string/percent"
-			        android:textSize="@dimen/editDiscountInlineTextSize"
-			        android:textColor="@color/light_grey" />
-                
-            </FrameLayout>
-        
-        </LinearLayout>
-        
-	   <LinearLayout 
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:layout_weight="1"
+        android:layout_below="@+id/layout_first_row"
+        android:orientation="horizontal">
 
-	        android:orientation="vertical" >     
-	
-	        <TextView
-		        android:id="@+id/textPrice2"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		         />
-	        
-	        <TextView
-		        android:id="@+id/textPriceResult"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text="@string/na"
-		        />
-	        
-	        <TextView 
-	            android:id="@+id/textYouSave"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="@string/you_save"
-	            />
-	        
-	        <TextView
-		        android:id="@+id/textYouSaveResult"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text="@string/na"
-		        />
-	
-	    </LinearLayout>
-    
-        
+        <LinearLayout
+            android:id="@+id/percentage_input_layout"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/textDiscountValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/discount_percentage"
+                 />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editDiscountValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="@dimen/editDiscountTextSize"
+                    android:hint="@string/zero"
+                    android:inputType="number" >
+                </EditText>
+
+                <TextView
+                    android:id="@+id/textPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:text="@string/percent"
+                    android:textSize="@dimen/editDiscountInlineTextSize"
+                    android:textColor="@color/light_grey" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+       <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textPrice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+
+            <TextView
+                android:id="@+id/textPriceResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/na"
+                />
+
+            <TextView
+                android:id="@+id/textYouSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/you_save"
+                />
+
+            <TextView
+                android:id="@+id/textYouSaveResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/na"
+                />
+
+        </LinearLayout>
     </LinearLayout>
 
 

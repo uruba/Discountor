@@ -8,9 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+
 import cz.uruba.slevnicek.filters.discountEditInputFilter;
 import cz.uruba.slevnicek.filters.priceEditInputFilter;
 import cz.uruba.slevnicek.listeners.ListenerEditTextChange;
@@ -21,14 +27,14 @@ import cz.uruba.slevnicek.utils.DisCalc;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class DiscountCalculatorFragment extends AbstractCalculatorFragment {
+public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 
 	// TextView declaration
 	private TextView textPriceResultLabel, textPriceResultValue, textYouSaveResultValue, textCurrency1;
 	// EditText declaration
 	private EditText editPrice, editDiscountValue;
 	// RadioGroup declaration
-	private RadioGroup selectBeforeAfterDiscount;
+	private Spinner selectBeforeAfterDiscount;
 	
 	
 	
@@ -51,13 +57,21 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment {
 				false);
 		
 				
-		// init selectBeforeAfterDiscount RadioGroup and set onCheckedChange listener
-		selectBeforeAfterDiscount = (RadioGroup) rootView.findViewById(R.id.selectBeforeAfterDiscount);
-		selectBeforeAfterDiscount.setOnCheckedChangeListener(new ListenerSelectDiscount(this));
+		// init selectBeforeAfterDiscount Spinner and set onSelectItem listener
+        ArrayList<String> itemList = new ArrayList<String>();
+        for(String[] item: Values.price_before_after){
+            itemList.add(this.getString(getResources().getIdentifier(item[1], "string", this.getActivity().getPackageName())));
+        }
+        SpinnerAdapter spinAdapt = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1, itemList);
+
+        selectBeforeAfterDiscount = (Spinner) rootView.findViewById(R.id.textPrice);
+        selectBeforeAfterDiscount.setAdapter(spinAdapt);
+        selectBeforeAfterDiscount.setOnItemSelectedListener(new ListenerSelectDiscount(this));
+
 		
 		// init textPriceResultLabel
 		textPriceResultLabel = (TextView) rootView.findViewById(R.id.textPrice2);
-		setTextBeforeAfter();
+		setTextBeforeAfter(selectBeforeAfterDiscount.getSelectedItemId());
 		
 		textPriceResultValue = (TextView) rootView.findViewById(R.id.textPriceResult);
 		textYouSaveResultValue = (TextView) rootView.findViewById(R.id.textYouSaveResult);
@@ -83,24 +97,24 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment {
 	
 	//----- START Text Before/After Discount manipulation
 	
-	private String formatTextBeforeAfter(){
+	private String formatTextBeforeAfter(long id){
 		String price_formatted_append = 
-				selectBeforeAfterDiscount.getCheckedRadioButtonId() == R.id.radioBeforeDiscount ? 
+				id == 0 ?
 				this.getString(R.string.price_after) : 
 				this.getString(R.string.price_before);
 
 		return String.format(this.getString(R.string.price_formatted), price_formatted_append);
 	}
 	
-	public void setTextBeforeAfter(){
+	public void setTextBeforeAfter(long id){
 		textPriceResultLabel
-			.setText(formatTextBeforeAfter());
+			.setText(formatTextBeforeAfter(id));
 	}
 	
 	//----- END Text Before/After Discount manipulation
 
     private boolean isCheckedPriceBefore(){
-        return selectBeforeAfterDiscount.getCheckedRadioButtonId() == R.id.radioBeforeDiscount;
+        return selectBeforeAfterDiscount.getSelectedItemId() == 0;
     }
 
 	private DiscountItem calculateResult(){
