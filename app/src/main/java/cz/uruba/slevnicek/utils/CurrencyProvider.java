@@ -6,21 +6,14 @@ import java.util.Currency;
 import java.util.Locale;
 
 public class CurrencyProvider {
-	private Currency currency;
-	
-	// ---- CONSTRUCTOR ----
-	public CurrencyProvider(){
-		this.currency = Currency.getInstance(Locale.getDefault());
-	}
-	
-	
+
 	// returns currency symbol
-	public String getSymbol(){
-		return currency.getSymbol();
+	public static String getSymbol(){
+		return Currency.getInstance(Locale.getDefault()).getSymbol();
 	}
 	
 	// returns formatted price amount
-	public String getFormattedAmount(double price, boolean with_currency){
+	public static String getFormattedAmount(double price, boolean with_currency){
         if (Double.isNaN(price)){
             return "N/A";
         }
@@ -37,9 +30,13 @@ public class CurrencyProvider {
 		
 		return currencyFormatter.format(price);
 	}
+
+    public static String getFormattedAmount(double price){
+        return getFormattedAmount(price, false);
+    }
 	
 	//returns double from string input
-	public double getParseddouble(String input) throws ParseException{
+	public static double getParseddouble(String input) throws ParseException{
 		return NumberFormat.getNumberInstance(Locale.getDefault()).parse(input).doubleValue();
 	}
 

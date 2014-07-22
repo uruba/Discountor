@@ -23,6 +23,7 @@ import cz.uruba.slevnicek.filters.priceEditInputFilter;
 import cz.uruba.slevnicek.listeners.ListenerEditTextChange;
 import cz.uruba.slevnicek.listeners.ListenerSelectDiscount;
 import cz.uruba.slevnicek.models.DiscountItem;
+import cz.uruba.slevnicek.utils.CurrencyProvider;
 import cz.uruba.slevnicek.utils.DisCalc;
 
 /**
@@ -51,8 +52,6 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		
-		super.onCreateView();
 		
 		View rootView = inflater.inflate(R.layout.fragment_discount_calculator, container,
 				false);
@@ -84,7 +83,7 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		editPrice.setFilters(new InputFilter[]{ new priceEditInputFilter() });
 		
 		textCurrency1 = (TextView) rootView.findViewById(R.id.textCurrency1);
-		textCurrency1.setText(currencyProvider.getSymbol());
+		textCurrency1.setText(CurrencyProvider.getSymbol());
 		
 		// init editDiscountValue EditText
 		editDiscountValue = (EditText) rootView.findViewById(R.id.editDiscountValue);
@@ -151,8 +150,8 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 			resultPrice = resultYouSave = this.getString(R.string.na); 
 		} else {
             // result price is opposite to the input price (therefore, if the input price is marked as a price before, we must get the price after as a result – and vice versa)
-			resultPrice = currencyProvider.getFormattedAmount((isCheckedPriceBefore()) ? result.getPriceAfter() : result.getPriceBefore(), true);
-			resultYouSave = currencyProvider.getFormattedAmount(result.getSavings(), true);
+			resultPrice = CurrencyProvider.getFormattedAmount((isCheckedPriceBefore()) ? result.getPriceAfter() : result.getPriceBefore(), true);
+			resultYouSave = CurrencyProvider.getFormattedAmount(result.getSavings(), true);
 		}
 		
 		textPriceResultValue

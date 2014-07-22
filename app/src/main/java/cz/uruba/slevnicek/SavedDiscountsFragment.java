@@ -18,6 +18,7 @@ import java.util.List;
 
 import cz.uruba.slevnicek.models.DiscountItem;
 import cz.uruba.slevnicek.models.ModelDiscountItem;
+import cz.uruba.slevnicek.utils.CurrencyProvider;
 
 /**
  * Created by Vaclav on 4.7.2014.
@@ -103,10 +104,10 @@ public class SavedDiscountsFragment extends Fragment {
             DiscountItem item = values.get(position);
 
             itemName.setText(item.getDiscountName());
-            itemPriceBefore.setText(String.valueOf(item.getPriceBefore()));
-            itemPriceAfter.setText(String.valueOf(item.getPriceAfter()));
+            itemPriceBefore.setText(CurrencyProvider.getFormattedAmount(item.getPriceBefore()));
+            itemPriceAfter.setText(CurrencyProvider.getFormattedAmount(item.getPriceAfter()));
             itemDiscountPercentage.setText(String.valueOf(item.getDiscountValue()));
-            itemSavings.setText(String.valueOf(item.getSavings()));
+            itemSavings.setText(CurrencyProvider.getFormattedAmount(item.getSavings()));
 
             return rowSingle;
         }

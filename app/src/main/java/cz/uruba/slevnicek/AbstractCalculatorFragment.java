@@ -14,15 +14,8 @@ import android.widget.EditText;
 
 
 public abstract class AbstractCalculatorFragment extends Fragment {
-	protected CurrencyProvider currencyProvider;
-	protected EditText defaultEdit;
 	protected SharedPreferences sharedPref;
     protected InputMethodManager imm;
-
-    public void onCreateView() {
-		currencyProvider = new CurrencyProvider();
-	}
-	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState){
