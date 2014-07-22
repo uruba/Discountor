@@ -36,7 +36,7 @@ public class DiscountItem {
     // START Getters and setters
 
     public double getPriceBefore() {
-        if (priceBefore == DEFAULT_DOUBLE){
+        if (priceBefore == DEFAULT_DOUBLE && priceAfter != DEFAULT_DOUBLE){
            return DisCalc.origFromPercentage(priceAfter, discountValue);
         }
 
