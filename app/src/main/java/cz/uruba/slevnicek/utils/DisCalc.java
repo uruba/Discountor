@@ -3,8 +3,8 @@ package cz.uruba.slevnicek.utils;
 public class DisCalc {
 	private static final int ONE_HUNDRED = 100;
 	
-	public static double discFromPercentage(double origPrice, int percentage){		
-		return origPrice - ((origPrice / ONE_HUNDRED) * percentage);
+	public static double discFromPercentage(double origPrice, int percentage){
+            return origPrice - (roundToDecimals((origPrice / ONE_HUNDRED) * percentage, 2));
 	}
 	
 	public static double origFromPercentage(double discPrice, int percentage) {
