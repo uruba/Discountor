@@ -2,6 +2,7 @@ package cz.uruba.slevnicek;
 
 import java.util.ArrayList;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.content.Intent;
@@ -68,6 +69,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.container, new SavedDiscountsFragment())
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .addToBackStack(null)
                         .commit();
 
