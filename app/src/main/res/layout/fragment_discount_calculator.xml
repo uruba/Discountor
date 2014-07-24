@@ -78,7 +78,8 @@
 
             <FrameLayout
                 android:layout_width="112dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
                 <EditText
                     android:id="@+id/editDiscountValue"
@@ -88,6 +89,7 @@
                     android:textSize="@dimen/editDiscountTextSize"
                     android:hint="@string/zero"
                     android:paddingLeft="@dimen/inline_symbol_margin"
+                    android:paddingTop="0dp"
                     android:inputType="number" >
                 </EditText>
 
