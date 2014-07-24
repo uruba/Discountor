@@ -11,7 +11,11 @@ public class DisCalc {
         if (percentage < ONE_HUNDRED) {
             return (discPrice / (ONE_HUNDRED - percentage)) * ONE_HUNDRED;
         }
-
+/*
+        if (discPrice == 0.0d){
+            return discPrice;
+        }
+*/
         return Double.NaN;
     }
 	
