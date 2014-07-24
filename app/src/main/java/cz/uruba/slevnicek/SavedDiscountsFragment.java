@@ -1,10 +1,16 @@
 package cz.uruba.slevnicek;
 
+import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -44,7 +50,10 @@ public class SavedDiscountsFragment extends Fragment {
                              Bundle savedInstanceState)
     {
         // modify Action Bar
-        ((ActionBarActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        android.support.v7.app.ActionBar actionBar = ((ActionBarActivity)getActivity()).getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
+        setHasOptionsMenu(true);
 
         // initialize main view container
         View rootView = inflater.inflate(R.layout.fragment_list_saved_discounts, container,
@@ -74,6 +83,19 @@ public class SavedDiscountsFragment extends Fragment {
         final DiscountListArrayAdapter adapter = new DiscountListArrayAdapter(this.getActivity(), discountList);
 
         listView.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+
+                android.support.v4.app.FragmentManager fm = getActivity().getSupportFragmentManager();
+                fm.popBackStack();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
