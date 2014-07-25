@@ -1,7 +1,9 @@
 package cz.uruba.slevnicek;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
@@ -35,6 +37,7 @@ import cz.uruba.slevnicek.utils.CurrencyProvider;
 public class SavedDiscountsFragment extends Fragment {
     private ListView listView;
     private ArrayList<DiscountItem> discountList;
+    private View rootView;
 
     public SavedDiscountsFragment(){    }
 
@@ -56,7 +59,7 @@ public class SavedDiscountsFragment extends Fragment {
         setHasOptionsMenu(true);
 
         // initialize main view container
-        View rootView = inflater.inflate(R.layout.fragment_list_saved_discounts, container,
+        rootView = inflater.inflate(R.layout.fragment_list_saved_discounts, container,
                 false);
 
         // initialize list view
@@ -64,8 +67,8 @@ public class SavedDiscountsFragment extends Fragment {
 
         this.listAll();
 
-        final InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(rootView.getWindowToken(), 0);
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getActivity().getWindow().getDecorView().getRootView().getWindowToken(), 0);
 
         return rootView;
     }
