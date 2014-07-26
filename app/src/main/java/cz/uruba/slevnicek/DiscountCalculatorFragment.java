@@ -1,18 +1,13 @@
 package cz.uruba.slevnicek;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,9 +17,8 @@ import cz.uruba.slevnicek.filters.discountEditInputFilter;
 import cz.uruba.slevnicek.filters.priceEditInputFilter;
 import cz.uruba.slevnicek.listeners.ListenerEditTextChange;
 import cz.uruba.slevnicek.listeners.ListenerSelectDiscount;
-import cz.uruba.slevnicek.models.DiscountItem;
+import cz.uruba.slevnicek.models.item_definitions.DiscountItem;
 import cz.uruba.slevnicek.utils.CurrencyProvider;
-import cz.uruba.slevnicek.utils.DisCalc;
 
 /**
  * A placeholder fragment containing a simple view.

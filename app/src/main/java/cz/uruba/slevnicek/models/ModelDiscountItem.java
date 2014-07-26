@@ -2,6 +2,8 @@ package cz.uruba.slevnicek.models;
 
 import java.util.ArrayList;
 
+import cz.uruba.slevnicek.models.item_definitions.DiscountItem;
+
 /**
  * Created by Vaclav on 6.7.2014.
  */

@@ -1,4 +1,4 @@
-package cz.uruba.slevnicek.models;
+package cz.uruba.slevnicek.models.item_definitions;
 
 import cz.uruba.slevnicek.utils.DisCalc;
 
