@@ -14,20 +14,20 @@ public class DiscountItem {
     private String discountName;
 
     // START constructors
-    public DiscountItem(double priceBeforeAfter, boolean isPriceBefore, int discountValue){
+    public DiscountItem(double priceValue, boolean isPriceBefore, int discountValue){
         this.isPriceBefore = isPriceBefore;
 
         if(isPriceBefore) {
-            this.priceBefore = priceBeforeAfter;
+            this.priceBefore = priceValue;
         } else {
-            this.priceAfter = priceBeforeAfter;
+            this.priceAfter = priceValue;
         }
 
         this.discountValue = discountValue;
     }
 
-    public DiscountItem(double priceBeforeAfter, boolean isPriceBefore, int discountValue, String discountName){
-        this(priceBeforeAfter, isPriceBefore, discountValue);
+    public DiscountItem(double priceValue, boolean isPriceBefore, int discountValue, String discountName){
+        this(priceValue, isPriceBefore, discountValue);
         this.setDiscountName(discountName);
     }
 

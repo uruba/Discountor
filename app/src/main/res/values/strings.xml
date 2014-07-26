@@ -11,7 +11,7 @@
     <!-- Discount strings -->
     <string name="before_discount">Before discount</string>
     <string name="after_discount">After discount</string>
-    <string name="discount_percentage">Discount percentage</string>
+    <string name="discount_percentage">Discount value</string>
     <string name="percent">%</string>
 
     <!-- Price strings -->

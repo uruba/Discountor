@@ -11,6 +11,7 @@
             backward-compatibility can go here.
         -->
         <item name="actionBarStyle">@style/ActionBarSlevnicek</item>
+        <item name="actionBarItemBackground">@null</item>
     </style>
     
     <style name="ActionBarSlevnicek"
