@@ -74,15 +74,15 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
                         .commit();
 
                 break;
+            /*
 			case R.id.action_settings:
-
 				Class<?> targetClass;
 				targetClass = Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB ?
 						SettingsActivityAPI11plus.class :
 						SettingsActivityAPI8to10.class;
 				startActivity(new Intent(this, targetClass));
 
-				break;
+				break; */
 			default: return super.onOptionsItemSelected(item);
 		}
 

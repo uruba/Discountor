@@ -7,6 +7,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="action_reset">Reset values</string>
+    <string name="action_about">About</string>
+
 
     <!-- Discount strings -->
     <string name="before_discount">Before discount</string>
@@ -69,5 +71,6 @@
     <string name="prompt_save_succesful">Discount saved succesfuly</string>
 
     <string name="title_fragment_list_discounts">Saved discounts</string>
+    <string name="title_activity_about">About this app</string>
 
 </resources>
