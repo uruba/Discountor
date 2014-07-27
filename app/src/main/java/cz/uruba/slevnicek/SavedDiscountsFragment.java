@@ -62,6 +62,8 @@ public class SavedDiscountsFragment extends Fragment {
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getActivity().getWindow().getDecorView().getRootView().getWindowToken(), 0);
 
+        getActivity().setTitle(R.string.title_fragment_list_discounts);
+
         return rootView;
     }
 
@@ -69,6 +71,8 @@ public class SavedDiscountsFragment extends Fragment {
     public void onDestroyView(){
         // de-modify Action Bar
         ((ActionBarActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
+        getActivity().setTitle(getString(getActivity().getApplicationInfo().labelRes));
 
         super.onDestroyView();
     }

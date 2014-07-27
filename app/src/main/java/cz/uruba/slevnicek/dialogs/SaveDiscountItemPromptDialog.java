@@ -2,16 +2,12 @@ package cz.uruba.slevnicek.dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.EditText;
 
-import cz.uruba.slevnicek.AbstractCalculatorFragment;
 import cz.uruba.slevnicek.DiscountCalculatorFragment;
 import cz.uruba.slevnicek.R;
-import cz.uruba.slevnicek.models.ModelDiscountItem;
-import cz.uruba.slevnicek.models.item_definitions.DiscountItem;
 
 /**
  * Created by Temp on 27.7.2014.
@@ -29,7 +25,7 @@ public class SaveDiscountItemPromptDialog extends android.support.v4.app.DialogF
 
         return new AlertDialog.Builder(getActivity())
                 .setView(input)
-                .setTitle(R.string.promt_save_discount_title)
+                .setTitle(R.string.prompt_save_discount_title)
                 .setPositiveButton(R.string.prompt_save,
                         new DialogInterface.OnClickListener() {
                             @Override

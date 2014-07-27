@@ -61,10 +61,13 @@
     <string name="pref_title_activate_keyboard">Activate keyboard on deleting values</string>
 	<string name="pref_summary_on_activate_keyboard">Shows keyboard after pressing the "Delete" button (if hidden)</string>
 	<string name="pref_summary_off_activate_keyboard">Doesn\'t show keyboard after pressing the "Delete" button (if hidden)</string>
+
     <string name="prompt_save">Save</string>
     <string name="prompt_cancel">Cancel</string>
-    <string name="promt_save_discount_title">Save discount</string>
+    <string name="prompt_save_discount_title">Save discount</string>
     <string name="prompt_name_optional">Optional name</string>
     <string name="prompt_save_succesful">Discount saved succesfuly</string>
+
+    <string name="title_fragment_list_discounts">Saved discounts</string>
 
 </resources>
