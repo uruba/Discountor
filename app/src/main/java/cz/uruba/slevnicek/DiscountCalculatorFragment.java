@@ -1,22 +1,29 @@
 package cz.uruba.slevnicek;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.text.InputFilter;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import cz.uruba.slevnicek.adapters.DiscountBeforeAfterAdapter;
+import cz.uruba.slevnicek.dialogs.SaveDiscountItemPromptDialog;
 import cz.uruba.slevnicek.filters.discountEditInputFilter;
 import cz.uruba.slevnicek.filters.priceEditInputFilter;
 import cz.uruba.slevnicek.listeners.ListenerEditTextChange;
 import cz.uruba.slevnicek.listeners.ListenerSelectDiscount;
+import cz.uruba.slevnicek.models.ModelDiscountItem;
 import cz.uruba.slevnicek.models.item_definitions.DiscountItem;
 import cz.uruba.slevnicek.utils.CurrencyProvider;
 
@@ -31,6 +38,8 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 	private EditText editPrice, editDiscountValue;
 	// RadioGroup declaration
 	private Spinner selectBeforeAfterDiscount;
+    // ModelDiscountItem declaration
+    private ModelDiscountItem modelDiscountItem;
 	
 	
 	
@@ -84,10 +93,32 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		editDiscountValue.addTextChangedListener(new ListenerEditTextChange(this));
 		editDiscountValue.setFilters(new InputFilter[]{ new discountEditInputFilter() });
 
+        // init modelDiscountItem ModelDiscountItem
+        modelDiscountItem = new ModelDiscountItem(this.getActivity());
+
 		resetEditValues(true);
 
 		return rootView;
 	}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.action_save:
+                SaveDiscountItemPromptDialog dialog = new SaveDiscountItemPromptDialog();
+                dialog.setTargetFragment(this, 0);
+                dialog.show(getActivity().getSupportFragmentManager(), null);
+                break;
+            default: return super.onOptionsItemSelected(item);
+        }
+
+        return true;
+
+    }
 
 	//----- START Text Before/After Discount manipulation
 	
@@ -162,6 +193,22 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		
 	    focusAndShowKeyboard(editPrice, showKeyboard);
 	}
+
+    public void saveResultValuesToDB(String optionalName){
+        DiscountItem savedItem = calculateResult();
+
+        if (optionalName != null && !optionalName.isEmpty()) {
+            savedItem.setDiscountName(optionalName);
+        }
+
+        modelDiscountItem.addNew(savedItem);
+
+        Toast confirmationToast = Toast
+                .makeText(getActivity(), R.string.prompt_save_succesful, Toast.LENGTH_SHORT);
+
+        confirmationToast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, ((ActionBarActivity)getActivity()).getSupportActionBar().getHeight() + R.dimen.activity_vertical_margin);
+        confirmationToast.show();
+    }
 	
 	
 	

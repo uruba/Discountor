@@ -73,7 +73,7 @@ public class SavedDiscountsFragment extends Fragment {
     }
 
     public void listAll(){
-        discountList = ModelDiscountItem.getAll();
+        discountList = ModelDiscountItem.getAll(this.getActivity());
         final DiscountListArrayAdapter adapter = new DiscountListArrayAdapter(this.getActivity(), discountList);
 
         listView.setAdapter(adapter);

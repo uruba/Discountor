@@ -30,12 +30,12 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
 
 
     private static final String QUERY_CREATE_DB
-            = "CREATE TABLE" + TABLE_DISCOUNT_RECORDS
+            = "CREATE TABLE " + TABLE_DISCOUNT_RECORDS
             + "("
                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-               + PRICE_BEFORE
-               + PRICE_VALUE
-               + DISCOUNT_VALUE
+               + PRICE_BEFORE + " INTEGER, "
+               + PRICE_VALUE + " REAL, "
+               + DISCOUNT_VALUE + " INTEGER, "
                + DISPLAYED_NAME + " TEXT,"
                + DATE_CREATED + " DATETIME DEFAULT CURRENT_TIMESTAMP"
             + ")";
@@ -61,15 +61,19 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
     }
 
     public void insertNew(DiscountItem item){
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues insertedValues = new ContentValues();
-        insertedValues.put(PRICE_BEFORE, item.isPriceBefore());
+        insertedValues.put(PRICE_BEFORE, item.isPriceBefore() ?
+                                            1 :
+                                            0);
         insertedValues.put(PRICE_VALUE, item.isPriceBefore() ?
                                             item.getPriceBefore() :
                                             item.getPriceAfter());
         insertedValues.put(DISCOUNT_VALUE, item.getDiscountValue());
         insertedValues.put(DISPLAYED_NAME, item.getDiscountName());
+
+        db.insert(TABLE_DISCOUNT_RECORDS, null, insertedValues);
     }
 
     public List<DiscountItem> retrieveAll(){
