@@ -3,6 +3,7 @@ package cz.uruba.slevnicek.models;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import cz.uruba.slevnicek.helpers.SavedDiscountsHelper;
 import cz.uruba.slevnicek.models.item_definitions.DiscountItem;
@@ -17,11 +18,13 @@ public class ModelDiscountItem {
         this.helper = new SavedDiscountsHelper(context);
     }
 
-    public static ArrayList<DiscountItem> getAll(Context context){
+    public static ArrayList<DiscountItem> getAll(Context context, boolean desc){
         SavedDiscountsHelper helper = new SavedDiscountsHelper(context);
 
         ArrayList<DiscountItem> items = (ArrayList) helper.retrieveAll();
-
+        if(desc) {
+            Collections.reverse(items);
+        }
         /* ...
         items.add(new DiscountItem(true, 25.0, 5, "Hovno"));
         items.add(new DiscountItem(false, 125.3, 25));

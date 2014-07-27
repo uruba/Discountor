@@ -36,6 +36,7 @@ public class SavedDiscountsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
     }
 
 
@@ -73,7 +74,7 @@ public class SavedDiscountsFragment extends Fragment {
     }
 
     public void listAll(){
-        discountList = ModelDiscountItem.getAll(this.getActivity());
+        discountList = ModelDiscountItem.getAll(this.getActivity(), true);
         final DiscountListArrayAdapter adapter = new DiscountListArrayAdapter(this.getActivity(), discountList);
 
         listView.setAdapter(adapter);
