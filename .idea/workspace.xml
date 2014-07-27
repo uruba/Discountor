@@ -36,9 +36,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28d0be2f-7b03-409d-9ff3-0e884f1f4e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/models/ModelDiscountItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/models/ModelDiscountItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/discount.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/discount.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="slevkulacka.iws" />
@@ -62,11 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SavedDiscountsFragment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SavedDiscountsFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3264095" vertical-offset="783" max-vertical-offset="2057">
-              <caret line="76" column="44" selection-start-line="76" selection-start-column="44" selection-end-line="76" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="2057">
+              <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -108,9 +107,31 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="716" max-vertical-offset="1598">
+            <state vertical-scroll-proportion="0.0" vertical-offset="461" max-vertical-offset="1598">
               <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="discount.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/discount.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4792285" vertical-offset="0" max-vertical-offset="674">
+              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+              <folding>
+                <element signature="e#301#323#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,16 +169,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="579" max-vertical-offset="1241">
               <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v14/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="782">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -1194,7 +1205,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/CurrencyProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/DisCalc.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_discount_calculator.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/discount.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/models/DiscountItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-v14/styles.xml" />
@@ -1207,6 +1217,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/models/ModelDiscountItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/discount.xml" />
       </list>
     </option>
   </component>
@@ -2251,7 +2263,11 @@
       <created>1406480692647</created>
       <updated>1406480692647</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="- SavedDiscounts fragment - descending order for listed DiscountItems">
+      <created>1406483429576</created>
+      <updated>1406483429576</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2269,6 +2285,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="835" y="518" width="760" height="662" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.239819" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32651073" sideWeight="0.4969834" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917467" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -2286,7 +2303,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24023324" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2325,7 +2341,8 @@
     <MESSAGE value="- various changes" />
     <MESSAGE value="- initial database access and data modelling draft" />
     <MESSAGE value="- working database access in the scenario of saving discount entries thru DialogFragment prompt" />
-    <option name="LAST_COMMIT_MESSAGE" value="- working database access in the scenario of saving discount entries thru DialogFragment prompt" />
+    <MESSAGE value="- SavedDiscounts fragment - descending order for listed DiscountItems" />
+    <option name="LAST_COMMIT_MESSAGE" value="- SavedDiscounts fragment - descending order for listed DiscountItems" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2603,20 +2620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25679758" vertical-offset="0" max-vertical-offset="662">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/discount.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/DisCalc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
@@ -2730,14 +2733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="716" max-vertical-offset="1598">
-          <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/models/ModelDiscountItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="969">
@@ -2753,9 +2748,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3264095" vertical-offset="783" max-vertical-offset="2057">
-          <caret line="76" column="44" selection-start-line="76" selection-start-column="44" selection-end-line="76" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="2057">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="716" max-vertical-offset="1598">
+          <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/discount.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4792285" vertical-offset="0" max-vertical-offset="674">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding>
+            <element signature="e#301#323#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
