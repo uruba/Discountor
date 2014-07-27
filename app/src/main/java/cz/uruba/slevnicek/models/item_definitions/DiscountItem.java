@@ -14,7 +14,7 @@ public class DiscountItem {
     private String discountName;
 
     // START constructors
-    public DiscountItem(double priceValue, boolean isPriceBefore, int discountValue){
+    public DiscountItem(boolean isPriceBefore, double priceValue, int discountValue){
         this.isPriceBefore = isPriceBefore;
 
         if(isPriceBefore) {
@@ -26,8 +26,8 @@ public class DiscountItem {
         this.discountValue = discountValue;
     }
 
-    public DiscountItem(double priceValue, boolean isPriceBefore, int discountValue, String discountName){
-        this(priceValue, isPriceBefore, discountValue);
+    public DiscountItem(boolean isPriceBefore, double priceValue, int discountValue, String discountName){
+        this(isPriceBefore, priceValue, discountValue);
         this.setDiscountName(discountName);
     }
 

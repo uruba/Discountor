@@ -1,8 +1,15 @@
 package cz.uruba.slevnicek.helpers;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import cz.uruba.slevnicek.models.item_definitions.DiscountItem;
 
 /**
  * Created by Václav on 24.7.2014.
@@ -30,7 +37,7 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
                + PRICE_VALUE
                + DISCOUNT_VALUE
                + DISPLAYED_NAME + " TEXT,"
-               + DATE_CREATED
+               + DATE_CREATED + " DATETIME DEFAULT CURRENT_TIMESTAMP"
             + ")";
 
 
@@ -51,5 +58,44 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public void insertNew(DiscountItem item){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues insertedValues = new ContentValues();
+        insertedValues.put(PRICE_BEFORE, item.isPriceBefore());
+        insertedValues.put(PRICE_VALUE, item.isPriceBefore() ?
+                                            item.getPriceBefore() :
+                                            item.getPriceAfter());
+        insertedValues.put(DISCOUNT_VALUE, item.getDiscountValue());
+        insertedValues.put(DISPLAYED_NAME, item.getDiscountName());
+    }
+
+    public List<DiscountItem> retrieveAll(){
+        List<DiscountItem> discountItems = new ArrayList<DiscountItem>();
+
+        String query = "SELECT "
+                    + PRICE_BEFORE + ", "
+                    + PRICE_VALUE + ", "
+                    + DISCOUNT_VALUE + ", "
+                    + DISPLAYED_NAME + " "
+                    + "FROM " + TABLE_DISCOUNT_RECORDS;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()){
+            do {
+                DiscountItem discountItem = new DiscountItem(cursor.getInt(0) > 0,
+                                                             cursor.getFloat(1),
+                                                             cursor.getInt(2),
+                                                             cursor.getString(3));
+                discountItems.add(discountItem);
+            } while (cursor.moveToNext());
+        }
+
+        return discountItems;
     }
 }

@@ -16,12 +16,17 @@ public class ModelDiscountItem {
         ArrayList<DiscountItem> items = new ArrayList<DiscountItem>();
 
         /* ... */
-        items.add(new DiscountItem(25.0, true, 5, "Hovno"));
-        items.add(new DiscountItem(125.3, false, 25));
-        items.add(new DiscountItem(10.0, true, 65, "Prdel"));
+        items.add(new DiscountItem(true, 25.0, 5, "Hovno"));
+        items.add(new DiscountItem(false, 125.3, 25));
+        items.add(new DiscountItem(true, 10.0, 65, "Prdel"));
 
         return items;
     }
+
+    public static void addNew(float price, boolean isPriceBeforeAfter, int discount, String displayedName){
+        DiscountItem insertedItem = new DiscountItem(isPriceBeforeAfter, price, discount, displayedName);
+    }
+
 /*
     public static DiscountItem getById(int id){
         DiscountItem item = new DiscountItem();

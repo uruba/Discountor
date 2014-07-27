@@ -127,7 +127,7 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
         boolean isPriceBefore = isCheckedPriceBefore();
 
 
-        return new DiscountItem(price, isPriceBefore, discount);
+        return new DiscountItem(isPriceBefore, price, discount);
 	}
 	
 	private String getStringFromNumberEditText(EditText edit){
