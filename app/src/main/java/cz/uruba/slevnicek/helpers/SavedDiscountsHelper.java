@@ -34,7 +34,7 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
             + "("
                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                + PRICE_BEFORE + " INTEGER, "
-               + PRICE_VALUE + " REAL, "
+               + PRICE_VALUE + " TEXT, "
                + DISCOUNT_VALUE + " INTEGER, "
                + DISPLAYED_NAME + " TEXT,"
                + DATE_CREATED + " DATETIME DEFAULT CURRENT_TIMESTAMP"
@@ -93,7 +93,7 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()){
             do {
                 DiscountItem discountItem = new DiscountItem(cursor.getInt(0) > 0,
-                                                             cursor.getFloat(1),
+                                                             cursor.getDouble(1),
                                                              cursor.getInt(2),
                                                              cursor.getString(3));
                 discountItems.add(discountItem);
