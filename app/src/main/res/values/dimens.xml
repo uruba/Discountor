@@ -11,9 +11,8 @@
 
     <dimen name="editPriceTextSize">25sp</dimen>
     <dimen name="editPriceInlineTextSize">20sp</dimen>
+    <dimen name="textDiscountValue">13sp</dimen>
     <dimen name="editDiscountTextSize">42sp</dimen>
     <dimen name="editDiscountInlineTextSize">36sp</dimen>
-
-    <dimen name="textDiscountValue">12sp</dimen>
 
 </resources>

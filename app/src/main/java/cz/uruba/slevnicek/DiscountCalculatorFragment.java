@@ -87,7 +87,9 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		
 		textCurrency1 = (TextView) rootView.findViewById(R.id.textCurrency1);
 		textCurrency1.setText(CurrencyProvider.getSymbol());
-		
+
+        ((TextView) rootView.findViewById(R.id.textDiscountValue)).append(":");
+
 		// init editDiscountValue EditText
 		editDiscountValue = (EditText) rootView.findViewById(R.id.editDiscountValue);
 		editDiscountValue.addTextChangedListener(new ListenerEditTextChange(this));
