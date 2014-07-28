@@ -37,7 +37,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28d0be2f-7b03-409d-9ff3-0e884f1f4e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/helpers/SavedDiscountsHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/helpers/SavedDiscountsHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="slevkulacka.iws" />
@@ -61,16 +60,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DiscountCalculatorFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/DiscountCalculatorFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="895" max-vertical-offset="3315">
-              <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -111,11 +100,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SavedDiscountsHelper.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SavedDiscountsHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/helpers/SavedDiscountsHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65255475" vertical-offset="522" max-vertical-offset="1666">
+            <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="1666">
               <caret line="70" column="65" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DisCalc.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/DisCalc.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35474452" vertical-offset="131" max-vertical-offset="816">
+              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -1179,7 +1178,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/adapters/DiscountBeforeAfterAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/spinner_item_price_before_after_dropdown.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/CurrencyProvider.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/DisCalc.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/models/DiscountItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/models/item_definitions/DiscountItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/dialogs/SaveDiscountItemPromptDialog.java" />
@@ -1201,12 +1199,13 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values-large/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/helpers/SavedDiscountsHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/DisCalc.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="323" />
-    <option name="y" value="52" />
+    <option name="x" value="325" />
+    <option name="y" value="13" />
     <option name="width" value="1539" />
     <option name="height" value="1174" />
   </component>
@@ -2269,11 +2268,19 @@
       <created>1406581990970</created>
       <updated>1406581990970</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="- updated datatype for storing big numbers in DB">
+      <created>1406582584648</created>
+      <updated>1406582584648</updated>
+    </task>
+    <task id="LOCAL-00034" summary="- fixed issue with negative zero as a result of substracting discounted price from original price (gonna have to look into this further as I don't fully comprehend the inaccuracies coming from rounding the floating point types in Java)">
+      <created>1406582797944</created>
+      <updated>1406582797944</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="323" y="52" width="1539" height="1174" extended-state="0" />
+    <frame x="325" y="13" width="1539" height="1174" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -2323,8 +2330,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="- reworked radio buttons as a spinner on DiscountCalculatorFragmen" />
-    <MESSAGE value="- commented out the navigation spinner for the main activity" />
     <MESSAGE value="- tweaked values identifiers for price_before_after" />
     <MESSAGE value="- added layout file for spinner items&#10;&#10;TODO:&#10;- tried to put in a code to deactivate the soft keyboard upon creating SavedDiscountsFragment, but it doesn't work - TODO: find out why" />
     <MESSAGE value="- resolved keyboard hiding on SavedDiscountsFragment&#10;- tweaks in layout&#10;" />
@@ -2348,7 +2353,9 @@
     <MESSAGE value="- various layout changes" />
     <MESSAGE value="- updated localization strings&#10;- changed limit of input price" />
     <MESSAGE value="- updated some dimensions&#10;- defined screen orientation as portrait only for the main activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="- updated some dimensions&#10;- defined screen orientation as portrait only for the main activity" />
+    <MESSAGE value="- updated datatype for storing big numbers in DB" />
+    <MESSAGE value="- fixed issue with negative zero as a result of substracting discounted price from original price (gonna have to look into this further as I don't fully comprehend the inaccuracies coming from rounding the floating point types in Java)" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fixed issue with negative zero as a result of substracting discounted price from original price (gonna have to look into this further as I don't fully comprehend the inaccuracies coming from rounding the floating point types in Java)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2512,14 +2519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52577317" vertical-offset="0" max-vertical-offset="680">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/DisCalc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2768,8 +2767,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/helpers/SavedDiscountsHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65255475" vertical-offset="522" max-vertical-offset="1666">
+        <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="1666">
           <caret line="70" column="65" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/DisCalc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35474452" vertical-offset="131" max-vertical-offset="816">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
           <folding />
         </state>
       </provider>

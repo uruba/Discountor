@@ -37,6 +37,6 @@ public class DisCalc {
     }
 
     public static double amountSavedFromOrigAndDisc(double origPrice, double discPrice){
-        return origPrice - discPrice;
+        return Math.abs(origPrice - discPrice);
     }
 }
