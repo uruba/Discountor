@@ -18,7 +18,7 @@
         <item
             android:id="@+id/action_list_discounts"
             android:orderInCategory="99"
-            android:title="Saved discounts"
+            android:title="@string/title_fragment_list_discounts"
             app:showAsAction="never"/>
 
 </menu>

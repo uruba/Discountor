@@ -5,7 +5,10 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Nastavení</string>
-    
+    <string name="action_reset">Vymazat hodnoty</string>
+    <string name="action_about">O aplikaci</string>
+
+
     <string name="toast_settings">Toto je nastavení</string>
     <string name="before_discount">Před slevou</string>
     <string name="after_discount">Po slevě</string>
@@ -18,6 +21,39 @@
     <string name="zero">0</string>
     <string name="na">–</string>
     <string name="you_save">Ušetříte</string>
+
+
+    <!-- Price before/after strings -->
+    <string name="spinner_price_before">Původní cena</string>
+    <string name="spinner_price_after">Cena po slevě</string>
+
+    <!-- Preference strings
+    <string name="currency_category">Application defaults</string>
+    <string name="miscellaneous_category">Miscellaneous</string>
+    <string name="pref_title_default_currency">Displayed currency</string>
+    <string name="pref_title_default_mode">Default mode</string>
+    <string name="pref_summary_default_mode">Preffered application mode on application startup</string>
+
+    <string name="pref_title_about">About</string>
+    <string name="pref_summary_about">Info about this app</string>
+
+    <string name="pref_title_preserve">Save state on exit</string>
+    <string name="pref_summary_preserve">Preserve currently input values</string>
+
+    <string name="pref_title_activate_keyboard">Activate keyboard on deleting values</string>
+    <string name="pref_summary_on_activate_keyboard">Shows keyboard after pressing the "Delete" button (if hidden)</string>
+    <string name="pref_summary_off_activate_keyboard">Doesn\'t show keyboard after pressing the "Delete" button (if hidden)</string>
+ -->
+
+
+    <string name="prompt_save">Uložit</string>
+    <string name="prompt_cancel">Zrušit</string>
+    <string name="prompt_save_discount_title">Uložit slevu</string>
+    <string name="prompt_name_optional">Poznámka (nepovinné)</string>
+    <string name="prompt_save_succesful">Sleva byla úspěšně uložena</string>
+
+    <string name="title_fragment_list_discounts">Uložené slevy</string>
+    <string name="title_activity_about">O aplikaci</string>
 
     
 </resources>
