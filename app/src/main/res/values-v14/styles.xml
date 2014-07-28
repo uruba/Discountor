@@ -9,16 +9,17 @@
         <!-- API 14 theme customizations can go here. -->
         <item name="android:actionBarStyle">@style/ActionBarSlevnicek</item>
         <item name="android:actionBarItemBackground">@null</item>
-        <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
-    </style>
-    
-    <!-- @Override – Default ActionBar style -->
+   </style>
+
+   <!-- @Override – Default ActionBar style -->
     <style name="ActionBarSlevnicek"
            parent="@android:style/Widget.Holo.Light.ActionBar">
         	<item name="android:background">@color/theme_red</item>
         	<item name="android:titleTextStyle">@style/TitleTextStyle</item>
         	<item name="android:displayOptions">showTitle|useLogo</item>
     </style>
+
+
  
  	<!-- 
     <style name="TitleTextStyle"

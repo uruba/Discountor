@@ -23,8 +23,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="-4dp"
              />
 
         <FrameLayout
@@ -39,7 +37,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/editPriceTextSize"
                 android:inputType="numberDecimal"
-                android:hint="@string/zero_float">
+                android:hint="@string/zero_float"
+                android:imeOptions="flagNoExtractUi">
             </EditText>
 
             <TextView
@@ -62,8 +61,7 @@
 
         <LinearLayout
             android:id="@+id/percentage_input_layout"
-            android:layout_width="0dp"
-            android:layout_weight="0.4"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
@@ -73,32 +71,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/discount_percentage"
-                android:textSize="12dp"
+                android:textSize="@dimen/textDiscountValue"
+                android:paddingLeft="4dp"
                  />
 
             <FrameLayout
-                android:layout_width="112dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 >
 
                 <EditText
                     android:id="@+id/editDiscountValue"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="2"
                     android:textSize="@dimen/editDiscountTextSize"
                     android:hint="@string/zero"
                     android:paddingLeft="@dimen/inline_symbol_margin"
                     android:paddingTop="0dp"
-                    android:inputType="number" >
+                    android:inputType="number"
+                    android:imeOptions="flagNoExtractUi"
+                    >
                 </EditText>
 
                 <TextView
                     android:id="@+id/textPercent"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|center_vertical"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical"
                     android:layout_marginRight="@dimen/inline_symbol_margin"
+                    android:layout_marginBottom="6dp"
                     android:text="@string/percent"
                     android:textSize="@dimen/editDiscountInlineTextSize"
                     android:textColor="@color/light_grey" />
@@ -108,8 +111,7 @@
         </LinearLayout>
 
        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="0.6"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
 
             android:orientation="vertical" >

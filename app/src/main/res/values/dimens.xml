@@ -7,11 +7,13 @@
     <dimen name="inline_symbol_margin">8dp</dimen>
     <dimen name="inline_number_margin">6dp</dimen>
 
-    <dimen name="spinnerPriceBeforeAfterTextSize">16dp</dimen>
+    <dimen name="spinnerPriceBeforeAfterTextSize">18sp</dimen>
 
-    <dimen name="editPriceTextSize">25dp</dimen>
-    <dimen name="editPriceInlineTextSize">20dp</dimen>
-    <dimen name="editDiscountTextSize">40dp</dimen>
-    <dimen name="editDiscountInlineTextSize">32dp</dimen>
+    <dimen name="editPriceTextSize">25sp</dimen>
+    <dimen name="editPriceInlineTextSize">20sp</dimen>
+    <dimen name="editDiscountTextSize">42sp</dimen>
+    <dimen name="editDiscountInlineTextSize">36sp</dimen>
+
+    <dimen name="textDiscountValue">12sp</dimen>
 
 </resources>

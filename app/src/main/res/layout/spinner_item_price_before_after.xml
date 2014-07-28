@@ -5,4 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textSize="@dimen/spinnerPriceBeforeAfterTextSize"
+    android:gravity="right"
+    android:textColor="@color/light_grey"
     />
