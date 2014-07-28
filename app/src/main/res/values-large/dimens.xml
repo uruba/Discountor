@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="spinnerPriceBeforeAfterTextSize">28sp</dimen>
+    <dimen name="spinnerPriceBeforeAfterTextSize">24sp</dimen>
     
-    <dimen name="editPriceTextSize">50sp</dimen>
-    <dimen name="editPriceInlineTextSize">40sp</dimen>
+    <dimen name="editPriceTextSize">40sp</dimen>
+    <dimen name="editPriceInlineTextSize">32sp</dimen>
     <dimen name="editDiscountTextSize">60sp</dimen>
     <dimen name="editDiscountInlineTextSize">50sp</dimen>
 
-    <dimen name="textDiscountValue">20sp</dimen>
+    <dimen name="textDiscountValue">18sp</dimen>
     
 </resources>
