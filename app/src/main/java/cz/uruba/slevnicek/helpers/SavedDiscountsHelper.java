@@ -17,6 +17,7 @@ import cz.uruba.slevnicek.models.item_definitions.DiscountItem;
 public class SavedDiscountsHelper extends SQLiteOpenHelper {
 
     private static final int DB_VERSION = 1;
+    private SQLiteDatabase db;
 
     private static final String DB_NAME = "discountor_data";
 
@@ -40,14 +41,25 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
                + DATE_CREATED + " DATETIME DEFAULT CURRENT_TIMESTAMP"
             + ")";
 
+    private static final String QUERY_READ_ALL
+            = "SELECT "
+            + COLUMN_ID + ", "
+            + PRICE_BEFORE + ", "
+            + PRICE_VALUE + ", "
+            + DISCOUNT_VALUE + ", "
+            + DISPLAYED_NAME + " "
+            + "FROM " + TABLE_DISCOUNT_RECORDS;
+
 
 
     public SavedDiscountsHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
+
+        this.db = getWritableDatabase();
     }
 
     public SavedDiscountsHelper(Context context){
-        super(context, DB_NAME, null, DB_VERSION);
+        this(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
@@ -61,8 +73,6 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
     }
 
     public void insertNew(DiscountItem item){
-        SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues insertedValues = new ContentValues();
         insertedValues.put(PRICE_BEFORE, item.isPriceBefore() ?
                                             1 :
@@ -79,27 +89,31 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
     public List<DiscountItem> retrieveAll(){
         List<DiscountItem> discountItems = new ArrayList<DiscountItem>();
 
-        String query = "SELECT "
-                    + PRICE_BEFORE + ", "
-                    + PRICE_VALUE + ", "
-                    + DISCOUNT_VALUE + ", "
-                    + DISPLAYED_NAME + " "
-                    + "FROM " + TABLE_DISCOUNT_RECORDS;
-
-        SQLiteDatabase db = this.getWritableDatabase();
+        String query = QUERY_READ_ALL;
 
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()){
             do {
-                DiscountItem discountItem = new DiscountItem(cursor.getInt(0) > 0,
-                                                             cursor.getDouble(1),
-                                                             cursor.getInt(2),
-                                                             cursor.getString(3));
+                DiscountItem discountItem = new DiscountItem(cursor.getInt(0),
+                                                             cursor.getInt(1) > 0,
+                                                             cursor.getDouble(2),
+                                                             cursor.getInt(3),
+                                                             cursor.getString(4));
                 discountItems.add(discountItem);
             } while (cursor.moveToNext());
         }
 
         return discountItems;
+    }
+
+    private void deleteByID(int id){
+        db.delete(TABLE_DISCOUNT_RECORDS,
+                    COLUMN_ID + " = ?",
+                    new String[] { String.valueOf(id) } );
+    }
+
+    public void deleteByID(DiscountItem item){
+        deleteByID(item.getDB_ID());
     }
 }

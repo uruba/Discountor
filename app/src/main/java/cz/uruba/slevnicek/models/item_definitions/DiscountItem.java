@@ -7,11 +7,13 @@ import cz.uruba.slevnicek.utils.DisCalc;
  */
 public class DiscountItem {
     final double DEFAULT_DOUBLE = 0.0d;
+    final int DEFAULT_DB_ID = -1;
 
     private double priceBefore, priceAfter;
     private int discountValue;
     private boolean isPriceBefore;
     private String discountName;
+    private int db_id;
 
     // START constructors
     public DiscountItem(boolean isPriceBefore, double priceValue, int discountValue){
@@ -24,11 +26,17 @@ public class DiscountItem {
         }
 
         this.discountValue = discountValue;
+        this.db_id = DEFAULT_DB_ID;
     }
 
     public DiscountItem(boolean isPriceBefore, double priceValue, int discountValue, String discountName){
         this(isPriceBefore, priceValue, discountValue);
         this.setDiscountName(discountName);
+    }
+
+    public DiscountItem(int db_id, boolean isPriceBefore, double priceValue, int discountValue, String discountName){
+        this(isPriceBefore, priceValue, discountValue, discountName);
+        this.db_id = db_id;
     }
 
     // END constructors
@@ -71,5 +79,8 @@ public class DiscountItem {
         return DisCalc.amountSavedFromOrigAndDisc(this.getPriceBefore(), this.getPriceAfter());
     }
 
+    public int getDB_ID(){
+        return db_id;
+    }
     // END Getters and setters
 }
