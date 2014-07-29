@@ -70,7 +70,10 @@ public class SavedDiscountsFragment extends Fragment {
     @Override
     public void onDestroyView(){
         // de-modify Action Bar
-        ((ActionBarActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        android.support.v7.app.ActionBar actionBar = ((ActionBarActivity)getActivity()).getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(false);
+        actionBar.setHomeButtonEnabled(false);
+
 
         getActivity().setTitle(getString(getActivity().getApplicationInfo().labelRes));
 

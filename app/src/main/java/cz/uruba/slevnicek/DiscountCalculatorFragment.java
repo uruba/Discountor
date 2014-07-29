@@ -172,17 +172,24 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		
 		String resultPrice;
 		String resultYouSave;
+        Boolean isCheckedPriceBefore = isCheckedPriceBefore();
 		
 		if(result == null){
 			resultPrice = resultYouSave = this.getString(R.string.na); 
 		} else {
             // result price is opposite to the input price (therefore, if the input price is marked as a price before, we must get the price after as a result – and vice versa)
-			resultPrice = CurrencyProvider.getFormattedAmount((isCheckedPriceBefore()) ? result.getPriceAfter() : result.getPriceBefore(), true);
+			resultPrice = CurrencyProvider.getFormattedAmount(isCheckedPriceBefore ? result.getPriceAfter() : result.getPriceBefore(), true);
 			resultYouSave = CurrencyProvider.getFormattedAmount(result.getSavings(), true);
 		}
-		
+
+        editPrice.setTextColor(isCheckedPriceBefore ?
+                                    getResources().getColor(R.color.theme_red) :
+                                    getResources().getColor(R.color.black));
 		textPriceResultValue
 			.setText(resultPrice);
+        textPriceResultValue.setTextColor(!isCheckedPriceBefore ?
+                                                getResources().getColor(R.color.theme_red) :
+                                                getResources().getColor(R.color.black));
 		textYouSaveResultValue
 			.setText(resultYouSave);
 		
