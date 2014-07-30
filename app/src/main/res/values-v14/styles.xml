@@ -9,6 +9,8 @@
         <!-- API 14 theme customizations can go here. -->
         <item name="android:actionBarStyle">@style/ActionBarSlevnicek</item>
         <item name="android:actionBarItemBackground">@null</item>
+        <item name="android:actionModeBackground">@drawable/cab_bckg</item>
+        <item name="android:actionModeCloseDrawable">@drawable/abc_ic_ab_back_holo_light</item>
    </style>
 
    <!-- @Override – Default ActionBar style -->
