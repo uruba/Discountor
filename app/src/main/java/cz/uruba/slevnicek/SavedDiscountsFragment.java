@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import cz.uruba.slevnicek.listeners.ListenerListSavedDiscountOnItemLongClick;
 import cz.uruba.slevnicek.models.item_definitions.DiscountItem;
 import cz.uruba.slevnicek.models.ModelDiscountItem;
 import cz.uruba.slevnicek.utils.CurrencyProvider;
@@ -56,6 +57,7 @@ public class SavedDiscountsFragment extends Fragment {
 
         // initialize list view
         listView = (ListView) rootView.findViewById(R.id.listSavedDiscounts);
+        listView.setOnItemLongClickListener(new ListenerListSavedDiscountOnItemLongClick(this));
 
         this.listAll();
 
@@ -82,9 +84,14 @@ public class SavedDiscountsFragment extends Fragment {
 
     public void listAll(){
         discountList = ModelDiscountItem.getAll(this.getActivity(), true);
-        final DiscountListArrayAdapter adapter = new DiscountListArrayAdapter(this.getActivity(), discountList);
+
+        DiscountListArrayAdapter adapter = new DiscountListArrayAdapter(this.getActivity(), discountList);
 
         listView.setAdapter(adapter);
+    }
+
+    public ListView getListView(){
+        return this.listView;
     }
 
     @Override
@@ -101,7 +108,7 @@ public class SavedDiscountsFragment extends Fragment {
     }
 
 
-    private class DiscountListArrayAdapter extends ArrayAdapter<DiscountItem>{
+    public class DiscountListArrayAdapter extends ArrayAdapter<DiscountItem>{
         private final Context context;
         private final ArrayList<DiscountItem> values;
 
