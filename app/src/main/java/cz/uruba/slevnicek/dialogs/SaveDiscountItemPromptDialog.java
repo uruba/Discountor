@@ -31,7 +31,7 @@ public class SaveDiscountItemPromptDialog extends android.support.v4.app.DialogF
                             @Override
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 String optionalName = input.getText().toString();
-                                ((DiscountCalculatorFragment)getTargetFragment()).saveResultValuesToDB(optionalName);
+                                ((DiscountCalculatorFragment)getTargetFragment()).saveResultValuesToDB(optionalName.trim());
                             }
                         }
                 )

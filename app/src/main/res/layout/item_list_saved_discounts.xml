@@ -1,42 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
+    android:padding="8dp">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
         android:id="@+id/name"
+
+        android:visibility="gone"
+
+        android:textColor="@color/light_grey"
+        android:includeFontPadding="false"
+        android:layout_marginBottom="3dp"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        android:id="@+id/price_before"
-        />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        android:id="@+id/price_after"
-        />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:id="@+id/price_before"
+
+                    android:textColor="@color/theme_red"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:id="@+id/price_after"
+                    android:layout_gravity="right"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingLeft="16dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/amount_saved"
+                android:textSize="8sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/savings"
+
+                android:includeFontPadding="false"
+                android:textColor="@color/theme_green"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical|right"
+            android:gravity="right"
+            android:paddingLeft="16dp"
 
-        android:id="@+id/discount_percentage"
-        />
+            android:id="@+id/discount_percentage"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:textColor="@color/light_grey"
+            />
 
-        android:id="@+id/savings"
-        />
+    </LinearLayout>
 
 </LinearLayout>

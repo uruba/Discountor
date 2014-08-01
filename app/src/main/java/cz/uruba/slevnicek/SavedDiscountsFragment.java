@@ -1,6 +1,7 @@
 package cz.uruba.slevnicek;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -134,11 +135,20 @@ public class SavedDiscountsFragment extends Fragment {
 
             DiscountItem item = values.get(position);
 
-            itemName.setText(item.getDiscountName());
-            itemPriceBefore.setText(CurrencyProvider.getFormattedAmount(item.getPriceBefore()));
-            itemPriceAfter.setText(CurrencyProvider.getFormattedAmount(item.getPriceAfter()));
-            itemDiscountPercentage.setText(String.valueOf(item.getDiscountValue()));
-            itemSavings.setText(CurrencyProvider.getFormattedAmount(item.getSavings()));
+            String discountName = item.getDiscountName();
+            if(discountName != null){
+                itemName.setText(discountName);
+                itemName.setVisibility(View.VISIBLE);
+            }
+
+            itemPriceBefore.setPaintFlags(itemPriceBefore.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            itemPriceBefore.setText(CurrencyProvider.getFormattedAmount(item.getPriceBefore(), true));
+
+            itemPriceAfter.setText(CurrencyProvider.getFormattedAmount(item.getPriceAfter(), true));
+
+            itemDiscountPercentage.setText(String.valueOf(item.getDiscountValue()).concat(getResources().getString(R.string.percent_off)));
+
+            itemSavings.setText(CurrencyProvider.getFormattedAmount(item.getSavings(), true));
 
             return rowSingle;
         }

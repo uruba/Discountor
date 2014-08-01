@@ -5,7 +5,7 @@ import android.text.Spanned;
 
 public class priceEditInputFilter implements InputFilter {
 	double MIN = 0.00;
-	double MAX = 99999999.99;
+	double MAX = 9999999.99;
 	
 	
 	@Override
