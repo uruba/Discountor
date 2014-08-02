@@ -9,13 +9,9 @@
     <dimen name="inline_symbol_margin">8dp</dimen>
     <dimen name="inline_number_margin">6dp</dimen>
 
-    <dimen name="spinnerPriceBeforeAfterTextSize">18sp</dimen>
-    <dimen name="editPriceTextSize">25sp</dimen>
-    <dimen name="editPriceInlineTextSize">20sp</dimen>
-
-    <dimen name="textDiscountValue">18sp</dimen>
-    <dimen name="editDiscountTextSize">25sp</dimen>
-    <dimen name="editDiscountInlineTextSize">20sp</dimen>
+    <dimen name="valueLabelsTextSize">18sp</dimen>
+    <dimen name="valueEditableFieldsTextSize">25sp</dimen>
+    <dimen name="valueInlineTextSize">20sp</dimen>
 
     <dimen name="textResultPrice">32sp</dimen>
 

@@ -50,6 +50,7 @@ public class SavedDiscountsFragment extends Fragment {
         android.support.v7.app.ActionBar actionBar = ((ActionBarActivity)getActivity()).getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(false);
         setHasOptionsMenu(true);
 
         // initialize main view container
@@ -76,6 +77,7 @@ public class SavedDiscountsFragment extends Fragment {
         android.support.v7.app.ActionBar actionBar = ((ActionBarActivity)getActivity()).getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setHomeButtonEnabled(false);
+        actionBar.setDisplayShowHomeEnabled(true);
 
 
         getActivity().setTitle(getString(getActivity().getApplicationInfo().labelRes));

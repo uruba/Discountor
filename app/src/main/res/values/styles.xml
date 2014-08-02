@@ -18,7 +18,7 @@
            parent="@style/Widget.AppCompat.Light.ActionBar">
         	<item name="background">@color/theme_red</item>
         	<item name="titleTextStyle">@style/TitleTextStyle</item>
-        	<item name="displayOptions">showHome|useLogo</item>
+        	<item name="displayOptions">showHome|showTitle</item>
     </style>
     
     <style name="TitleTextStyle"
@@ -30,6 +30,8 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:editTextStyle">@style/EditTextAppTheme</item>
+        <item name="android:icon">@drawable/ic_launcher</item>
+        <item name="icon">@drawable/ic_launcher</item>
     </style>
     
 

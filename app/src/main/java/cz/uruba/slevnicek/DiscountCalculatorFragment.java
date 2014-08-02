@@ -26,6 +26,7 @@ import cz.uruba.slevnicek.listeners.ListenerSelectDiscount;
 import cz.uruba.slevnicek.models.ModelDiscountItem;
 import cz.uruba.slevnicek.models.item_definitions.DiscountItem;
 import cz.uruba.slevnicek.utils.CurrencyProvider;
+import cz.uruba.slevnicek.utils.DisCalc;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -184,13 +185,13 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
         Double savings_double = result.getSavings();
         Double resultPrice_double = result.isPriceBefore() ? result.getPriceAfter() : result.getPriceBefore();
 		
-		if(result == null){
+		/*if(result == null){
 			resultPrice = resultYouSave = this.getString(R.string.na); 
-		} else {
+		} else {*/
             // result price is opposite to the input price (therefore, if the input price is marked as a price before, we must get the price after as a result – and vice versa)
 			resultPrice = CurrencyProvider.getFormattedAmount(resultPrice_double, true);
 			resultYouSave = CurrencyProvider.getFormattedAmount(savings_double, true);
-		}
+		/*}*/
 
         editPrice.setTextColor(result.isPriceBefore() ?
                                     getResources().getColor(R.color.theme_red) :
@@ -202,7 +203,7 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
                                                 getResources().getColor(R.color.black));
 		textYouSaveResultValue
 			.setText(resultYouSave);
-        textYouSaveResultValue.setTextColor(savings_double > Constants.DEFAULT_DOUBLE ?
+        textYouSaveResultValue.setTextColor(DisCalc.roundToDecimals(savings_double,2) > Constants.DEFAULT_DOUBLE ?
                                                 getResources().getColor(R.color.theme_green) :
                                                 getResources().getColor(R.color.black));
 

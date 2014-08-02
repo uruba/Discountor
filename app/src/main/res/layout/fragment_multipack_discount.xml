@@ -29,7 +29,7 @@
 	        android:id="@+id/editPrice"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:textSize="@dimen/editPriceTextSize"
+	        android:textSize="@dimen/valueEditableFieldsTextSize"
 	        android:inputType="numberDecimal"
 	        android:hint="@string/zero_float">
 	    </EditText>
@@ -37,7 +37,7 @@
 	    <EditText 
 	        android:id="@+id/editMultipackPcs"
 	    	android:layout_width="match_parent"
-	    	android:textSize="@dimen/editPriceTextSize"
+	    	android:textSize="@dimen/valueEditableFieldsTextSize"
 	    	android:inputType="numberDecimal">
 	    </EditText>        
     </FrameLayout> 
@@ -95,7 +95,7 @@
 			        android:layout_width="match_parent"
 			        android:layout_height="wrap_content"
 			        android:ems="10"
-			        android:textSize="@dimen/editDiscountTextSize"
+			        android:textSize="@dimen/valueEditableFieldsTextSize"
 			        android:hint="@string/zero"
 			        android:inputType="number" >
 			    </EditText>
@@ -107,7 +107,7 @@
 			        android:layout_gravity="right|center_vertical"
 			        android:layout_marginRight="@dimen/activity_horizontal_margin"
 			        android:text="@string/percent"
-			        android:textSize="@dimen/editDiscountInlineTextSize"
+			        android:textSize="@dimen/valueInlineTextSize"
 			        android:textColor="@color/light_grey" />
                 
             </FrameLayout>

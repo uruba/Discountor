@@ -22,7 +22,8 @@
             <Spinner
                 android:id="@+id/textPrice"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"/>
 
             <FrameLayout
                 android:layout_width="0dp"
@@ -34,7 +35,7 @@
                     android:id="@+id/editPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/editPriceTextSize"
+                    android:textSize="@dimen/valueEditableFieldsTextSize"
                     android:inputType="numberDecimal"
                     android:hint="@string/zero_float"
                     android:imeOptions="flagNoExtractUi">
@@ -46,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="@dimen/inline_symbol_margin"
-                    android:textSize="@dimen/editPriceInlineTextSize"
+                    android:textSize="@dimen/valueInlineTextSize"
                     android:textColor="@color/light_grey"
                     />
 
@@ -61,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/discount_percentage"
-                android:textSize="@dimen/textDiscountValue"
+                android:textSize="@dimen/valueLabelsTextSize"
                 android:textColor="@color/black"
                 android:layout_gravity="right|center_vertical"
                 android:paddingRight="2dp"
@@ -77,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="3"
-                    android:textSize="@dimen/editDiscountTextSize"
+                    android:textSize="@dimen/valueEditableFieldsTextSize"
                     android:hint="@string/zero"
                     android:inputType="number"
                     android:imeOptions="flagNoExtractUi"
@@ -91,7 +92,7 @@
                     android:layout_gravity="right|center_vertical"
                     android:layout_marginRight="@dimen/inline_symbol_margin"
                     android:text="@string/percent"
-                    android:textSize="@dimen/editDiscountInlineTextSize"
+                    android:textSize="@dimen/valueInlineTextSize"
                     android:textColor="@color/light_grey" />
 
             </FrameLayout>
