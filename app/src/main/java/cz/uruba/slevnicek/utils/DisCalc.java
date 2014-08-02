@@ -1,15 +1,16 @@
 package cz.uruba.slevnicek.utils;
 
+import cz.uruba.slevnicek.constants.Constants;
+
 public class DisCalc {
-	private static final int ONE_HUNDRED = 100;
-	
+
 	public static double discFromPercentage(double origPrice, int percentage){
-            return origPrice - (roundToDecimals((origPrice / ONE_HUNDRED) * percentage, 2));
+            return origPrice - (roundToDecimals((origPrice / Constants.ONE_HUNDRED) * percentage, 2));
 	}
 	
 	public static double origFromPercentage(double discPrice, int percentage) {
-        if (percentage < ONE_HUNDRED) {
-            return (discPrice / (ONE_HUNDRED - percentage)) * ONE_HUNDRED;
+        if (percentage < Constants.ONE_HUNDRED) {
+            return (discPrice / (Constants.ONE_HUNDRED - percentage)) * Constants.ONE_HUNDRED;
         }
 /*
         if (discPrice == 0.0d){

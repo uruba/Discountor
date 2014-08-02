@@ -1,12 +1,13 @@
 package cz.uruba.slevnicek.models.item_definitions;
 
+import cz.uruba.slevnicek.constants.Constants;
 import cz.uruba.slevnicek.utils.DisCalc;
 
 /**
  * Created by Vaclav on 6.7.2014.
  */
 public class DiscountItem {
-    final double DEFAULT_DOUBLE = 0.0d;
+
     final int DEFAULT_DB_ID = -1;
 
     private double priceBefore, priceAfter;
@@ -44,7 +45,7 @@ public class DiscountItem {
     // START Getters and setters
 
     public double getPriceBefore() {
-        if (priceBefore == DEFAULT_DOUBLE && !isPriceBefore){
+        if (priceBefore == Constants.DEFAULT_DOUBLE && !isPriceBefore){
            return DisCalc.origFromPercentage(priceAfter, discountValue);
         }
 
@@ -56,7 +57,7 @@ public class DiscountItem {
     }
 
     public double getPriceAfter() {
-        if (priceAfter == DEFAULT_DOUBLE){
+        if (priceAfter == Constants.DEFAULT_DOUBLE){
             return DisCalc.discFromPercentage(priceBefore, discountValue);
         }
 

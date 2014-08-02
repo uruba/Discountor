@@ -18,6 +18,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import cz.uruba.slevnicek.adapters.DiscountBeforeAfterAdapter;
+import cz.uruba.slevnicek.constants.Constants;
 import cz.uruba.slevnicek.dialogs.SaveDiscountItemPromptDialog;
 import cz.uruba.slevnicek.filters.discountEditInputFilter;
 import cz.uruba.slevnicek.filters.priceEditInputFilter;
@@ -173,13 +174,16 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		String resultPrice;
 		String resultYouSave;
         Boolean isCheckedPriceBefore = isCheckedPriceBefore();
+
+        Double savings_double = result.getSavings();
+        Double resultPrice_double = isCheckedPriceBefore ? result.getPriceAfter() : result.getPriceBefore();
 		
 		if(result == null){
 			resultPrice = resultYouSave = this.getString(R.string.na); 
 		} else {
             // result price is opposite to the input price (therefore, if the input price is marked as a price before, we must get the price after as a result – and vice versa)
-			resultPrice = CurrencyProvider.getFormattedAmount(isCheckedPriceBefore ? result.getPriceAfter() : result.getPriceBefore(), true);
-			resultYouSave = CurrencyProvider.getFormattedAmount(result.getSavings(), true);
+			resultPrice = CurrencyProvider.getFormattedAmount(resultPrice_double, true);
+			resultYouSave = CurrencyProvider.getFormattedAmount(savings_double, true);
 		}
 
         editPrice.setTextColor(isCheckedPriceBefore ?
@@ -187,11 +191,14 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
                                     getResources().getColor(R.color.black));
 		textPriceResultValue
 			.setText(resultPrice);
-        textPriceResultValue.setTextColor(!isCheckedPriceBefore ?
+        textPriceResultValue.setTextColor(!isCheckedPriceBefore && resultPrice_double > Constants.DEFAULT_DOUBLE ?
                                                 getResources().getColor(R.color.theme_red) :
                                                 getResources().getColor(R.color.black));
 		textYouSaveResultValue
 			.setText(resultYouSave);
+        textYouSaveResultValue.setTextColor(savings_double > Constants.DEFAULT_DOUBLE ?
+                                                getResources().getColor(R.color.theme_green) :
+                                                getResources().getColor(R.color.black));
 		
 		result = null;
 	}

@@ -4,6 +4,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="component_margin">14dp</dimen>
+
     <dimen name="inline_symbol_margin">8dp</dimen>
     <dimen name="inline_number_margin">6dp</dimen>
 
