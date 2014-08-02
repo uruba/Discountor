@@ -231,7 +231,7 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
         Toast confirmationToast = Toast
                 .makeText(getActivity(), R.string.prompt_save_succesful, Toast.LENGTH_SHORT);
 
-        confirmationToast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, ((ActionBarActivity)getActivity()).getSupportActionBar().getHeight() + R.dimen.activity_vertical_margin);
+        confirmationToast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, ((ActionBarActivity)getActivity()).getSupportActionBar().getHeight() + getResources().getDimensionPixelSize(R.dimen.activity_vertical_margin));
         confirmationToast.show();
     }
 	
