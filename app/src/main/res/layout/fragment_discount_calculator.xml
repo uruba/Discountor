@@ -111,61 +111,91 @@
         android:layerType="software"
         />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+   <LinearLayout
+        android:id="@+id/layout_price_result"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_divider"
 
-        android:orientation="horizontal">
+        android:orientation="vertical"
 
-       <LinearLayout
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/textPrice2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            />
+
+        <TextView
+            android:id="@+id/textPriceResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/textPrice2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                 />
-
-            <TextView
-                android:id="@+id/textPriceResult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/na"
-                android:textSize="@dimen/textResultPrice"
-                />
+            android:text="@string/na"
+            android:textSize="@dimen/textResultPrice"
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            />
 
 
-        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_you_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_price_result"
+
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textYouSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/you_save"
+            />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
 
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/textYouSave"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/you_save"
-                />
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textYouSaveResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:text="@string/na"
                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/light_grey"
+                android:text=" = "/>
+
+            <TextView
+                android:id="@+id/textPriceBeforeMinusPriceAfter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/light_grey"
+                />
+
 
         </LinearLayout>
 
 
+
     </LinearLayout>
+
+
 
 
 </RelativeLayout>

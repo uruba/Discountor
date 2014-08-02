@@ -1,6 +1,5 @@
 package cz.uruba.slevnicek;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.text.InputFilter;
@@ -34,7 +33,7 @@ import cz.uruba.slevnicek.utils.CurrencyProvider;
 public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 
 	// TextView declaration
-	private TextView textPriceResultLabel, textPriceResultValue, textYouSaveResultValue, textCurrency1;
+	private TextView textPriceResultLabel, textPriceResultValue, textYouSaveResultValue, textCurrency1, textPriceBeforeMinusPriceAfter;
 	// EditText declaration
 	private EditText editPrice, editDiscountValue;
 	// RadioGroup declaration
@@ -80,6 +79,8 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		
 		textPriceResultValue = (TextView) rootView.findViewById(R.id.textPriceResult);
 		textYouSaveResultValue = (TextView) rootView.findViewById(R.id.textYouSaveResult);
+        textPriceBeforeMinusPriceAfter = (TextView) rootView.findViewById(R.id.textPriceBeforeMinusPriceAfter);
+
 		
 		//init editPrice EditText and set onChange listener and init its label (with currency symbol)
 		editPrice = (EditText) rootView.findViewById(R.id.editPrice);
@@ -168,15 +169,20 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		return edit.getText().toString().equals("") ? edit.getHint().toString() : edit.getText().toString(); 
 	}
 
+    private String getStringPriceBeforeMinusPriceAfter(DiscountItem item){
+        return  CurrencyProvider.getFormattedAmount(item.getPriceBefore(), true) +
+                " – " +
+                CurrencyProvider.getFormattedAmount(item.getPriceAfter(), true);
+    }
+
 	public void setTextResult(){
 		DiscountItem result = calculateResult();
 		
 		String resultPrice;
 		String resultYouSave;
-        Boolean isCheckedPriceBefore = isCheckedPriceBefore();
 
         Double savings_double = result.getSavings();
-        Double resultPrice_double = isCheckedPriceBefore ? result.getPriceAfter() : result.getPriceBefore();
+        Double resultPrice_double = result.isPriceBefore() ? result.getPriceAfter() : result.getPriceBefore();
 		
 		if(result == null){
 			resultPrice = resultYouSave = this.getString(R.string.na); 
@@ -186,12 +192,12 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 			resultYouSave = CurrencyProvider.getFormattedAmount(savings_double, true);
 		}
 
-        editPrice.setTextColor(isCheckedPriceBefore ?
+        editPrice.setTextColor(result.isPriceBefore() ?
                                     getResources().getColor(R.color.theme_red) :
                                     getResources().getColor(R.color.black));
 		textPriceResultValue
 			.setText(resultPrice);
-        textPriceResultValue.setTextColor(!isCheckedPriceBefore && resultPrice_double > Constants.DEFAULT_DOUBLE ?
+        textPriceResultValue.setTextColor(!result.isPriceBefore() && resultPrice_double > Constants.DEFAULT_DOUBLE ?
                                                 getResources().getColor(R.color.theme_red) :
                                                 getResources().getColor(R.color.black));
 		textYouSaveResultValue
@@ -199,6 +205,9 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
         textYouSaveResultValue.setTextColor(savings_double > Constants.DEFAULT_DOUBLE ?
                                                 getResources().getColor(R.color.theme_green) :
                                                 getResources().getColor(R.color.black));
+
+        textPriceBeforeMinusPriceAfter
+                .setText(getStringPriceBeforeMinusPriceAfter(result));
 		
 		result = null;
 	}
