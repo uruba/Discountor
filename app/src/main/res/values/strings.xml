@@ -65,5 +65,6 @@
     <string name="title_fragment_list_discounts">Saved discounts</string>
     <string name="title_activity_about">About this app</string>
     <string name="optional_name">Optional name</string>
+    <string name="saved_discount_item_delete">Discount deleted</string>
 
 </resources>

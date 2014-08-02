@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import cz.uruba.slevnicek.R;
 import cz.uruba.slevnicek.SavedDiscountsFragment;
@@ -63,6 +64,10 @@ public class ListenerListSavedDiscountOnItemLongClick implements AdapterView.OnI
                     helper.deleteByID(clickedItem);
 
                     ((SavedDiscountsFragment.DiscountListArrayAdapter) fragment.getListView().getAdapter()).remove(clickedItem);
+
+                    Toast
+                        .makeText(fragment.getActivity(), R.string.saved_discount_item_delete, Toast.LENGTH_SHORT)
+                        .show();
 
                     actionMode.finish();
                     return true;
