@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:id="@+id/listSavedDiscounts"
-    android:background="@color/white">
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:id="@+id/listSavedDiscounts"
+        android:background="@color/white" />
 
-</ListView>
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:id="@+id/emptyListSavedDiscounts"
+        android:gravity="center"
+        android:text="@string/list_saved_discounts_list_empty"
+        android:visibility="gone"
+        />
+
+</LinearLayout>

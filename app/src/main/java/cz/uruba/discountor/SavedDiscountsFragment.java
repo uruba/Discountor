@@ -60,6 +60,7 @@ public class SavedDiscountsFragment extends Fragment {
         // initialize list view
         listView = (ListView) rootView.findViewById(R.id.listSavedDiscounts);
         listView.setOnItemLongClickListener(new ListenerListSavedDiscountOnItemLongClick(this));
+        listView.setEmptyView(rootView.findViewById(R.id.emptyListSavedDiscounts));
 
         this.listAll();
 
