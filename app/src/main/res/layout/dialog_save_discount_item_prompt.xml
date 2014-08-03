@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin">
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    >
 
     <EditText
         android:id="@+id/optionalNameEditText"
@@ -15,6 +16,7 @@
         android:singleLine="true"
         android:maxLength="48"
         android:hint="@string/optional_name"
+        style="@style/DialogText"
         />
 
 </LinearLayout>
