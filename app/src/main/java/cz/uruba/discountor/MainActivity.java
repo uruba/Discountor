@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 import android.preference.PreferenceManager;
 
+import cz.uruba.discountor.dialogs.AboutApplicationDialog;
+
 public class MainActivity extends ActionBarActivity implements ActionBar.OnNavigationListener {
 	
 	
@@ -67,6 +69,10 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
                         .addToBackStack(null)
                         .commit();
 
+                break;
+            case R.id.action_about:
+                AboutApplicationDialog dialog = new AboutApplicationDialog();
+                dialog.show(getSupportFragmentManager(), null);
                 break;
             /*
 			case R.id.action_settings:

@@ -67,5 +67,16 @@
     <string name="optional_name">Optional name</string>
     <string name="saved_discount_item_delete">Discount deleted</string>
     <string name="list_saved_discounts_list_empty">You\'ve not saved any discounts yet</string>
+    <string name="prompt_email">Email me</string>
+    <string name="prompt_rate">Rate me</string>
+
+    <string name="about_text">
+        <![CDATA[
+        <i>Discounts + calculator = Discountor.</i><br/> Quick and easy tool for your shopping needs.<br/><br/>
+        <b>This app is made for you</b>, so your honest opinion is very important to me.<br/>
+        If you have any questions, comments, concerns or suggestions, let\'s hear them!<br/><br/>
+        <b>Thank you for using Discountor.</b>
+        ]]>
+    </string>
 
 </resources>

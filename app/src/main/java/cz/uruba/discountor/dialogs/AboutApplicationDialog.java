@@ -4,8 +4,9 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
-import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.text.Html;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,15 +15,16 @@ import cz.uruba.discountor.DiscountCalculatorFragment;
 import cz.uruba.discountor.R;
 
 /**
- * Created by Temp on 27.7.2014.
+ * Created by Temp on 3.8.2014.
  */
-public class SaveDiscountItemPromptDialog extends DialogFragment {
+public class AboutApplicationDialog extends DialogFragment {
 
+    private Resources res;
 
     @Override
     public void onStart() {
         super.onStart();
-        final Resources res = getResources();
+
         final int themeRed = res.getColor(R.color.theme_red);
         final int lightGrey = res.getColor(R.color.light_grey);
 
@@ -37,25 +39,37 @@ public class SaveDiscountItemPromptDialog extends DialogFragment {
         final int titleDividerId = res.getIdentifier("titleDivider", "id", "android");
         final View titleDivider = getDialog().findViewById(titleDividerId);
         if (titleDivider != null) {
-            titleDivider.setBackgroundColor(lightGrey);
+            titleDivider.setBackgroundColor(themeRed);
         }
     }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        final View dialogView = View.inflate(this.getActivity(), R.layout.dialog_save_discount_item_prompt, null);
-        final EditText optionalNameEditText = (EditText) dialogView.findViewById(R.id.optionalNameEditText);
+        res = getResources();
+
+        View dialogView = View.inflate(this.getActivity(), R.layout.dialog_about_application, null);
+
+        TextView contentAbout = (TextView) dialogView.findViewById(R.id.about_content);
+        String text = res.getString(R.string.about_text);
+        contentAbout.setText(Html.fromHtml(res.getString(R.string.about_text)));
 
         return new AlertDialog.Builder(getActivity())
                 .setView(dialogView)
-                .setTitle(R.string.prompt_save_discount_title)
-                .setPositiveButton(R.string.prompt_save,
+                .setTitle(R.string.title_activity_about)
+                .setPositiveButton(R.string.prompt_email,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                String optionalName = optionalNameEditText.getText().toString();
-                                ((DiscountCalculatorFragment)getTargetFragment()).saveResultValuesToDB(optionalName.trim());
+
+                            }
+                        }
+                )
+                .setNeutralButton(R.string.prompt_rate,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int whichButton) {
+
                             }
                         }
                 )
@@ -69,4 +83,6 @@ public class SaveDiscountItemPromptDialog extends DialogFragment {
                 )
                 .create();
     }
+
+
 }
