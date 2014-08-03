@@ -53,7 +53,7 @@
     <string name="prompt_save_succesful">Sleva byla úspěšně uložena</string>
 
     <string name="title_fragment_list_discounts">Uložené slevy</string>
-    <string name="title_activity_about">O aplikaci</string>
+    <string name="menu_title_about">O aplikaci</string>
 
     
 </resources>

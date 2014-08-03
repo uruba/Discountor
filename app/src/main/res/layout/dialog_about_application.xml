@@ -4,25 +4,83 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_horizontal_margin"
+    android:paddingTop="0dp"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/about_title"
-        style="@style/DialogText"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/about_version"
-        style="@style/DialogText"/>
+        android:id="@+id/layout_first_row"
+        android:layout_marginBottom="@dimen/component_margin"
+        >
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/DialogText"
+                android:text="@string/about_build_date"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/inline_number_margin"
+                android:textColor="@color/light_grey"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/about_title"
+                style="@style/DialogText"
+                android:textColor="@color/light_grey"
+                android:textStyle="bold"
+                />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/DialogText"
+                android:text="@string/about_version_name"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/inline_number_margin"
+                android:textColor="@color/light_grey"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/about_version"
+                style="@style/DialogText"
+                android:textColor="@color/light_grey"
+                android:textStyle="bold"
+                />
+
+        </TableRow>
+
+    </TableLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/about_content"
         style="@style/DialogText"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/about_thank_you"
+        style="@style/DialogText"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/dark_grey"
+
+        android:includeFontPadding="false"
         />
 
 </LinearLayout>

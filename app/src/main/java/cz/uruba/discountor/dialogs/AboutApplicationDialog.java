@@ -3,13 +3,23 @@ package cz.uruba.discountor.dialogs;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.app.ActionBarActivity;
 import android.text.Html;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 import cz.uruba.discountor.DiscountCalculatorFragment;
 import cz.uruba.discountor.R;
@@ -20,6 +30,7 @@ import cz.uruba.discountor.R;
 public class AboutApplicationDialog extends DialogFragment {
 
     private Resources res;
+    private ActionBarActivity parentActivity;
 
     @Override
     public void onStart() {
@@ -47,16 +58,45 @@ public class AboutApplicationDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         res = getResources();
+        parentActivity = (ActionBarActivity) getActivity();
 
-        View dialogView = View.inflate(this.getActivity(), R.layout.dialog_about_application, null);
+        View dialogView = View.inflate(parentActivity, R.layout.dialog_about_application, null);
+
+        TextView versionAbout = (TextView) dialogView.findViewById(R.id.about_version);
+        TextView dateBuiltAbout = (TextView) dialogView.findViewById(R.id.about_title);
+
+        PackageInfo pInfo;
+        String versionName, dateBuilt;
+        try {
+            versionName = parentActivity.getPackageManager()
+                    .getPackageInfo(parentActivity.getPackageName(), 0)
+                    .versionName;
+
+            ApplicationInfo ai = parentActivity.getPackageManager()
+                    .getApplicationInfo(parentActivity.getPackageName(), 0);
+            ZipFile zf = new ZipFile(ai.sourceDir);
+            ZipEntry ze = zf.getEntry("classes.dex");
+            long time = ze.getTime();
+            dateBuilt = SimpleDateFormat.getDateInstance(DateFormat.LONG).format(new java.util.Date(time));
+            zf.close();
+        } catch (Exception e) {
+            versionName = "";
+            dateBuilt = "";
+        }
+
+        versionAbout.setText(versionName);
+        dateBuiltAbout.setText(dateBuilt);
 
         TextView contentAbout = (TextView) dialogView.findViewById(R.id.about_content);
-        String text = res.getString(R.string.about_text);
         contentAbout.setText(Html.fromHtml(res.getString(R.string.about_text)));
+
+        TextView thankyouAbout = (TextView) dialogView.findViewById(R.id.about_thank_you);
+        thankyouAbout.setText(R.string.about_thank_you);
 
         return new AlertDialog.Builder(getActivity())
                 .setView(dialogView)
-                .setTitle(R.string.title_activity_about)
+                .setTitle(R.string.about_title)
+                .setIcon(R.drawable.ic_launcher)
                 .setPositiveButton(R.string.prompt_email,
                         new DialogInterface.OnClickListener() {
                             @Override
