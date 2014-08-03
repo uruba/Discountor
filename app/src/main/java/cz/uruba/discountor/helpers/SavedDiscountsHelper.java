@@ -51,14 +51,24 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
             + "FROM " + TABLE_DISCOUNT_RECORDS;
 
 
+    private static SavedDiscountsHelper mDBHelper;
 
-    public SavedDiscountsHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public static SavedDiscountsHelper getInstance(Context ctx) {
+
+        if (mDBHelper == null) { //this will ensure no multiple instances out there.
+            mDBHelper = new SavedDiscountsHelper(ctx.getApplicationContext());
+        }
+
+        return mDBHelper;
+    }
+
+    private SavedDiscountsHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
 
         this.db = getWritableDatabase();
     }
 
-    public SavedDiscountsHelper(Context context){
+    private SavedDiscountsHelper(Context context){
         this(context, DB_NAME, null, DB_VERSION);
     }
 
@@ -104,6 +114,8 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
+        cursor.close();
+
         return discountItems;
     }
 
@@ -116,4 +128,5 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
     public void deleteByID(DiscountItem item){
         deleteByID(item.getDB_ID());
     }
+
 }

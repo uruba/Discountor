@@ -59,7 +59,7 @@ public class ListenerListSavedDiscountOnItemLongClick implements AdapterView.OnI
                 case R.id.action_delete_item:
                     DiscountItem clickedItem = (DiscountItem) fragment.getListView().getItemAtPosition(position);
 
-                    SavedDiscountsHelper helper = new SavedDiscountsHelper(fragment.getActivity());
+                    SavedDiscountsHelper helper = SavedDiscountsHelper.getInstance(fragment.getActivity());
                     helper.deleteByID(clickedItem);
 
                     ((SavedDiscountsFragment.DiscountListArrayAdapter) fragment.getListView().getAdapter()).remove(clickedItem);

@@ -15,11 +15,11 @@ public class ModelDiscountItem {
     SavedDiscountsHelper helper;
 
     public ModelDiscountItem(Context context){
-        this.helper = new SavedDiscountsHelper(context);
+        this.helper = SavedDiscountsHelper.getInstance(context);
     }
 
     public static ArrayList<DiscountItem> getAll(Context context, boolean desc){
-        SavedDiscountsHelper helper = new SavedDiscountsHelper(context);
+        SavedDiscountsHelper helper = SavedDiscountsHelper.getInstance(context);
 
         ArrayList<DiscountItem> items = (ArrayList) helper.retrieveAll();
         if(desc) {
