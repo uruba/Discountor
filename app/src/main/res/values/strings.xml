@@ -74,12 +74,14 @@
     <string name="about_text">
         <![CDATA[
         <i>Discounts + calculator = Discountor.</i><br/> Quick and easy tool for your shopping needs.<br/><br/>
-        <b>This app is made for you</b>, so your honest opinion is very important to me.<br/>
+        <b>This app is being made for you</b>, so your honest opinion is very important to me.<br/>
         If you have any questions, comments, concerns or suggestions, let\'s hear them!<br/>
         ]]>
     </string>
     <string name="about_thank_you">Thank you for using Discountor.</string>
     <string name="about_version_name">Application version:</string>
     <string name="about_build_date">Build date:</string>
+    <string name="prompt_email_title">Send with</string>
+    <string name="toast_no_email_client">There is no e-mail client installed</string>
 
 </resources>

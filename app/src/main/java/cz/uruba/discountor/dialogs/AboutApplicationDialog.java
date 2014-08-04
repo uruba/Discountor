@@ -2,10 +2,13 @@ package cz.uruba.discountor.dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
@@ -13,6 +16,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -101,7 +105,15 @@ public class AboutApplicationDialog extends DialogFragment {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int whichButton) {
-
+                                Intent i = new Intent(Intent.ACTION_SEND);
+                                i.setType("message/rfc822");
+                                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"uruba@outlook.com"});
+                                i.putExtra(Intent.EXTRA_SUBJECT, "[Discountor] ");
+                                try {
+                                    startActivity(Intent.createChooser(i, res.getString(R.string.prompt_email_title)));
+                                } catch (android.content.ActivityNotFoundException ex) {
+                                    Toast.makeText(parentActivity, R.string.toast_no_email_client, Toast.LENGTH_SHORT).show();
+                                }
                             }
                         }
                 )
@@ -109,7 +121,13 @@ public class AboutApplicationDialog extends DialogFragment {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int whichButton) {
-
+                                Uri uri = Uri.parse("market://details?id=" + parentActivity.getPackageName());
+                                Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                                try {
+                                    startActivity(goToMarket);
+                                } catch (ActivityNotFoundException e) {
+                                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + parentActivity.getPackageName())));
+                                }
                             }
                         }
                 )
