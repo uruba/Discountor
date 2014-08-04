@@ -15,7 +15,7 @@
         android:layout_marginTop="10dp"
         android:singleLine="true"
         android:maxLength="48"
-        android:hint="@string/optional_name"
+        android:hint="@string/prompt_name_optional"
         style="@style/DialogText"
         />
 

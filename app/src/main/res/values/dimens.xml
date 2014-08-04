@@ -15,4 +15,6 @@
 
     <dimen name="textResultPrice">32sp</dimen>
 
+    <dimen name="toastSaveConfirmationMarginTop">40sp</dimen>
+
 </resources>

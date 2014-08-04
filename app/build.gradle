@@ -5,7 +5,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "cz.uruba.slevnicek"
+        applicationId "cz.uruba.discountor"
         minSdkVersion 9
         targetSdkVersion 19
     }

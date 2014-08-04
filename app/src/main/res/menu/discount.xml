@@ -21,4 +21,11 @@
             android:title="@string/title_fragment_list_discounts"
             app:showAsAction="never"/>
 
+        <item
+            android:id="@+id/action_about"
+            android:title="@string/menu_title_about"
+            android:orderInCategory="100"
+            app:showAsAction="never"
+            />
+
 </menu>

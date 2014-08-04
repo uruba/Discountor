@@ -38,7 +38,7 @@
     <string name="spinner_price_before">Original price</string>
     <string name="spinner_price_after">Discounted price</string>
 
-    <!-- Preference strings -->
+    <!-- Preference strings
     <string name="toast_settings">This is Settings</string>
     <string name="currency_category">Application defaults</string>
     <string name="miscellaneous_category">Miscellaneous</string>
@@ -55,6 +55,7 @@
     <string name="pref_title_activate_keyboard">Activate keyboard on deleting values</string>
 	<string name="pref_summary_on_activate_keyboard">Shows keyboard after pressing the "Delete" button (if hidden)</string>
 	<string name="pref_summary_off_activate_keyboard">Doesn\'t show keyboard after pressing the "Delete" button (if hidden)</string>
+	 -->
 
     <string name="prompt_save">Save</string>
     <string name="prompt_cancel">Cancel</string>
@@ -64,7 +65,6 @@
 
     <string name="title_fragment_list_discounts">Saved discounts</string>
     <string name="menu_title_about">About this app</string>
-    <string name="optional_name">Optional name</string>
     <string name="saved_discount_item_delete">Discount deleted</string>
     <string name="list_saved_discounts_list_empty">You\'ve not saved any discounts yet</string>
     <string name="prompt_email">Email me</string>
@@ -75,7 +75,7 @@
         <![CDATA[
         <i>Discounts + calculator = Discountor.</i><br/> Quick and easy tool for your shopping needs.<br/><br/>
         <b>This app is being made for you</b>, so your honest opinion is very important to me.<br/>
-        If you have any questions, comments, concerns or suggestions, let\'s hear them!<br/>
+        If you have any questions, comments, concerns or suggestions (as to how to make this app better for you), let\'s hear them!<br/>
         ]]>
     </string>
     <string name="about_thank_you">Thank you for using Discountor.</string>
