@@ -47,21 +47,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: cz.uruba.discountor" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28d0be2f-7b03-409d-9ff3-0e884f1f4e79" name="Default" comment="- changed e-mail link in about dialog&#10;- changed menus&#10;- changed some dimensions and strings">
-      <change type="DELETED" beforePath="C:\Users\Temp\AndroidStudioProjects\slevkulacka\.idea\libraries\appcompat_v7_20_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Temp\AndroidStudioProjects\slevkulacka\.idea\libraries\support_annotations_20_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Temp\AndroidStudioProjects\slevkulacka\.idea\libraries\support_v4_20_0_0.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/dialogs/AboutApplicationDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/dialogs/AboutApplicationDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_save_discount_item_prompt.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_save_discount_item_prompt.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/discount.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/discount.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml/preferences.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml/preferences.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-cs/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-cs/strings.xml" />
+    <list default="true" id="28d0be2f-7b03-409d-9ff3-0e884f1f4e79" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="slevkulacka.iws" />
@@ -2036,7 +2022,11 @@
       <created>1407120513048</created>
       <updated>1407120513049</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="- changed e-mail link in about dialog&#10;- changed menus&#10;- changed some dimensions and strings">
+      <created>1407167450275</created>
+      <updated>1407167450275</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2090,7 +2080,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="- updated some dimensions&#10;- defined screen orientation as portrait only for the main activity" />
     <MESSAGE value="- updated datatype for storing big numbers in DB" />
     <MESSAGE value="- fixed issue with negative zero as a result of substracting discounted price from original price (gonna have to look into this further as I don't fully comprehend the inaccuracies coming from rounding the floating point types in Java)" />
     <MESSAGE value="- fixed issue with negative zero as a result of substracting discounted price from original price (gonna have to look into this further as I don't fully comprehend the inaccuracies stemming from rounding the floating point types in Java)" />
@@ -2115,7 +2104,8 @@
     <MESSAGE value="- added AboutApplicationDialog&#10;- tweaked styles" />
     <MESSAGE value="- tweaked AboutApplicationDialog&#10;- set minimumSDKVersion to 9 in build.gradle" />
     <MESSAGE value="- tweaked AboutApplicationDialog&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="- tweaked AboutApplicationDialog&#10;" />
+    <MESSAGE value="- changed e-mail link in about dialog&#10;- changed menus&#10;- changed some dimensions and strings" />
+    <option name="LAST_COMMIT_MESSAGE" value="- changed e-mail link in about dialog&#10;- changed menus&#10;- changed some dimensions and strings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
