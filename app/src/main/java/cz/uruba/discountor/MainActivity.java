@@ -30,7 +30,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
 		}
 		
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-		
+
+        /*
 		final ActionBar actionBar = getSupportActionBar();
 
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
@@ -42,6 +43,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
 		ActionBarSpinnerAdapter spinAdapt = new ActionBarSpinnerAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, itemList);
 		
 		actionBar.setListNavigationCallbacks(spinAdapt, this);
+		*/
 
 	}
 	
