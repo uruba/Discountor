@@ -34,7 +34,7 @@ import cz.uruba.discountor.utils.DisCalc;
 public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 
 	// TextView declaration
-	private TextView textPriceResultLabel, textPriceResultValue, textYouSaveResultValue, textCurrency1, textPriceBeforeMinusPriceAfter;
+	private TextView textPriceResultLabel, textPriceResultValue, textYouSaveResultValue, textCurrencyInline, textPriceBeforeMinusPriceAfter;
 	// EditText declaration
 	private EditText editPrice, editDiscountValue;
 	// RadioGroup declaration
@@ -88,8 +88,8 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		editPrice.addTextChangedListener(new ListenerEditTextChange(this));
 		editPrice.setFilters(new InputFilter[]{ new priceEditInputFilter() });
 		
-		textCurrency1 = (TextView) rootView.findViewById(R.id.textCurrency1);
-		textCurrency1.setText(CurrencyProvider.getSymbol());
+		textCurrencyInline = (TextView) rootView.findViewById(R.id.textCurrencyInline);
+		textCurrencyInline.setText(CurrencyProvider.getSymbol());
 
         //((TextView) rootView.findViewById(R.id.textDiscountValue)).append(":");
 

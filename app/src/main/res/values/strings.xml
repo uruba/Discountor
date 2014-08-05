@@ -30,9 +30,9 @@
     <string name="percent_off">% off</string>
 
     <!-- Mode strings -->
-    <string name="mode_standard">Standard mode</string>
-    <string name="mode_multipack">Multipack mode</string>
-    <string name="mode_percentage">Percentage mode</string>
+    <string name="mode_percentage">Percentage</string>
+    <string name="mode_difference">Difference</string>
+    <string name="mode_multipack">Multipack</string>
 
     <!-- Price before/after strings -->
     <string name="spinner_price_before">Original price</string>

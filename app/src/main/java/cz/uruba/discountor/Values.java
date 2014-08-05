@@ -4,9 +4,9 @@ public class Values {
 
 	// application modes array of String arrays { mode_identifier, string_resource }
 	public static String[][] modes = {
-		{ "standard"	, "mode_standard" },
-		{ "multipack"	, "mode_multipack" },
-		{ "percentage"	, "mode_percentage" }
+		{ "percentage"	, "mode_percentage" },
+        { "difference"	, "mode_difference" },
+		{ "multipack"	, "mode_multipack" }
 	};
 
     // price before and after for the spinner on the fragment_discount_calculator

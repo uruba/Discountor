@@ -6,9 +6,14 @@ import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 import android.preference.PreferenceManager;
 
+import java.util.ArrayList;
+
+import cz.uruba.discountor.adapters.ActionBarSpinnerAdapter;
 import cz.uruba.discountor.dialogs.AboutApplicationDialog;
 
 public class MainActivity extends ActionBarActivity implements ActionBar.OnNavigationListener {
@@ -27,17 +32,17 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 		
 		final ActionBar actionBar = getSupportActionBar();
-        /*
+
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 		
 		ArrayList<String> itemList = new ArrayList<String>();
 		for(String[] item: Values.modes){
 			itemList.add(this.getString(getResources().getIdentifier(item[1], "string", MainActivity.this.getPackageName())));
 		}
-		SpinnerAdapter spinAdapt = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, itemList);
+		ActionBarSpinnerAdapter spinAdapt = new ActionBarSpinnerAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, itemList);
 		
 		actionBar.setListNavigationCallbacks(spinAdapt, this);
-		*/
+
 	}
 	
 	@Override
