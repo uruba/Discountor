@@ -1,13 +1,20 @@
 package cz.uruba.discountor;
 
+import android.app.TabActivity;
+import android.content.Intent;
+import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.SpinnerAdapter;
+import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.preference.PreferenceManager;
 
@@ -24,13 +31,42 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		if (savedInstanceState == null) {
+/*		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new DiscountCalculatorFragment()).commit();
-		}
+		}*/
 		
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
+        FragmentTabHost tabHost = (FragmentTabHost) findViewById(R.id.tabhost);
+        tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
+        //tabHost.setup(this, getSupportFragmentManager(), R.id.container);
+
+        TabHost.TabSpec tab1 = tabHost.newTabSpec("First Tab");
+        TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
+        TabHost.TabSpec tab3 = tabHost.newTabSpec("Third tab");
+
+        // Set the Tab name and Activity
+        // that will be opened when particular Tab will be selected
+        tab1.setIndicator("Tab1");
+        tab2.setIndicator("Tab2");
+        tab3.setIndicator("Tab3");
+
+        tabHost.addTab(tab1, DiscountCalculatorFragment.class, null);
+        tabHost.addTab(tab2, DiscountCalculatorFragment.class, null);
+        tabHost.addTab(tab3, DiscountCalculatorFragment.class, null);
+/*
+        for(String[] item: Values.modes){
+            tabHost.addTab(
+                    tabHost
+                            .newTabSpec(item[0])
+                            .setIndicator(this
+                                    .getString(getResources()
+                                            .getIdentifier(item[1], "string", MainActivity.this.getPackageName()))),
+                    DiscountCalculatorFragment.class,
+                    null
+            );
+        }*/
         /*
 		final ActionBar actionBar = getSupportActionBar();
 
@@ -71,7 +107,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
             case R.id.action_list_discounts:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.container, new SavedDiscountsFragment())
+                        .replace(android.R.id.tabcontent, new SavedDiscountsFragment())
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .addToBackStack(null)
                         .commit();
