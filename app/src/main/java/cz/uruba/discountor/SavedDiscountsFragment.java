@@ -46,12 +46,6 @@ public class SavedDiscountsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
-        // modify Action Bar
-        android.support.v7.app.ActionBar actionBar = ((ActionBarActivity)getActivity()).getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        setHasOptionsMenu(true);
 
         // initialize main view container
         rootView = inflater.inflate(R.layout.fragment_list_saved_discounts, container,
@@ -64,26 +58,7 @@ public class SavedDiscountsFragment extends Fragment {
 
         this.listAll();
 
-        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getActivity().getWindow().getDecorView().getRootView().getWindowToken(), 0);
-
-        getActivity().setTitle(R.string.title_fragment_list_discounts);
-
         return rootView;
-    }
-
-    @Override
-    public void onDestroyView(){
-        // de-modify Action Bar
-        android.support.v7.app.ActionBar actionBar = ((ActionBarActivity)getActivity()).getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setHomeButtonEnabled(false);
-        actionBar.setDisplayShowHomeEnabled(true);
-
-
-        getActivity().setTitle(getString(getActivity().getApplicationInfo().labelRes));
-
-        super.onDestroyView();
     }
 
     public void listAll(){
@@ -96,19 +71,6 @@ public class SavedDiscountsFragment extends Fragment {
 
     public ListView getListView(){
         return this.listView;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
-            case android.R.id.home:
-
-                android.support.v4.app.FragmentManager fm = getActivity().getSupportFragmentManager();
-                fm.popBackStack();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
 

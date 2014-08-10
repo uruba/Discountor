@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import cz.uruba.discountor.adapters.ActionBarSpinnerAdapter;
 import cz.uruba.discountor.dialogs.AboutApplicationDialog;
 
-public class MainActivity extends ActionBarActivity implements ActionBar.OnNavigationListener {
+public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavigationListener {
 	
 	
 	@Override
@@ -54,7 +54,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
 
         tabHost.addTab(tab1, DiscountCalculatorFragment.class, null);
         tabHost.addTab(tab2, DiscountCalculatorFragment.class, null);
-        tabHost.addTab(tab3, DiscountCalculatorFragment.class, null);
+        tabHost.addTab(tab3, DiscountCalculatorFragment.class, null
+        );
 /*
         for(String[] item: Values.modes){
             tabHost.addTab(
@@ -62,7 +63,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
                             .newTabSpec(item[0])
                             .setIndicator(this
                                     .getString(getResources()
-                                            .getIdentifier(item[1], "string", MainActivity.this.getPackageName()))),
+                                            .getIdentifier(item[1], "string", ActivityMain.this.getPackageName()))),
                     DiscountCalculatorFragment.class,
                     null
             );
@@ -74,7 +75,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
 		
 		ArrayList<String> itemList = new ArrayList<String>();
 		for(String[] item: Values.modes){
-			itemList.add(this.getString(getResources().getIdentifier(item[1], "string", MainActivity.this.getPackageName())));
+			itemList.add(this.getString(getResources().getIdentifier(item[1], "string", ActivityMain.this.getPackageName())));
 		}
 		ActionBarSpinnerAdapter spinAdapt = new ActionBarSpinnerAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, itemList);
 		
@@ -105,12 +106,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
 		int id = item.getItemId();
 		switch (id) {
             case R.id.action_list_discounts:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(android.R.id.tabcontent, new SavedDiscountsFragment())
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .addToBackStack(null)
-                        .commit();
+                Intent intent = new Intent(this, ActivitySavedDiscounts.class);
+                startActivity(intent);
 
                 break;
             case R.id.action_about:
