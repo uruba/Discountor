@@ -23,4 +23,6 @@ public abstract class DiscountItem {
     abstract public double getPriceBefore();
     abstract public double getPriceAfter();
 
+    abstract public double getSavings();
+
 }

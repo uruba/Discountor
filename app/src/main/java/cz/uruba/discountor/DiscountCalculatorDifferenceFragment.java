@@ -1,13 +1,16 @@
 package cz.uruba.discountor;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.text.InputFilter;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import cz.uruba.discountor.constants.Constants;
 import cz.uruba.discountor.filters.priceEditInputFilter;
@@ -56,6 +59,23 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
         resetEditValues(true);
 
         return rootView;
+    }
+
+    @Override
+    public void saveResultValuesToDB(String optionalName) {
+        DiscountItemDifference savedItem = calculateResult();
+
+        if (optionalName != null && !optionalName.isEmpty()) {
+            savedItem.setDiscountName(optionalName);
+        }
+
+        modelDiscountItem.addNew(savedItem);
+
+        Toast confirmationToast = Toast
+                .makeText(getActivity(), R.string.prompt_save_succesful, Toast.LENGTH_SHORT);
+
+        confirmationToast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, ((ActionBarActivity)getActivity()).getSupportActionBar().getHeight() + getResources().getDimensionPixelSize(R.dimen.toastSaveConfirmationMarginTop));
+        confirmationToast.show();
     }
 
     @Override

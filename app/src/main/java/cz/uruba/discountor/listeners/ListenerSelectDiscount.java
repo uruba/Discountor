@@ -1,16 +1,16 @@
 package cz.uruba.discountor.listeners;
 
-import cz.uruba.discountor.DiscountCalculatorFragment;
+import cz.uruba.discountor.DiscountCalculatorPercentageFragment;
 
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
 public class ListenerSelectDiscount implements Spinner.OnItemSelectedListener {
-	DiscountCalculatorFragment fragment;
+	DiscountCalculatorPercentageFragment fragment;
 	
 	
-	public ListenerSelectDiscount(DiscountCalculatorFragment fragment){
+	public ListenerSelectDiscount(DiscountCalculatorPercentageFragment fragment){
 		this.fragment = fragment;
 	}
 

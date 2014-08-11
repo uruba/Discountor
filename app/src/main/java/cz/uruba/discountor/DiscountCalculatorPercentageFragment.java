@@ -32,7 +32,7 @@ import cz.uruba.discountor.utils.DisCalc;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
+public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFragment{
 
 	// TextView declaration
 	private TextView textPriceResultLabel, textPriceResultValue, textYouSaveResultValue, textCurrencyInline, textPriceBeforeMinusPriceAfter;
@@ -44,7 +44,7 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 	
 	
 	// --- CONSTRUCTOR ---
-	public DiscountCalculatorFragment() {
+	public DiscountCalculatorPercentageFragment() {
 	}
 	
 	@Override
@@ -101,25 +101,6 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 
 		return rootView;
 	}
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        switch (id) {
-            case R.id.action_save:
-                SaveDiscountItemPromptDialog dialog = new SaveDiscountItemPromptDialog();
-                dialog.setTargetFragment(this, 0);
-                dialog.show(getActivity().getSupportFragmentManager(), null);
-                break;
-            default: return super.onOptionsItemSelected(item);
-        }
-
-        return true;
-
-    }
 
 	//----- START Text Before/After Discount manipulation
 	

@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import cz.uruba.discountor.listeners.ListenerListSavedDiscountOnItemLongClick;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
 import cz.uruba.discountor.models.ModelDiscountItem;
+import cz.uruba.discountor.models.item_definitions.DiscountItemDifference;
 import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 import cz.uruba.discountor.utils.CurrencyProvider;
 
@@ -30,7 +31,7 @@ import cz.uruba.discountor.utils.CurrencyProvider;
 
 public class SavedDiscountsFragment extends Fragment {
     private ListView listView;
-    private ArrayList<DiscountItemPercentage> discountList;
+    private ArrayList<DiscountItem> discountList;
     private View rootView;
 
     public SavedDiscountsFragment(){    }
@@ -75,11 +76,11 @@ public class SavedDiscountsFragment extends Fragment {
     }
 
 
-    public class DiscountListArrayAdapter extends ArrayAdapter<DiscountItemPercentage>{
+    public class DiscountListArrayAdapter extends ArrayAdapter<DiscountItem>{
         private final Context context;
-        private final ArrayList<DiscountItemPercentage> values;
+        private final ArrayList<DiscountItem> values;
 
-        public DiscountListArrayAdapter(Context context, ArrayList<DiscountItemPercentage> values){
+        public DiscountListArrayAdapter(Context context, ArrayList<DiscountItem> values){
             super(context, R.layout.item_list_saved_discounts, values);
 
             this.context = context;
@@ -99,7 +100,7 @@ public class SavedDiscountsFragment extends Fragment {
             TextView itemDiscountPercentage = (TextView) rowSingle.findViewById(R.id.discount_percentage);
             TextView itemSavings = (TextView) rowSingle.findViewById(R.id.savings);
 
-            DiscountItemPercentage item = values.get(position);
+            DiscountItem item = values.get(position);
 
             String discountName = item.getDiscountName();
             if(discountName != null){
@@ -107,14 +108,26 @@ public class SavedDiscountsFragment extends Fragment {
                 itemName.setVisibility(View.VISIBLE);
             }
 
-            itemPriceBefore.setPaintFlags(itemPriceBefore.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-            itemPriceBefore.setText(CurrencyProvider.getFormattedAmount(item.getPriceBefore(), true));
+            String strPriceBefore = CurrencyProvider.getFormattedAmount(item.getPriceBefore(), true);
+            String strPriceAfter = CurrencyProvider.getFormattedAmount(item.getPriceAfter(), true);
+            String strDiscountPercentage = String.valueOf(
+                    item instanceof DiscountItemPercentage ?
+                            ((DiscountItemPercentage) item).getDiscountValue() :
+                            ((DiscountItemDifference) item).getPercentageDiscount())
+                    .concat(getResources().getString(R.string.percent_off));
+            String strSavings = CurrencyProvider.getFormattedAmount(
+                                    item.getSavings()
+                                    , true);
 
-            itemPriceAfter.setText(CurrencyProvider.getFormattedAmount(item.getPriceAfter(), true));
 
-            itemDiscountPercentage.setText(String.valueOf(item.getDiscountValue()).concat(getResources().getString(R.string.percent_off)));
+                    itemPriceBefore.setPaintFlags(itemPriceBefore.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            itemPriceBefore.setText(strPriceBefore);
 
-            itemSavings.setText(CurrencyProvider.getFormattedAmount(item.getSavings(), true));
+            itemPriceAfter.setText(strPriceAfter);
+
+            itemDiscountPercentage.setText(strDiscountPercentage);
+
+            itemSavings.setText(strSavings);
 
             return rowSingle;
         }

@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import cz.uruba.discountor.dialogs.SaveDiscountItemPromptDialog;
 import cz.uruba.discountor.models.ModelDiscountItem;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
 import cz.uruba.discountor.utils.CurrencyProvider;
@@ -49,12 +50,19 @@ public abstract class AbstractCalculatorFragment extends Fragment {
 				boolean showKeyboard = sharedPref.getBoolean("settings_show_keyboard_on_delete", true);				
 				resetEditValues(showKeyboard);
 				break;
-			default: return super.onOptionsItemSelected(item);
-		}
+            case R.id.action_save:
+                SaveDiscountItemPromptDialog dialog = new SaveDiscountItemPromptDialog();
+                dialog.setTargetFragment(this, 0);
+                dialog.show(getActivity().getSupportFragmentManager(), null);
+                break;
+            default: return super.onOptionsItemSelected(item);
+        }
 
-		return true;
-		
-	}
+        return true;
+
+    }
+
+    abstract public void saveResultValuesToDB(String optionalName);
 
     protected String getStringFromNumberEditText(EditText edit){
         return edit.getText().toString().equals("") ? edit.getHint().toString() : edit.getText().toString();

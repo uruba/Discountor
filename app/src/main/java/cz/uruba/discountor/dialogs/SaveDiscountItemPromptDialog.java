@@ -10,7 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import cz.uruba.discountor.DiscountCalculatorFragment;
+import cz.uruba.discountor.AbstractCalculatorFragment;
+import cz.uruba.discountor.DiscountCalculatorPercentageFragment;
 import cz.uruba.discountor.R;
 
 /**
@@ -55,7 +56,7 @@ public class SaveDiscountItemPromptDialog extends DialogFragment {
                             @Override
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 String optionalName = optionalNameEditText.getText().toString();
-                                ((DiscountCalculatorFragment)getTargetFragment()).saveResultValuesToDB(optionalName.trim());
+                                ((AbstractCalculatorFragment)getTargetFragment()).saveResultValuesToDB(optionalName.trim());
                             }
                         }
                 )

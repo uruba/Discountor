@@ -58,7 +58,7 @@ public class ListenerListSavedDiscountOnItemLongClick implements AdapterView.OnI
         public boolean onActionItemClicked(android.support.v7.view.ActionMode actionMode, MenuItem menuItem) {
             switch(menuItem.getItemId()){
                 case R.id.action_delete_item:
-                    DiscountItemPercentage clickedItem = (DiscountItemPercentage) fragment.getListView().getItemAtPosition(position);
+                    DiscountItem clickedItem = (DiscountItem) fragment.getListView().getItemAtPosition(position);
 
                     SavedDiscountsHelper helper = SavedDiscountsHelper.getInstance(fragment.getActivity());
                     helper.deleteByID(clickedItem);

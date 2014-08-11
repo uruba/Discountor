@@ -1,26 +1,16 @@
 package cz.uruba.discountor;
 
-import android.app.TabActivity;
 import android.content.Intent;
 import android.support.v4.app.FragmentTabHost;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
-import android.widget.SpinnerAdapter;
 import android.widget.TabHost;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.preference.PreferenceManager;
 
-import java.util.ArrayList;
-
-import cz.uruba.discountor.adapters.ActionBarSpinnerAdapter;
 import cz.uruba.discountor.dialogs.AboutApplicationDialog;
 
 public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavigationListener {
@@ -33,7 +23,7 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
 
 /*		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new DiscountCalculatorFragment()).commit();
+					.add(R.id.container, new DiscountCalculatorPercentageFragment()).commit();
 		}*/
 		
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
@@ -52,9 +42,9 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
         tab2.setIndicator("Tab2");
         tab3.setIndicator("Tab3");
 
-        tabHost.addTab(tab1, DiscountCalculatorFragment.class, null);
+        tabHost.addTab(tab1, DiscountCalculatorPercentageFragment.class, null);
         tabHost.addTab(tab2, DiscountCalculatorDifferenceFragment.class, null);
-        tabHost.addTab(tab3, DiscountCalculatorFragment.class, null
+        tabHost.addTab(tab3, DiscountCalculatorPercentageFragment.class, null
         );
 /*
         for(String[] item: Values.modes){
@@ -64,7 +54,7 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
                             .setIndicator(this
                                     .getString(getResources()
                                             .getIdentifier(item[1], "string", ActivityMain.this.getPackageName()))),
-                    DiscountCalculatorFragment.class,
+                    DiscountCalculatorPercentageFragment.class,
                     null
             );
         }*/

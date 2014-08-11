@@ -19,10 +19,10 @@ public class ModelDiscountItem {
         this.helper = SavedDiscountsHelper.getInstance(context);
     }
 
-    public static ArrayList<DiscountItemPercentage> getAll(Context context, boolean desc){
+    public static ArrayList<DiscountItem> getAll(Context context, boolean desc){
         SavedDiscountsHelper helper = SavedDiscountsHelper.getInstance(context);
 
-        ArrayList<DiscountItemPercentage> items = (ArrayList) helper.retrieveAll();
+        ArrayList<DiscountItem> items = (ArrayList) helper.retrieveAll();
         if(desc) {
             Collections.reverse(items);
         }
@@ -43,7 +43,7 @@ public class ModelDiscountItem {
         this.addNew(insertedItem);
     }
 
-    public void addNew(DiscountItemPercentage insertedItem){
+    public void addNew(DiscountItem insertedItem){
         helper.insertNew(insertedItem);
     }
 

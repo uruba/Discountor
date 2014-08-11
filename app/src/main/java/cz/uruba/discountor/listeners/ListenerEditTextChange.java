@@ -1,7 +1,7 @@
 package cz.uruba.discountor.listeners;
 
 import cz.uruba.discountor.AbstractCalculatorFragment;
-import cz.uruba.discountor.DiscountCalculatorFragment;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 

@@ -21,6 +21,11 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
 	}
 
     @Override
+    public void saveResultValuesToDB(String optionalName) {
+
+    }
+
+    @Override
     protected DiscountItem calculateResult() {
         return null;
     }
