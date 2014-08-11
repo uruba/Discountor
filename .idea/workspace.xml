@@ -48,7 +48,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28d0be2f-7b03-409d-9ff3-0e884f1f4e79" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItemDifference.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItemPercentage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/AbstractCalculatorFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/AbstractCalculatorFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/ActivityMain.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/ActivityMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/CurrencyProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/CurrencyProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/DisCalc.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/DisCalc.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorDifferenceFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorDifferenceFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorMultipackFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorMultipackFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerEditTextChange.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerEditTextChange.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerListSavedDiscountOnItemLongClick.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerListSavedDiscountOnItemLongClick.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/ModelDiscountItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/ModelDiscountItem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/SavedDiscountsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/SavedDiscountsFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/helpers/SavedDiscountsHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/helpers/SavedDiscountsHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_difference_discount.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_difference_discount.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="slevkulacka.iws" />
@@ -71,113 +87,116 @@
     <favorites_list name="slevkulacka" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.615385" vertical-offset="0" max-vertical-offset="846">
-              <caret line="24" column="98" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="98" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_saved_discounts.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_saved_discounts.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0769231" vertical-offset="0" max-vertical-offset="216">
-              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivitySavedDiscounts.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/ActivitySavedDiscounts.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="828">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Values.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/Values.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivityMain.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/ActivityMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="2268">
-              <caret line="107" column="29" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1656">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SavedDiscountsFragment.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/SavedDiscountsFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4846154" vertical-offset="720" max-vertical-offset="1944">
-              <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
-              <folding>
-                <element signature="e#2112#2113#0" expanded="true" />
-                <element signature="e#2148#2149#0" expanded="true" />
-                <element signature="e#4024#4070#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1134">
-              <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
-              <folding>
-                <element signature="e#585#603#0" expanded="true" />
-                <element signature="e#1217#1256#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="798" max-vertical-offset="1674">
-              <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="fragment_difference_discount.xml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_difference_discount.xml">
+              <provider editor-type-id="android-designer">
+                <state />
+              </provider>
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-8.807693" vertical-offset="2633" max-vertical-offset="3654">
+                  <caret line="159" column="48" selection-start-line="159" selection-start-column="48" selection-end-line="159" selection-end-column="48" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-6.5555553" vertical-offset="345" max-vertical-offset="1710">
+                  <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DiscountCalculatorDifferenceFragment.java" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorDifferenceFragment.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.89285713" vertical-offset="1062" max-vertical-offset="2052">
+                  <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
+                  <folding>
+                    <element signature="e#4130#4171#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DisCalc.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/DisCalc.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
+                  <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ModelDiscountItem.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/ModelDiscountItem.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1152">
+                  <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="fragment_discount_calculator.xml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_discount_calculator.xml">
+              <provider editor-type-id="android-designer">
+                <state />
+              </provider>
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-11.269231" vertical-offset="3217" max-vertical-offset="3708">
+                  <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DiscountCalculatorFragment.java" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorFragment.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.6785714" vertical-offset="2718" max-vertical-offset="3654">
+                  <caret line="199" column="5" selection-start-line="199" selection-start-column="5" selection-end-line="199" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AbstractCalculatorFragment.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/AbstractCalculatorFragment.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="1602">
+                  <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DiscountItem.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItem.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
+                  <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -1191,14 +1210,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/gradient_divider.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/constants/constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/utils/DisCalc.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/constants/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/listeners/ListenerListSavedDiscountOnItemLongClick.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/SavedDiscountsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/spinner_item_price_before_after.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/spinner_item_price_before_after_dropdown.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-large/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_multipack_discount.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/slevnicek/models/item_definitions/DiscountItem.java" />
@@ -1206,9 +1217,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/list_selector_holo_light.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/list_selector_background_transition_holo_light.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/spinner_background_holo_light.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/ModelDiscountItem.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerListSavedDiscountOnItemLongClick.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/helpers/SavedDiscountsHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-v11/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/empty_list_saved_discounts.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
@@ -1223,25 +1231,36 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values-cs/strings.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/dialogs/AboutApplicationDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorDifferenceFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_difference_discount.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/Values.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/spinner_action_bar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-v14/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_discount_calculator.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_saved_discounts.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/ActivitySavedDiscounts.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/adapters/ActionBarSpinnerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_saved_discounts.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/ActivityMain.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/ActivitySavedDiscounts.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/ActivityMain.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerEditTextChange.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItemPercentage.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorMultipackFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/helpers/SavedDiscountsHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/ModelDiscountItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/SavedDiscountsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerListSavedDiscountOnItemLongClick.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/CurrencyProvider.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItemDifference.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/DisCalc.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/AbstractCalculatorFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_difference_discount.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorDifferenceFragment.java" />
       </list>
     </option>
   </component>
@@ -1448,6 +1467,36 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Slevnicek" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discountor" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1546,6 +1595,112 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Slevnicek" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discountor" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discountor" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="item_definitions" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Slevnicek" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discountor" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discountor" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Slevnicek" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discountor" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discountor" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="adapters" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1582,6 +1737,9 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cz.uruba.discountor.models.item_definitions" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cz.uruba.discountor" />
       <recent name="cz.uruba.slevnicek.constants" />
@@ -2099,15 +2257,14 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.532839" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917467" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3089701" sideWeight="0.496875" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39463955" sideWeight="0.65625" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39424142" sideWeight="0.65625" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977852" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294347" sideWeight="0.4996717" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917467" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3234165" sideWeight="0.49635416" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39424142" sideWeight="0.62023807" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32336655" sideWeight="0.49635416" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39756367" sideWeight="0.62023807" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2115,12 +2272,13 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19345239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3177481" sideWeight="0.49322918" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31672204" sideWeight="0.49322918" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.3295626" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="812" y="620" width="500" height="129" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3089701" sideWeight="0.496875" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977852" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2176,72 +2334,16 @@
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/DisCalc.java</url>
-          <line>38</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/dialogs/SaveDiscountItemPromptDialog.java</url>
           <line>29</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="51" />
+      <option name="time" value="56" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/ActivityMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1008" max-vertical-offset="2700">
-          <caret line="56" column="67" selection-start-line="56" selection-start-column="67" selection-end-line="56" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_discount_calculator.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="3708">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="3924">
-          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/SavedDiscountsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="954" max-vertical-offset="2970">
-          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="1394">
-          <caret line="47" column="71" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/DisCalc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="833">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/spinner_background_holo_light.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
@@ -2277,20 +2379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/ModelDiscountItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="935">
-          <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerListSavedDiscountOnItemLongClick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1326">
-          <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v11/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
@@ -2308,6 +2396,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_list_saved_discounts.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62754303" vertical-offset="789" max-vertical-offset="1836">
           <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
@@ -2315,9 +2406,6 @@
             <element signature="e#2146#2168#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/cab_bckg.xml">
@@ -2342,14 +2430,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_about_application.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="35" max-vertical-offset="1581">
           <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/preferences.xml">
@@ -2359,27 +2447,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/discount.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="28" selection-end-column="14" />
-          <folding>
-            <element signature="e#301#323#0" expanded="false" />
-            <element signature="e#686#725#0" expanded="false" />
-            <element signature="e#849#875#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_save_discount_item_prompt.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="459">
           <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/dialogs/AboutApplicationDialog.java">
@@ -2397,31 +2473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerEditTextChange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3794643" vertical-offset="0" max-vertical-offset="672">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_difference_discount.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/helpers/SavedDiscountsHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.12648809" vertical-offset="612" max-vertical-offset="2091">
-          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/adapters/DiscountBeforeAfterAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17708333" vertical-offset="0" max-vertical-offset="672">
@@ -2430,14 +2481,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/spinner_item_price_before_after.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15813954" vertical-offset="0" max-vertical-offset="645">
           <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
@@ -2457,39 +2508,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list_saved_discounts.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10759494" vertical-offset="0" max-vertical-offset="632">
           <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20637329" vertical-offset="0" max-vertical-offset="659">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_discount_calculator.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="3708">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorDifferenceFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="414">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2514,23 +2538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="576">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/AbstractCalculatorFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1080">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3078" max-vertical-offset="3924">
-          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2538,7 +2545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
           <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2546,40 +2552,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41095892" vertical-offset="0" max-vertical-offset="876">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="798" max-vertical-offset="1674">
-          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.615385" vertical-offset="0" max-vertical-offset="846">
+        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="846">
           <caret line="24" column="98" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="98" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_saved_discounts.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_saved_discounts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0769231" vertical-offset="0" max-vertical-offset="216">
+        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="216">
           <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
@@ -2590,22 +2585,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/ActivityMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1247" max-vertical-offset="2268">
-          <caret line="107" column="29" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1134">
           <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
-          <folding>
-            <element signature="e#585#603#0" expanded="true" />
-            <element signature="e#1217#1256#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2613,20 +2597,184 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="828">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/discount.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79615384" vertical-offset="0" max-vertical-offset="666">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="28" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/ActivityMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77120316" vertical-offset="221" max-vertical-offset="2268">
+          <caret line="55" column="65" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerEditTextChange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21301775" vertical-offset="0" max-vertical-offset="612">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding>
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/ModelDiscountItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1152">
+          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/listeners/ListenerListSavedDiscountOnItemLongClick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42406312" vertical-offset="541" max-vertical-offset="1404">
+          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/SavedDiscountsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3846154" vertical-offset="918" max-vertical-offset="1908">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorMultipackFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71005917" vertical-offset="0" max-vertical-offset="774">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="e#590#591#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/CurrencyProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56804734" vertical-offset="378" max-vertical-offset="990">
+          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/utils/DisCalc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/helpers/SavedDiscountsHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="2214">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItemPercentage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="588" max-vertical-offset="1314">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_discount_calculator.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.269231" vertical-offset="3217" max-vertical-offset="3708">
+          <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/AbstractCalculatorFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="1602">
+          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/SavedDiscountsFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4846154" vertical-offset="720" max-vertical-offset="1944">
-          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.6785714" vertical-offset="2718" max-vertical-offset="3654">
+          <caret line="199" column="5" selection-start-line="199" selection-start-column="5" selection-end-line="199" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5555553" vertical-offset="345" max-vertical-offset="1710">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_difference_discount.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.807693" vertical-offset="2633" max-vertical-offset="3654">
+          <caret line="159" column="48" selection-start-line="159" selection-start-column="48" selection-end-line="159" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/models/item_definitions/DiscountItemDifference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89285713" vertical-offset="162" max-vertical-offset="792">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
           <folding>
-            <element signature="e#2112#2113#0" expanded="true" />
-            <element signature="e#2148#2149#0" expanded="true" />
-            <element signature="e#4024#4070#0" expanded="true" />
+            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="e#1194#1195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cz/uruba/discountor/DiscountCalculatorDifferenceFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89285713" vertical-offset="1062" max-vertical-offset="2052">
+          <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
+          <folding>
+            <element signature="e#4130#4171#0" expanded="true" />
           </folding>
         </state>
       </provider>

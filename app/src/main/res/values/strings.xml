@@ -15,6 +15,7 @@
     <string name="before_discount">Before discount</string>
     <string name="after_discount">After discount</string>
     <string name="discount_percentage">Discount value</string>
+    <string name="discount_percentage_explicit">Discount percentage</string>
     <string name="percent">%</string>
 
     <!-- Price strings -->
@@ -26,6 +27,7 @@
     <string name="zero_float">0.00</string>
     <string name="na">–</string>
     <string name="you_save">You save</string>
+    <string name="you_lose">You lose</string>
     <string name="amount_saved">Amount saved</string>
     <string name="percent_off">% off</string>
 

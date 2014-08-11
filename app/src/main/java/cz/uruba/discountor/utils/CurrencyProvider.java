@@ -7,6 +7,9 @@ import java.util.Locale;
 
 public class CurrencyProvider {
 
+    public static final String percentage_symbol = "%";
+    private static final String not_available = "N/A";
+
 	// returns currency symbol
 	public static String getSymbol(){
 		return Currency.getInstance(Locale.getDefault()).getSymbol();
@@ -15,7 +18,7 @@ public class CurrencyProvider {
 	// returns formatted price amount
 	public static String getFormattedAmount(double price, boolean with_currency){
         if (Double.isNaN(price)){
-            return "N/A";
+            return not_available;
         }
 
                 NumberFormat currencyFormatter;
@@ -33,6 +36,14 @@ public class CurrencyProvider {
 
     public static String getFormattedAmount(double price){
         return getFormattedAmount(price, false);
+    }
+
+    public static String getFormattedPercentage(double percentage){
+        if(Double.isNaN(percentage)){
+            return not_available;
+        }
+
+        return String.valueOf(percentage).concat(percentage_symbol);
     }
 	
 	//returns double from string input

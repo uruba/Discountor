@@ -53,7 +53,7 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
         tab3.setIndicator("Tab3");
 
         tabHost.addTab(tab1, DiscountCalculatorFragment.class, null);
-        tabHost.addTab(tab2, DiscountCalculatorFragment.class, null);
+        tabHost.addTab(tab2, DiscountCalculatorDifferenceFragment.class, null);
         tabHost.addTab(tab3, DiscountCalculatorFragment.class, null
         );
 /*

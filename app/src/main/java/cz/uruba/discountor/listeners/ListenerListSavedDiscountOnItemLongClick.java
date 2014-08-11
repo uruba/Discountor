@@ -12,6 +12,7 @@ import cz.uruba.discountor.R;
 import cz.uruba.discountor.SavedDiscountsFragment;
 import cz.uruba.discountor.helpers.SavedDiscountsHelper;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
+import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 
 /**
  * Created by Temp on 29.7.2014.
@@ -57,7 +58,7 @@ public class ListenerListSavedDiscountOnItemLongClick implements AdapterView.OnI
         public boolean onActionItemClicked(android.support.v7.view.ActionMode actionMode, MenuItem menuItem) {
             switch(menuItem.getItemId()){
                 case R.id.action_delete_item:
-                    DiscountItem clickedItem = (DiscountItem) fragment.getListView().getItemAtPosition(position);
+                    DiscountItemPercentage clickedItem = (DiscountItemPercentage) fragment.getListView().getItemAtPosition(position);
 
                     SavedDiscountsHelper helper = SavedDiscountsHelper.getInstance(fragment.getActivity());
                     helper.deleteByID(clickedItem);

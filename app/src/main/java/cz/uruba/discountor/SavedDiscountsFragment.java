@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import cz.uruba.discountor.listeners.ListenerListSavedDiscountOnItemLongClick;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
 import cz.uruba.discountor.models.ModelDiscountItem;
+import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 import cz.uruba.discountor.utils.CurrencyProvider;
 
 /**
@@ -29,7 +30,7 @@ import cz.uruba.discountor.utils.CurrencyProvider;
 
 public class SavedDiscountsFragment extends Fragment {
     private ListView listView;
-    private ArrayList<DiscountItem> discountList;
+    private ArrayList<DiscountItemPercentage> discountList;
     private View rootView;
 
     public SavedDiscountsFragment(){    }
@@ -74,11 +75,11 @@ public class SavedDiscountsFragment extends Fragment {
     }
 
 
-    public class DiscountListArrayAdapter extends ArrayAdapter<DiscountItem>{
+    public class DiscountListArrayAdapter extends ArrayAdapter<DiscountItemPercentage>{
         private final Context context;
-        private final ArrayList<DiscountItem> values;
+        private final ArrayList<DiscountItemPercentage> values;
 
-        public DiscountListArrayAdapter(Context context, ArrayList<DiscountItem> values){
+        public DiscountListArrayAdapter(Context context, ArrayList<DiscountItemPercentage> values){
             super(context, R.layout.item_list_saved_discounts, values);
 
             this.context = context;
@@ -98,7 +99,7 @@ public class SavedDiscountsFragment extends Fragment {
             TextView itemDiscountPercentage = (TextView) rowSingle.findViewById(R.id.discount_percentage);
             TextView itemSavings = (TextView) rowSingle.findViewById(R.id.savings);
 
-            DiscountItem item = values.get(position);
+            DiscountItemPercentage item = values.get(position);
 
             String discountName = item.getDiscountName();
             if(discountName != null){

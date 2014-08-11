@@ -7,6 +7,7 @@ import java.util.Collections;
 
 import cz.uruba.discountor.helpers.SavedDiscountsHelper;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
+import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 
 /**
  * Created by Vaclav on 6.7.2014.
@@ -18,10 +19,10 @@ public class ModelDiscountItem {
         this.helper = SavedDiscountsHelper.getInstance(context);
     }
 
-    public static ArrayList<DiscountItem> getAll(Context context, boolean desc){
+    public static ArrayList<DiscountItemPercentage> getAll(Context context, boolean desc){
         SavedDiscountsHelper helper = SavedDiscountsHelper.getInstance(context);
 
-        ArrayList<DiscountItem> items = (ArrayList) helper.retrieveAll();
+        ArrayList<DiscountItemPercentage> items = (ArrayList) helper.retrieveAll();
         if(desc) {
             Collections.reverse(items);
         }
@@ -37,12 +38,12 @@ public class ModelDiscountItem {
 
 
     public void addNew(float price, boolean isPriceBeforeAfter, int discount, String displayedName){
-        DiscountItem insertedItem = new DiscountItem(isPriceBeforeAfter, price, discount, displayedName);
+        DiscountItemPercentage insertedItem = new DiscountItemPercentage(isPriceBeforeAfter, price, discount, displayedName);
 
         this.addNew(insertedItem);
     }
 
-    public void addNew(DiscountItem insertedItem){
+    public void addNew(DiscountItemPercentage insertedItem){
         helper.insertNew(insertedItem);
     }
 

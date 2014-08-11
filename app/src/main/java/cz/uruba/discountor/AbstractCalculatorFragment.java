@@ -11,11 +11,17 @@ import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import cz.uruba.discountor.models.ModelDiscountItem;
+import cz.uruba.discountor.models.item_definitions.DiscountItem;
+import cz.uruba.discountor.utils.CurrencyProvider;
+
 
 public abstract class AbstractCalculatorFragment extends Fragment {
 	protected SharedPreferences sharedPref;
     protected InputMethodManager imm;
-	
+
+    protected ModelDiscountItem modelDiscountItem;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -23,6 +29,8 @@ public abstract class AbstractCalculatorFragment extends Fragment {
 		sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
 		setHasOptionsMenu(true);
         imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        modelDiscountItem = new ModelDiscountItem(this.getActivity());
 	}
 	
 	@Override
@@ -47,6 +55,16 @@ public abstract class AbstractCalculatorFragment extends Fragment {
 		return true;
 		
 	}
+
+    protected String getStringFromNumberEditText(EditText edit){
+        return edit.getText().toString().equals("") ? edit.getHint().toString() : edit.getText().toString();
+    }
+
+    protected String getStringPriceBeforeMinusPriceAfter(DiscountItem item){
+        return  CurrencyProvider.getFormattedAmount(item.getPriceBefore(), true) +
+                " – " +
+                CurrencyProvider.getFormattedAmount(item.getPriceAfter(), true);
+    }
 		
 	protected void focusAndShowKeyboard(EditText edit, boolean showKeyboard){
         edit.requestFocus();
@@ -58,6 +76,8 @@ public abstract class AbstractCalculatorFragment extends Fragment {
 		}
 	}
 
-	abstract void setTextResult();
-	abstract void resetEditValues(boolean showKeyboard);
+    abstract protected DiscountItem calculateResult();
+
+	abstract public void setTextResult();
+	abstract public void resetEditValues(boolean showKeyboard);
 }

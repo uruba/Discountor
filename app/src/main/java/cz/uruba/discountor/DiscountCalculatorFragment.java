@@ -25,6 +25,7 @@ import cz.uruba.discountor.listeners.ListenerEditTextChange;
 import cz.uruba.discountor.listeners.ListenerSelectDiscount;
 import cz.uruba.discountor.models.ModelDiscountItem;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
+import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 import cz.uruba.discountor.utils.CurrencyProvider;
 import cz.uruba.discountor.utils.DisCalc;
 
@@ -39,8 +40,6 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 	private EditText editPrice, editDiscountValue;
 	// RadioGroup declaration
 	private Spinner selectBeforeAfterDiscount;
-    // ModelDiscountItem declaration
-    private ModelDiscountItem modelDiscountItem;
 	
 	
 	
@@ -98,9 +97,6 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 		editDiscountValue.addTextChangedListener(new ListenerEditTextChange(this));
 		editDiscountValue.setFilters(new InputFilter[]{ new discountEditInputFilter() });
 
-        // init modelDiscountItem ModelDiscountItem
-        modelDiscountItem = new ModelDiscountItem(this.getActivity());
-
 		resetEditValues(true);
 
 		return rootView;
@@ -147,7 +143,7 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
         return selectBeforeAfterDiscount.getSelectedItemId() == 0;
     }
 
-	private DiscountItem calculateResult(){
+	protected DiscountItemPercentage calculateResult(){
 		double price;
 		int discount;
 		
@@ -163,21 +159,11 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
         boolean isPriceBefore = isCheckedPriceBefore();
 
 
-        return new DiscountItem(isPriceBefore, price, discount);
+        return new DiscountItemPercentage(isPriceBefore, price, discount);
 	}
-	
-	private String getStringFromNumberEditText(EditText edit){
-		return edit.getText().toString().equals("") ? edit.getHint().toString() : edit.getText().toString(); 
-	}
-
-    private String getStringPriceBeforeMinusPriceAfter(DiscountItem item){
-        return  CurrencyProvider.getFormattedAmount(item.getPriceBefore(), true) +
-                " – " +
-                CurrencyProvider.getFormattedAmount(item.getPriceAfter(), true);
-    }
 
 	public void setTextResult(){
-		DiscountItem result = calculateResult();
+		DiscountItemPercentage result = calculateResult();
 		
 		String resultPrice;
 		String resultYouSave;
@@ -221,7 +207,7 @@ public class DiscountCalculatorFragment extends AbstractCalculatorFragment{
 	}
 
     public void saveResultValuesToDB(String optionalName){
-        DiscountItem savedItem = calculateResult();
+        DiscountItemPercentage savedItem = calculateResult();
 
         if (optionalName != null && !optionalName.isEmpty()) {
             savedItem.setDiscountName(optionalName);

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
+import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 
 /**
  * Created by Václav on 24.7.2014.
@@ -82,7 +83,7 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
 
     }
 
-    public void insertNew(DiscountItem item){
+    public void insertNew(DiscountItemPercentage item){
         ContentValues insertedValues = new ContentValues();
         insertedValues.put(PRICE_BEFORE, item.isPriceBefore() ?
                                             1 :
@@ -96,8 +97,8 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
         db.insert(TABLE_DISCOUNT_RECORDS, null, insertedValues);
     }
 
-    public List<DiscountItem> retrieveAll(){
-        List<DiscountItem> discountItems = new ArrayList<DiscountItem>();
+    public List<DiscountItemPercentage> retrieveAll(){
+        List<DiscountItemPercentage> discountItems = new ArrayList<DiscountItemPercentage>();
 
         String query = QUERY_READ_ALL;
 
@@ -105,7 +106,7 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()){
             do {
-                DiscountItem discountItem = new DiscountItem(cursor.getInt(0),
+                DiscountItemPercentage discountItem = new DiscountItemPercentage(cursor.getInt(0),
                                                              cursor.getInt(1) > 0,
                                                              cursor.getDouble(2),
                                                              cursor.getInt(3),

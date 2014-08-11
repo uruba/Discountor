@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 
+import cz.uruba.discountor.models.item_definitions.DiscountItem;
+
 public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragment {
 	
 	@Override
@@ -18,14 +20,19 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
 		inflater.inflate(R.menu.discount, menu);
 	}
 
-	@Override
-	void setTextResult() {
+    @Override
+    protected DiscountItem calculateResult() {
+        return null;
+    }
+
+    @Override
+    public void setTextResult() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	void resetEditValues(boolean showKeyboard) {
+    public void resetEditValues(boolean showKeyboard) {
 		// TODO Auto-generated method stub
 		
 	}
