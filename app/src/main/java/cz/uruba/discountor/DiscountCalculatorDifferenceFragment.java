@@ -56,7 +56,7 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
         textPriceBeforeMinusPriceAfter = (TextView) rootView.findViewById(R.id.textPriceBeforeMinusPriceAfter);
 
 
-        resetEditValues(true);
+        resetEditValues(false);
 
         return rootView;
     }
@@ -130,13 +130,12 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
         textPriceBeforeMinusPriceAfter
                 .setText(getStringPriceBeforeMinusPriceAfter(result));
 
-        result = null;
     }
 
     @Override
     public void resetEditValues(boolean showKeyboard) {
-        editPriceBefore.setText("");
-        editPriceAfter.setText("");
+        editPriceBefore.setText(Constants.EMPTY_STRING);
+        editPriceAfter.setText(Constants.EMPTY_STRING);
 
         focusAndShowKeyboard(editPriceBefore, showKeyboard);
     }

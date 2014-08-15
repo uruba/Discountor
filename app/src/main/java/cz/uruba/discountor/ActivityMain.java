@@ -7,6 +7,10 @@ import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.TabHost;
 import android.widget.Toast;
 import android.preference.PreferenceManager;
@@ -28,7 +32,7 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
 		
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
-        FragmentTabHost tabHost = (FragmentTabHost) findViewById(R.id.tabhost);
+        final FragmentTabHost tabHost = (FragmentTabHost) findViewById(R.id.tabhost);
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
         //tabHost.setup(this, getSupportFragmentManager(), R.id.container);
 
@@ -38,14 +42,13 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
 
         // Set the Tab name and Activity
         // that will be opened when particular Tab will be selected
-        tab1.setIndicator("Tab1");
-        tab2.setIndicator("Tab2");
-        tab3.setIndicator("Tab3");
+        tab1.setIndicator("Percentage");
+        tab2.setIndicator("Difference");
+        tab3.setIndicator("Multipack");
 
         tabHost.addTab(tab1, DiscountCalculatorPercentageFragment.class, null);
         tabHost.addTab(tab2, DiscountCalculatorDifferenceFragment.class, null);
-        tabHost.addTab(tab3, DiscountCalculatorPercentageFragment.class, null
-        );
+        tabHost.addTab(tab3, DiscountCalculatorMultipackFragment.class, null);
 /*
         for(String[] item: Values.modes){
             tabHost.addTab(

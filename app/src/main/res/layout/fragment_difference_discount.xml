@@ -26,6 +26,7 @@
                 android:text="@string/spinner_price_before"
                 android:textSize="@dimen/valueLabelsTextSize"
                 android:textColor="@color/black"
+                android:paddingRight="2dp"
                 android:layout_gravity="right|center_vertical"/>
 
             <FrameLayout
@@ -39,6 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/valueEditableFieldsTextSize"
+                    android:textColor="@color/theme_red"
                     android:inputType="numberDecimal"
                     android:hint="@string/zero_float"
                     android:imeOptions="flagNoExtractUi|actionNext">
@@ -67,6 +69,7 @@
                 android:text="@string/spinner_price_after"
                 android:textSize="@dimen/valueLabelsTextSize"
                 android:textColor="@color/black"
+                android:paddingRight="2dp"
                 android:layout_gravity="right|center_vertical"
                 />
 
@@ -83,7 +86,7 @@
                     android:textSize="@dimen/valueEditableFieldsTextSize"
                     android:inputType="numberDecimal"
                     android:hint="@string/zero_float"
-                    android:imeOptions="flagNoExtractUi|actionNext">
+                    android:imeOptions="flagNoExtractUi|actionDone">
                 </EditText>
 
                 <TextView

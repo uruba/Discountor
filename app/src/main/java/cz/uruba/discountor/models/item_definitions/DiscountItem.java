@@ -20,9 +20,8 @@ public abstract class DiscountItem {
         return discountName;
     }
 
-    abstract public double getPriceBefore();
-    abstract public double getPriceAfter();
+    public abstract double getPriceBefore();
+    public abstract double getPriceAfter();
 
-    abstract public double getSavings();
-
+    public abstract double getSavings();
 }

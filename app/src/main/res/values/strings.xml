@@ -86,4 +86,14 @@
     <string name="prompt_email_title">Send with</string>
     <string name="toast_no_email_client">There is no e-mail client installed</string>
 
+    <string name="price_single">Price of single item</string>
+    <string name="price_multipack">Price of multipack</string>
+    <string name="pieces_multipack">Multipack size</string>
+    <string name="pcs">pcs.</string>
+    <string name="price_single_when_bought_separately">(when bought separately)</string>
+    <string name="saved_percentage">Saved in percent</string>
+    <string name="saved_total">Saved by buying the multipack</string>
+    <string name="lost_total">Lost by buying the multipack</string>
+    <string name="when_purchased_separately_it_would_cost">%1$s items at %2$s per would cost %3$s altogether.</string>
+
 </resources>

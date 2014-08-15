@@ -97,7 +97,7 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
 		editDiscountValue.addTextChangedListener(new ListenerEditTextChange(this));
 		editDiscountValue.setFilters(new InputFilter[]{ new discountEditInputFilter() });
 
-		resetEditValues(true);
+		resetEditValues(false);
 
 		return rootView;
 	}
@@ -181,8 +181,8 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
 	}
 
 	public void resetEditValues(boolean showKeyboard){
-		editPrice.setText("");
-		editDiscountValue.setText("");
+		editPrice.setText(Constants.EMPTY_STRING);
+		editDiscountValue.setText(Constants.EMPTY_STRING);
 		
 	    focusAndShowKeyboard(editPrice, showKeyboard);
 	}

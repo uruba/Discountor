@@ -22,6 +22,7 @@ public class DiscountItemDifference extends DiscountItem {
 
     public DiscountItemDifference(int db_id, double priceBefore, double priceAfter, String discountName){
         this(priceBefore, priceAfter);
+
         this.db_id = db_id;
         this.setDiscountName(discountName);
     }

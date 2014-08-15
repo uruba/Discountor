@@ -80,7 +80,7 @@
                     android:textSize="@dimen/valueEditableFieldsTextSize"
                     android:hint="@string/zero"
                     android:inputType="number"
-                    android:imeOptions="flagNoExtractUi"
+                    android:imeOptions="flagNoExtractUi|actionDone"
                     >
                 </EditText>
 

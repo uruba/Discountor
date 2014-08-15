@@ -38,12 +38,18 @@ public class DisCalc {
     }
 
     public static double amountSavedFromOrigAndDisc(double origPrice, double discPrice){
-        return Math.abs(origPrice - discPrice);
+        return origPrice - discPrice;
     }
 
     public static double percentageFromOrigAndDisc(double origPrice, double discPrice){
-        if(origPrice != discPrice && origPrice == Constants.DEFAULT_DOUBLE){
+        if(origPrice != discPrice &&
+           origPrice == Constants.DEFAULT_DOUBLE){
             return Double.NaN;
+        }
+
+        if(origPrice == Constants.DEFAULT_DOUBLE &&
+           discPrice == Constants.DEFAULT_DOUBLE){
+            return Constants.DEFAULT_DOUBLE;
         }
 
         return Constants.ONE_HUNDRED - (discPrice / (origPrice / Constants.ONE_HUNDRED));
