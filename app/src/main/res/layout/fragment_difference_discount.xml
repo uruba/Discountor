@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/spinner_price_before"
                 android:textSize="@dimen/valueLabelsTextSize"
-                android:textColor="@color/black"
+                android:textColor="@color/dark_grey"
                 android:paddingRight="2dp"
                 android:layout_gravity="right|center_vertical"/>
 
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/spinner_price_after"
                 android:textSize="@dimen/valueLabelsTextSize"
-                android:textColor="@color/black"
+                android:textColor="@color/dark_grey"
                 android:paddingRight="2dp"
                 android:layout_gravity="right|center_vertical"
                 />

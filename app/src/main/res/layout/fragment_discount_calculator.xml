@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/discount_percentage"
                 android:textSize="@dimen/valueLabelsTextSize"
-                android:textColor="@color/black"
+                android:textColor="@color/dark_grey"
                 android:layout_gravity="right|center_vertical"
                 android:paddingRight="2dp"
                 />

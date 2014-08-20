@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/price_multipack"
                 android:textSize="@dimen/valueLabelsTextSize"
-                android:textColor="@color/black"
+                android:textColor="@color/dark_grey"
                 android:paddingRight="2dp"
                 android:layout_gravity="right|center_vertical"
                 />
@@ -41,6 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/valueEditableFieldsTextSize"
+                    android:textStyle="bold"
                     android:inputType="numberDecimal"
                     android:hint="@string/zero_float"
                     android:imeOptions="flagNoExtractUi|actionNext">
@@ -69,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/pieces_multipack"
                 android:textSize="@dimen/valueLabelsTextSize"
-                android:textColor="@color/black"
+                android:textColor="@color/dark_grey"
                 android:layout_gravity="right|center_vertical"
                 android:paddingRight="2dp"
                 />
@@ -87,7 +88,7 @@
                     android:textSize="@dimen/valueEditableFieldsTextSize"
                     android:hint="@string/zero"
                     android:inputType="number"
-                    android:imeOptions="flagNoExtractUi|actionDone"
+                    android:imeOptions="flagNoExtractUi|actionNext"
                     >
                 </EditText>
 
@@ -120,7 +121,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/price_single"
                     android:textSize="@dimen/valueLabelsTextSize"
-                    android:textColor="@color/black"
+                    android:textColor="@color/dark_grey"
+                    android:includeFontPadding="false"
                     />
 
                 <TextView
@@ -129,6 +131,8 @@
                     android:text="@string/price_single_when_bought_separately"
                     android:textSize="@dimen/valueLabelHintTextSize"
                     android:textColor="@color/dark_grey"
+                    android:includeFontPadding="false"
+
                     android:layout_gravity="center_horizontal"/>
 
             </LinearLayout>
@@ -147,7 +151,7 @@
                     android:textSize="@dimen/valueEditableFieldsTextSize"
                     android:inputType="numberDecimal"
                     android:hint="@string/zero_float"
-                    android:imeOptions="flagNoExtractUi|actionNext">
+                    android:imeOptions="flagNoExtractUi|actionDone">
                 </EditText>
 
                 <TextView
@@ -175,6 +179,7 @@
         android:layout_below="@+id/layout_first_row"
         android:textSize="10sp"
         android:textColor="@color/light_grey"
+        android:layout_marginTop="@dimen/component_margin_less"
         android:layout_marginBottom="@dimen/component_margin"/>
 
 
