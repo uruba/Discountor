@@ -32,9 +32,11 @@ public class DiscountItemPercentage extends DiscountItem {
         this.setDiscountName(discountName);
     }
 
-    public DiscountItemPercentage(int db_id, boolean isPriceBefore, double priceValue, int discountValue, String discountName){
+    public DiscountItemPercentage(int db_id, boolean isPriceBefore, double priceValue, int discountValue, String discountName, int dateCreatedUNIXTimestamp){
         this(isPriceBefore, priceValue, discountValue, discountName);
+
         this.db_id = db_id;
+        this.dateCreatedUNIXTimestamp = dateCreatedUNIXTimestamp;
     }
 
     // END constructors
@@ -67,6 +69,10 @@ public class DiscountItemPercentage extends DiscountItem {
 
     public double getSavings(){
         return DisCalc.amountSavedFromOrigAndDisc(this.getPriceBefore(), this.getPriceAfter());
+    }
+
+    public int getDateCreatedUNIXTimestamp(){
+        return dateCreatedUNIXTimestamp;
     }
     // END Getters and setters
 }

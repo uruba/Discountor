@@ -55,7 +55,7 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
             + PRICE_VALUE + ", "
             + DISCOUNT_VALUE + ", "
             + DISPLAYED_NAME + ", "
-            + DATE_CREATED + " "
+            + "strftime('%s', " + DATE_CREATED + ") "
             + "FROM " + TABLE_PERCENTAGE_DISCOUNT_RECORDS;
 
 
@@ -75,7 +75,7 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
             + PRICE_BEFORE_VALUE + ", "
             + PRICE_AFTER_VALUE + ", "
             + DISPLAYED_NAME + ", "
-            + DATE_CREATED + " "
+            + "strftime('%s', " + DATE_CREATED + ") "
             + "FROM " + TABLE_DIFFERENCE_DISCOUNT_RECORDS;
 
 
@@ -170,7 +170,8 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
                                                              cursor.getInt(1) > 0,
                                                              cursor.getDouble(2),
                                                              cursor.getInt(3),
-                                                             cursor.getString(4)
+                                                             cursor.getString(4),
+                                                             cursor.getInt(5)
                                                              );
                 discountItems.add(discountItem);
             } while (cursor.moveToNext());
@@ -188,7 +189,8 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
                 DiscountItemDifference discountItem = new DiscountItemDifference(cursor.getInt(0),
                         cursor.getDouble(1),
                         cursor.getDouble(2),
-                        cursor.getString(3));
+                        cursor.getString(3),
+                        cursor.getInt(4));
                 discountItems.add(discountItem);
             } while (cursor.moveToNext());
         }

@@ -92,11 +92,12 @@
     <string name="pcs">pcs.</string>
     <string name="price_single_when_bought_separately">(when bought separately)</string>
     <string name="saved_percentage">Saved in percent</string>
+    <string name="lost_percentage">Lost in percent</string>
     <string name="saved_total">Saved by buying the multipack</string>
     <string name="lost_total">Lost by buying the multipack</string>
     <string name="when_purchased_separately_it_would_cost">
         <![CDATA[
-        %1$s items at %2$s per would cost <b>%3$s</b> altogether.
+        %1$s items at %2$s/pc. would cost <b>%3$s</b>
         ]]></string>
 
 </resources>

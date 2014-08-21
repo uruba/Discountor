@@ -20,10 +20,11 @@ public class DiscountItemDifference extends DiscountItem {
         this.db_id = DEFAULT_DB_ID;
     }
 
-    public DiscountItemDifference(int db_id, double priceBefore, double priceAfter, String discountName){
+    public DiscountItemDifference(int db_id, double priceBefore, double priceAfter, String discountName, int dateCreatedUNIXTimestamp){
         this(priceBefore, priceAfter);
 
         this.db_id = db_id;
+        this.dateCreatedUNIXTimestamp = dateCreatedUNIXTimestamp;
         this.setDiscountName(discountName);
     }
 

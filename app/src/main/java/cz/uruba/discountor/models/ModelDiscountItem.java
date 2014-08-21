@@ -4,6 +4,7 @@ import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 import cz.uruba.discountor.helpers.SavedDiscountsHelper;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
@@ -23,6 +24,15 @@ public class ModelDiscountItem {
         SavedDiscountsHelper helper = SavedDiscountsHelper.getInstance(context);
 
         ArrayList<DiscountItem> items = (ArrayList) helper.retrieveAll();
+
+        Collections.sort(items, new Comparator<DiscountItem>() {
+            // compare by date of creation
+            @Override
+            public int compare(DiscountItem discountItem, DiscountItem discountItem2) {
+                return Integer.signum(discountItem.getDateCreatedUNIXTimestamp() - discountItem2.getDateCreatedUNIXTimestamp());
+            }
+        });
+
         if(desc) {
             Collections.reverse(items);
         }

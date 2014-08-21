@@ -23,7 +23,7 @@ import cz.uruba.discountor.utils.CurrencyProvider;
 public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragment {
 
     private EditText editPriceSingle, editPriceMultipack, editMultipackPcs;
-    private TextView textSavedPercentageResult, textSavedAmountResult, textCurrencyInlineSingle, textCurrencyInlineMultipack, textWouldCost, textPriceBeforeMinusPriceAfter, textSavedAmount;
+    private TextView textSavedPercentage, textSavedPercentageResult, textSavedAmountResult, textCurrencyInlineSingle, textCurrencyInlineMultipack, textWouldCost, textPriceBeforeMinusPriceAfter, textSavedAmount;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,6 +45,7 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
 
         textWouldCost = (TextView) rootView.findViewById(R.id.textWouldCost);
 
+        textSavedPercentage = (TextView) rootView.findViewById(R.id.textSavedPercentage);
         textSavedPercentageResult = (TextView) rootView.findViewById(R.id.textSavedPercentageResult);
         textSavedAmount = (TextView) rootView.findViewById(R.id.textSavedAmount);
         textSavedAmountResult = (TextView) rootView.findViewById(R.id.textSavedAmountResult);
@@ -103,6 +104,10 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
 
         resultSavedPercentage = CurrencyProvider.getFormattedPercentage(saved_percentage_double);
         resultSavedAmount = CurrencyProvider.getFormattedAmount(saved_amount_double, true);
+
+        textSavedPercentage.setText(isSavings || isZero ?
+                                    getResources().getText(R.string.saved_percentage) :
+                                    getResources().getText(R.string.lost_percentage));
 
         textSavedPercentageResult.setText(resultSavedPercentage);
         textSavedPercentageResult.setTextColor(saved_percentage_double < Constants.DEFAULT_DOUBLE ?

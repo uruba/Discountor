@@ -5,22 +5,25 @@ import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.preference.PreferenceManager;
 
 import cz.uruba.discountor.dialogs.AboutApplicationDialog;
 
 public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavigationListener {
-	
-	
-	@Override
+	private FragmentTabHost tabHost;
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
@@ -32,35 +35,16 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
 		
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
-        final FragmentTabHost tabHost = (FragmentTabHost) findViewById(R.id.tabhost);
+        tabHost = (FragmentTabHost) findViewById(R.id.tabhost);
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
         //tabHost.setup(this, getSupportFragmentManager(), R.id.container);
 
-        TabHost.TabSpec tab1 = tabHost.newTabSpec("First Tab");
-        TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
-        TabHost.TabSpec tab3 = tabHost.newTabSpec("Third tab");
 
-        // Set the Tab name and Activity
-        // that will be opened when particular Tab will be selected
-        tab1.setIndicator("Percentage");
-        tab2.setIndicator("Difference");
-        tab3.setIndicator("Multipack");
+        addTab("Percentage", R.drawable.icon_percentage_discount, DiscountCalculatorPercentageFragment.class);
+        addTab("Difference", R.drawable.icon_difference_discount, DiscountCalculatorDifferenceFragment.class);
+        addTab("Multipack", R.drawable.icon_multipack_discount, DiscountCalculatorMultipackFragment.class);
 
-        tabHost.addTab(tab1, DiscountCalculatorPercentageFragment.class, null);
-        tabHost.addTab(tab2, DiscountCalculatorDifferenceFragment.class, null);
-        tabHost.addTab(tab3, DiscountCalculatorMultipackFragment.class, null);
-/*
-        for(String[] item: Values.modes){
-            tabHost.addTab(
-                    tabHost
-                            .newTabSpec(item[0])
-                            .setIndicator(this
-                                    .getString(getResources()
-                                            .getIdentifier(item[1], "string", ActivityMain.this.getPackageName()))),
-                    DiscountCalculatorPercentageFragment.class,
-                    null
-            );
-        }*/
+
         /*
 		final ActionBar actionBar = getSupportActionBar();
 
@@ -76,6 +60,20 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
 		*/
 
 	}
+
+    private void addTab(String label, int drawableId, Class<?> targetClass) {
+        TabHost.TabSpec spec = tabHost.newTabSpec(label);
+
+        View tabIndicator = getLayoutInflater().inflate(R.layout.tab_custom_indicator, null);
+        TextView title = (TextView) tabIndicator.findViewById(R.id.title);
+        title.setText(label);
+        ImageView icon = (ImageView) tabIndicator.findViewById(R.id.icon);
+        icon.setImageResource(drawableId);
+
+        spec.setIndicator(tabIndicator);
+
+        tabHost.addTab(spec, targetClass, null);
+    }
 	
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {

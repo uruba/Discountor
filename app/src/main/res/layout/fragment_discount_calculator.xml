@@ -171,6 +171,7 @@
                 android:layout_height="wrap_content"
 
                 android:text="@string/na"
+                android:textStyle="bold"
                 />
 
             <TextView
