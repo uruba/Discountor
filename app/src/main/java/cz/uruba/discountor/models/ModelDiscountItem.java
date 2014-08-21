@@ -29,18 +29,13 @@ public class ModelDiscountItem {
             // compare by date of creation
             @Override
             public int compare(DiscountItem discountItem, DiscountItem discountItem2) {
-                return Integer.signum(discountItem.getDateCreatedUNIXTimestamp() - discountItem2.getDateCreatedUNIXTimestamp());
+                return Integer.signum(discountItem2.getDateCreatedUNIXTimestamp() - discountItem.getDateCreatedUNIXTimestamp() );
             }
         });
 
-        if(desc) {
+        if(!desc) {
             Collections.reverse(items);
         }
-        /* ...
-        items.add(new DiscountItem(true, 25.0, 5, "Hovno"));
-        items.add(new DiscountItem(false, 125.3, 25));
-        items.add(new DiscountItem(true, 10.0, 65, "Prdel"));
-        */
 
         return items;
     }
@@ -57,12 +52,4 @@ public class ModelDiscountItem {
         helper.insertNew(insertedItem);
     }
 
-/*
-    public static DiscountItem getById(int id){
-        DiscountItem item = new DiscountItem();
-        ...
-
-        return item;
-    }
- */
 }
