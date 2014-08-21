@@ -22,6 +22,7 @@ import cz.uruba.discountor.models.ModelDiscountItem;
 import cz.uruba.discountor.models.item_definitions.DiscountItemDifference;
 import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 import cz.uruba.discountor.utils.CurrencyProvider;
+import cz.uruba.discountor.utils.NumberFormatter;
 
 /**
  * Created by Vaclav on 4.7.2014.
@@ -110,7 +111,7 @@ public class SavedDiscountsFragment extends Fragment {
 
             String strPriceBefore = CurrencyProvider.getFormattedAmount(item.getPriceBefore(), true);
             String strPriceAfter = CurrencyProvider.getFormattedAmount(item.getPriceAfter(), true);
-            String strDiscountPercentage = String.valueOf(
+            String strDiscountPercentage = NumberFormatter.getInstance().formatZeroDecimalDigits(
                     item instanceof DiscountItemPercentage ?
                             ((DiscountItemPercentage) item).getDiscountValue() :
                             ((DiscountItemDifference) item).getPercentageDiscount())

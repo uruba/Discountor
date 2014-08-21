@@ -12,10 +12,10 @@
     <dimen name="inline_symbol_margin">8dp</dimen>
     <dimen name="inline_number_margin">6dp</dimen>
 
-    <dimen name="valueLabelsTextSize">17sp</dimen>
+    <dimen name="valueLabelsTextSize">18sp</dimen>
     <dimen name="valueLabelHintTextSize">12sp</dimen>
-    <dimen name="valueEditableFieldsTextSize">20sp</dimen>
-    <dimen name="valueInlineTextSize">18sp</dimen>
+    <dimen name="valueEditableFieldsTextSize">25sp</dimen>
+    <dimen name="valueInlineTextSize">20sp</dimen>
 
     <dimen name="textResultPrice">32sp</dimen>
 

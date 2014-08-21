@@ -94,6 +94,9 @@
     <string name="saved_percentage">Saved in percent</string>
     <string name="saved_total">Saved by buying the multipack</string>
     <string name="lost_total">Lost by buying the multipack</string>
-    <string name="when_purchased_separately_it_would_cost">%1$s items at %2$s per would cost %3$s altogether.</string>
+    <string name="when_purchased_separately_it_would_cost">
+        <![CDATA[
+        %1$s items at %2$s per would cost <b>%3$s</b> altogether.
+        ]]></string>
 
 </resources>

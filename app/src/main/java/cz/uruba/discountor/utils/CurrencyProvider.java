@@ -43,7 +43,7 @@ public class CurrencyProvider {
             return not_available;
         }
 
-        return String.valueOf(percentage).concat(percentage_symbol);
+        return NumberFormatter.getInstance().formatTwoDecimalDigits(percentage).concat(percentage_symbol);
     }
 	
 	//returns double from string input

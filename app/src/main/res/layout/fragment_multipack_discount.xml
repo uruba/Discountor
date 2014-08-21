@@ -177,7 +177,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_below="@+id/layout_first_row"
-        android:textSize="10sp"
+        android:textSize="13sp"
         android:textColor="@color/light_grey"
         android:layout_marginTop="@dimen/component_margin_less"
         android:layout_marginBottom="@dimen/component_margin"/>

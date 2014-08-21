@@ -1,6 +1,7 @@
 package cz.uruba.discountor;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -62,7 +63,7 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
 
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
-		// inflater.inflate(R.menu.discount, menu);
+		inflater.inflate(R.menu.discount_multipack, menu);
 	}
 
     @Override
@@ -121,12 +122,15 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
                         getResources().getColor(R.color.theme_red));
 
         textWouldCost.setText(
-                String.format(
-                        getActivity().getResources().getString(R.string.when_purchased_separately_it_would_cost),
-                        String.valueOf(result.getNoOfItems()),
-                        CurrencyProvider.getFormattedAmount(result.getPriceSingle(), true),
-                        CurrencyProvider.getFormattedAmount(result.getNoOfItems() * result.getPriceSingle(), true)
+                Html.fromHtml(
+                    String.format(
+                            getActivity().getResources().getString(R.string.when_purchased_separately_it_would_cost),
+                            String.valueOf(result.getNoOfItems()),
+                            CurrencyProvider.getFormattedAmount(result.getPriceSingle(), true),
+                            CurrencyProvider.getFormattedAmount(result.getNoOfItems() * result.getPriceSingle(), true)
+                    )
                 )
+
         );
 
         textPriceBeforeMinusPriceAfter.setText(getStringPriceBeforeMinusPriceAfter(result));
@@ -136,11 +140,11 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
 
 	@Override
     public void resetEditValues(boolean showKeyboard) {
-		editPriceSingle.setText(Constants.EMPTY_STRING);
         editPriceMultipack.setText(Constants.EMPTY_STRING);
         editMultipackPcs.setText(Constants.EMPTY_STRING);
+        editPriceSingle.setText(Constants.EMPTY_STRING);
 
-        focusAndShowKeyboard(editPriceSingle, showKeyboard);
+        focusAndShowKeyboard(editPriceMultipack, showKeyboard);
 	}
 	
 	
