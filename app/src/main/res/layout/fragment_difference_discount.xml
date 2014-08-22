@@ -176,6 +176,7 @@
 
                 android:text="@string/na"
                 android:textStyle="bold"
+                android:textSize="@dimen/valueResultYouSaveTextSize"
                 />
 
             <TextView
@@ -183,7 +184,9 @@
                 android:layout_height="wrap_content"
 
                 android:textColor="@color/light_grey"
-                android:text=" = "/>
+                android:textSize="@dimen/valueResultYouSaveTextSize"
+                android:text=" = "
+                />
 
             <TextView
                 android:id="@+id/textPriceBeforeMinusPriceAfter"
@@ -191,6 +194,7 @@
                 android:layout_height="wrap_content"
 
                 android:textColor="@color/light_grey"
+                android:textSize="@dimen/valueResultYouSaveTextSize"
                 />
 
 

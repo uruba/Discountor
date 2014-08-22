@@ -177,7 +177,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_below="@+id/layout_first_row"
-        android:textSize="13sp"
+        android:textSize="@dimen/valueResultWouldCost"
         android:textColor="@color/light_grey"
         android:layout_marginTop="@dimen/component_margin_less"
         android:layout_marginBottom="@dimen/component_margin"/>
@@ -227,6 +227,7 @@
                     android:layout_height="wrap_content"
 
                     android:textStyle="bold"
+                    android:textSize="@dimen/valueResultYouSaveTextSize"
                     android:text="@string/na"
                     android:includeFontPadding="false"
                     />
@@ -236,7 +237,8 @@
                     android:layout_height="wrap_content"
 
                     android:textColor="@color/light_grey"
-                    android:text=" = "/>
+                    android:text=" = "
+                    android:textSize="@dimen/valueResultYouSaveTextSize"/>
 
                 <TextView
                     android:id="@+id/textPriceBeforeMinusPriceAfter"
@@ -244,6 +246,7 @@
                     android:layout_height="wrap_content"
 
                     android:textColor="@color/light_grey"
+                    android:textSize="@dimen/valueResultYouSaveTextSize"
                     />
             </LinearLayout>
 

@@ -38,11 +38,13 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
         tabHost = (FragmentTabHost) findViewById(R.id.tabhost);
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
         //tabHost.setup(this, getSupportFragmentManager(), R.id.container);
+        tabHost.getTabWidget().setDividerDrawable(R.drawable.tab_divider);
 
 
-        addTab("Percentage", R.drawable.icon_percentage_discount, DiscountCalculatorPercentageFragment.class);
-        addTab("Difference", R.drawable.icon_difference_discount, DiscountCalculatorDifferenceFragment.class);
-        addTab("Multipack", R.drawable.icon_multipack_discount, DiscountCalculatorMultipackFragment.class);
+
+        addTab(getResources().getString(R.string.mode_percentage), R.drawable.icon_percentage_discount, DiscountCalculatorPercentageFragment.class);
+        addTab(getResources().getString(R.string.mode_difference), R.drawable.icon_difference_discount, DiscountCalculatorDifferenceFragment.class);
+        addTab(getResources().getString(R.string.mode_multipack), R.drawable.icon_multipack_discount, DiscountCalculatorMultipackFragment.class);
 
 
         /*

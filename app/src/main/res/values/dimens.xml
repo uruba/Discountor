@@ -16,9 +16,12 @@
     <dimen name="valueLabelHintTextSize">12sp</dimen>
     <dimen name="valueEditableFieldsTextSize">25sp</dimen>
     <dimen name="valueInlineTextSize">20sp</dimen>
+    <dimen name="valueResultYouSaveTextSize">14sp</dimen>
+    <dimen name="valueResultWouldCost">13sp</dimen>
 
     <dimen name="textResultPrice">32sp</dimen>
 
     <dimen name="toastSaveConfirmationMarginTop">40sp</dimen>
+
 
 </resources>
