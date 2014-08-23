@@ -25,6 +25,7 @@
     <string name="zero_float">0.00</string>
     <string name="na">–</string>
     <string name="you_save">Ušetříte</string>
+    <string name="you_lose">Proděláte</string>
     <string name="amount_saved">Ušetřeno</string>
     <string name="percent_off">% sleva</string>
 

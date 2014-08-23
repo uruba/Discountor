@@ -1,17 +1,15 @@
 package cz.uruba.discountor;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -19,6 +17,7 @@ import android.widget.Toast;
 import android.preference.PreferenceManager;
 
 import cz.uruba.discountor.dialogs.AboutApplicationDialog;
+import cz.uruba.discountor.views.CustomizedFragmentTabHost;
 
 public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavigationListener {
 	private FragmentTabHost tabHost;
@@ -28,6 +27,16 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+        int mask = getResources().getConfiguration().screenLayout &
+                Configuration.SCREENLAYOUT_SIZE_MASK;
+
+        if ((mask == Configuration.SCREENLAYOUT_SIZE_LARGE) ||
+            (mask == Configuration.SCREENLAYOUT_SIZE_XLARGE)) {
+
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+
+        }
+
 /*		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new DiscountCalculatorPercentageFragment()).commit();
@@ -35,11 +44,16 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
 		
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
-        tabHost = (FragmentTabHost) findViewById(R.id.tabhost);
+        tabHost = (CustomizedFragmentTabHost) findViewById(R.id.tabhost);
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
         //tabHost.setup(this, getSupportFragmentManager(), R.id.container);
         tabHost.getTabWidget().setDividerDrawable(R.drawable.tab_divider);
-
+        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String s) {
+                return;
+            }
+        });
 
 
         addTab(getResources().getString(R.string.mode_percentage), R.drawable.icon_percentage_discount, DiscountCalculatorPercentageFragment.class);
