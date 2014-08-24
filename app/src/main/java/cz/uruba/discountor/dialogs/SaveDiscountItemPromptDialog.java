@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import cz.uruba.discountor.AbstractCalculatorFragment;
-import cz.uruba.discountor.DiscountCalculatorPercentageFragment;
 import cz.uruba.discountor.R;
 
 /**

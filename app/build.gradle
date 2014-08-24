@@ -16,6 +16,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    productFlavors {
+        google {
+            packageName "cz.uruba.discountor"
+        }
+
+        amazon {
+            packageName "cz.uruba.amazon.discountor"
+        }
+    }
 }
 
 dependencies {
