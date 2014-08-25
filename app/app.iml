@@ -8,10 +8,11 @@
     </facet>
     <facet type="android" name="Android">
       <configuration>
-        <option name="SELECTED_BUILD_VARIANT" value="amazonRelease" />
-        <option name="ASSEMBLE_TASK_NAME" value="assembleAmazonRelease" />
-        <option name="COMPILE_JAVA_TASK_NAME" value="compileAmazonReleaseJava" />
-        <option name="SOURCE_GEN_TASK_NAME" value="generateAmazonReleaseSources" />
+        <option name="SELECTED_BUILD_VARIANT" value="amazonDebug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleAmazonDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileAmazonDebugJava" />
+        <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleAmazonDebugTest" />
+        <option name="SOURCE_GEN_TASK_NAME" value="generateAmazonDebugSources" />
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
@@ -21,21 +22,26 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$/build/intermediates/classes/amazon/release" />
+    <output url="file://$MODULE_DIR$/build/intermediates/classes/amazon/debug" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/amazon/release" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/amazon/release" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/amazon/release" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/amazon/release" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/amazon/release" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/amazonRelease/res" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/amazonRelease/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/amazonRelease/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/amazonRelease/assets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/amazonRelease/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/amazonRelease/jni" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/amazonRelease/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/amazon/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/amazon/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/amazon/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/amazon/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/amazon/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/amazonDebug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/amazonDebug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/amazonDebug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/amazonDebug/assets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/amazonDebug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/amazonDebug/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/amazonDebug/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/test/amazon/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/test/amazon/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/test/amazon/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/test/amazon/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/test/amazon/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/amazon/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/amazon/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/amazon/aidl" isTestSource="false" />
@@ -50,13 +56,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestAmazon/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestAmazon/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestAmazon/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/release/res" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/release/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/release/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/release/assets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/release/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/release/jni" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/release/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/assets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/aidl" isTestSource="false" />

@@ -202,7 +202,7 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
     }
 
     private void deleteByID(int id, String tableName){
-        db.delete(TABLE_PERCENTAGE_DISCOUNT_RECORDS,
+        db.delete(tableName,
                     COLUMN_ID + " = ?",
                     new String[] { String.valueOf(id) } );
     }
