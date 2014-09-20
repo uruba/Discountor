@@ -18,7 +18,6 @@ import cz.uruba.discountor.R;
  */
 public class SaveDiscountItemPromptDialog extends DialogFragment {
 
-
     @Override
     public void onStart() {
         super.onStart();

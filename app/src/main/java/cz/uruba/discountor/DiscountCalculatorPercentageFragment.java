@@ -147,14 +147,10 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
 
         Double savings_double = result.getSavings();
         Double resultPrice_double = result.isPriceBefore() ? result.getPriceAfter() : result.getPriceBefore();
-		
-		/*if(result == null){
-			resultPrice = resultYouSave = this.getString(R.string.na); 
-		} else {*/
-            // result price is opposite to the input price (therefore, if the input price is marked as a price before, we must get the price after as a result – and vice versa)
-			resultPrice = CurrencyProvider.getFormattedAmount(resultPrice_double, true);
-			resultYouSave = CurrencyProvider.getFormattedAmount(savings_double, true);
-		/*}*/
+
+        // result price is opposite to the input price (therefore, if the input price is marked as a price before, we must get the price after as a result – and vice versa)
+        resultPrice = CurrencyProvider.getFormattedAmount(resultPrice_double, true);
+        resultYouSave = CurrencyProvider.getFormattedAmount(savings_double, true);
 
         editPrice.setTextColor(result.isPriceBefore() ?
                                     getResources().getColor(R.color.theme_red) :

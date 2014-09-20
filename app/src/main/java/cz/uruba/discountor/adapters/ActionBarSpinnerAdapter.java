@@ -26,8 +26,7 @@ public class ActionBarSpinnerAdapter extends ArrayAdapter<String> implements Spi
     }
 
     @Override
-    public View getView(int position, View convertView,
-                                ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         TextView textView = (TextView) super.getView(position, convertView, parent);
         textView.setTextColor(context.getResources().getColor(R.color.white));
 

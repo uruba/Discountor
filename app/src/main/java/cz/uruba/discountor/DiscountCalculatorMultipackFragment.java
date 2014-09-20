@@ -16,7 +16,6 @@ import cz.uruba.discountor.constants.Constants;
 import cz.uruba.discountor.filters.discountEditInputFilter;
 import cz.uruba.discountor.filters.priceEditInputFilter;
 import cz.uruba.discountor.listeners.ListenerEditTextChange;
-import cz.uruba.discountor.models.item_definitions.DiscountItem;
 import cz.uruba.discountor.models.item_definitions.DiscountItemMultipack;
 import cz.uruba.discountor.utils.CurrencyProvider;
 

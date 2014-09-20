@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,13 +12,12 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.preference.PreferenceManager;
 
 import cz.uruba.discountor.dialogs.AboutApplicationDialog;
 import cz.uruba.discountor.views.CustomizedFragmentTabHost;
 
-public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavigationListener {
+public class ActivityMain extends ActionBarActivity{
 	private FragmentTabHost tabHost;
 
     @Override
@@ -36,17 +34,11 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         }
-
-/*		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new DiscountCalculatorPercentageFragment()).commit();
-		}*/
 		
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         tabHost = (CustomizedFragmentTabHost) findViewById(R.id.tabhost);
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
-        //tabHost.setup(this, getSupportFragmentManager(), R.id.container);
         tabHost.getTabWidget().setDividerDrawable(R.drawable.tab_divider);
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
@@ -59,21 +51,6 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
         addTab(getResources().getString(R.string.mode_percentage), R.drawable.icon_percentage_discount, DiscountCalculatorPercentageFragment.class);
         addTab(getResources().getString(R.string.mode_difference), R.drawable.icon_difference_discount, DiscountCalculatorDifferenceFragment.class);
         addTab(getResources().getString(R.string.mode_multipack), R.drawable.icon_multipack_discount, DiscountCalculatorMultipackFragment.class);
-
-
-        /*
-		final ActionBar actionBar = getSupportActionBar();
-
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-		
-		ArrayList<String> itemList = new ArrayList<String>();
-		for(String[] item: Values.modes){
-			itemList.add(this.getString(getResources().getIdentifier(item[1], "string", ActivityMain.this.getPackageName())));
-		}
-		ActionBarSpinnerAdapter spinAdapt = new ActionBarSpinnerAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, itemList);
-		
-		actionBar.setListNavigationCallbacks(spinAdapt, this);
-		*/
 
 	}
 
@@ -90,16 +67,9 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
 
         tabHost.addTab(spec, targetClass, null);
     }
-	
-	@Override
-	protected void onSaveInstanceState(Bundle outState) {
-	    super.onSaveInstanceState(outState);
-	 //   getSupportFragmentManager().putFragment(outState, "mainFragment", mainFragment);
-	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
@@ -121,28 +91,11 @@ public class ActivityMain extends ActionBarActivity implements ActionBar.OnNavig
                 AboutApplicationDialog dialog = new AboutApplicationDialog();
                 dialog.show(getSupportFragmentManager(), null);
                 break;
-            /*
-			case R.id.action_settings:
-				Class<?> targetClass;
-				targetClass = Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB ?
-						SettingsActivityAPI11plus.class :
-						SettingsActivityAPI8to10.class;
-				startActivity(new Intent(this, targetClass));
-
-				break; */
 			default: return super.onOptionsItemSelected(item);
 		}
 
 		return true;
 
-	}
-
-	@Override
-	public boolean onNavigationItemSelected(int position, long id) {
-		
-		Toast.makeText(getApplicationContext(), String.valueOf(position), Toast.LENGTH_LONG).show();
-			
-		return false;
 	}
 
 }

@@ -12,7 +12,6 @@ import cz.uruba.discountor.R;
 import cz.uruba.discountor.SavedDiscountsFragment;
 import cz.uruba.discountor.helpers.SavedDiscountsHelper;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
-import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 
 /**
  * Created by Temp on 29.7.2014.

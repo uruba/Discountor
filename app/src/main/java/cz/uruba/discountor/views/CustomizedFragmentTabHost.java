@@ -3,7 +3,6 @@ package cz.uruba.discountor.views;
 import android.content.Context;
 import android.support.v4.app.FragmentTabHost;
 import android.util.AttributeSet;
-import android.widget.TabWidget;
 
 /**
  * Created by vasek on 23/08/14.
@@ -24,6 +23,5 @@ public class CustomizedFragmentTabHost extends FragmentTabHost {
         setFocusable(false);
         setFocusableInTouchMode(false);
     }
-
 
 }

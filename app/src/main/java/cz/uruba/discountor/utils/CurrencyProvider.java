@@ -21,7 +21,7 @@ public class CurrencyProvider {
             return not_available;
         }
 
-                NumberFormat currencyFormatter;
+        NumberFormat currencyFormatter;
 		
 		if(with_currency){
 			currencyFormatter = NumberFormat.getCurrencyInstance(Locale.getDefault());

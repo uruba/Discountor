@@ -15,7 +15,6 @@ import android.widget.Toast;
 import cz.uruba.discountor.constants.Constants;
 import cz.uruba.discountor.filters.priceEditInputFilter;
 import cz.uruba.discountor.listeners.ListenerEditTextChange;
-import cz.uruba.discountor.models.item_definitions.DiscountItem;
 import cz.uruba.discountor.models.item_definitions.DiscountItemDifference;
 import cz.uruba.discountor.utils.CurrencyProvider;
 import cz.uruba.discountor.utils.DisCalc;

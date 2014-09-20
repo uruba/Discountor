@@ -12,8 +12,8 @@ public class NumberFormatter {
     private static NumberFormat twoDecimalDigits, zeroDecimalDigits;
 
     private NumberFormatter(){
-           twoDecimalDigits = new DecimalFormat("0.##");
-           zeroDecimalDigits = new DecimalFormat("0");
+       twoDecimalDigits = new DecimalFormat("0.##");
+       zeroDecimalDigits = new DecimalFormat("0");
     }
 
     public static NumberFormatter getInstance(){

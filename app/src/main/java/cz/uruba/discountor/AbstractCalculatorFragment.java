@@ -80,7 +80,6 @@ public abstract class AbstractCalculatorFragment extends Fragment {
 
 		if(showKeyboard){
 			imm.showSoftInput(edit, InputMethodManager.SHOW_IMPLICIT);
-            // imm.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, 0);
 		}
 	}
 

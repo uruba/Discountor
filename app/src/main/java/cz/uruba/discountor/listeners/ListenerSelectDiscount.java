@@ -14,13 +14,6 @@ public class ListenerSelectDiscount implements Spinner.OnItemSelectedListener {
 		this.fragment = fragment;
 	}
 
-    /*
-	public void onCheckedChanged(RadioGroup radioGroup, int idButtonChecked){
-		fragment.setTextBeforeAfter();
-		fragment.setTextResult();
-	}
-	*/
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         fragment.setTextBeforeAfter(id);

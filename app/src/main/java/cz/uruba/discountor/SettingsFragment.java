@@ -1,5 +1,6 @@
 package cz.uruba.discountor;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 
+@SuppressLint("NewApi")
 public class SettingsFragment extends PreferenceFragment implements OnSharedPreferenceChangeListener
 {
 

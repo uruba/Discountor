@@ -12,11 +12,7 @@ public class DisCalc {
         if (percentage < Constants.ONE_HUNDRED) {
             return (discPrice / (Constants.ONE_HUNDRED - percentage)) * Constants.ONE_HUNDRED;
         }
-/*
-        if (discPrice == 0.0d){
-            return discPrice;
-        }
-*/
+
         return Double.NaN;
     }
 	
@@ -42,14 +38,11 @@ public class DisCalc {
     }
 
     public static double percentageFromOrigAndDisc(double origPrice, double discPrice){
-        if(origPrice != discPrice &&
-           origPrice == Constants.DEFAULT_DOUBLE){
-            return Double.NaN;
-        }
-
-        if(origPrice == Constants.DEFAULT_DOUBLE &&
-           discPrice == Constants.DEFAULT_DOUBLE){
-            return Constants.DEFAULT_DOUBLE;
+        if(origPrice == Constants.DEFAULT_DOUBLE){
+            if(origPrice != discPrice)
+                return Double.NaN;
+            if(discPrice == Constants.DEFAULT_DOUBLE)
+                return Constants.DEFAULT_DOUBLE;
         }
 
         return Constants.ONE_HUNDRED - (discPrice / (origPrice / Constants.ONE_HUNDRED));
