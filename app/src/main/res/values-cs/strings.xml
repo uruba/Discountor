@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
+
     <string name="app_name">Slevkulačka</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="hello_world">Hello world!</string>
@@ -16,7 +16,7 @@
     <string name="discount_percentage_explicit">Výše slevy v procentech</string>
     <string name="percent">%</string>
 
-    
+
     <string name="price">Cena</string>
     <string name="price_formatted">Cena %s</string>
     <string name="price_before">před slevou</string>

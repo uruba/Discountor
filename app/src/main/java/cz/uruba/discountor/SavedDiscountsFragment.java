@@ -14,8 +14,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import cz.uruba.discountor.listeners.ListenerListSavedDiscountOnItemLongClick;
-import cz.uruba.discountor.models.item_definitions.DiscountItem;
 import cz.uruba.discountor.models.ModelDiscountItem;
+import cz.uruba.discountor.models.item_definitions.DiscountItem;
 import cz.uruba.discountor.models.item_definitions.DiscountItemDifference;
 import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 import cz.uruba.discountor.utils.CurrencyProvider;
@@ -26,17 +26,17 @@ import cz.uruba.discountor.utils.NumberFormatter;
  */
 
 
-
 public class SavedDiscountsFragment extends Fragment {
     private ListView listView;
     private ArrayList<DiscountItem> discountList;
     private View rootView;
 
-    public SavedDiscountsFragment(){    }
+    public SavedDiscountsFragment() {
+    }
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
     }
@@ -44,8 +44,7 @@ public class SavedDiscountsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
-    {
+                             Bundle savedInstanceState) {
         // initialize main view container
         rootView = inflater.inflate(R.layout.fragment_list_saved_discounts, container,
                 false);
@@ -60,7 +59,7 @@ public class SavedDiscountsFragment extends Fragment {
         return rootView;
     }
 
-    public void listAll(){
+    public void listAll() {
         discountList = ModelDiscountItem.getAll(this.getActivity(), true);
 
         DiscountListArrayAdapter adapter = new DiscountListArrayAdapter(this.getActivity(), discountList);
@@ -68,16 +67,16 @@ public class SavedDiscountsFragment extends Fragment {
         listView.setAdapter(adapter);
     }
 
-    public ListView getListView(){
+    public ListView getListView() {
         return this.listView;
     }
 
 
-    public class DiscountListArrayAdapter extends ArrayAdapter<DiscountItem>{
+    public class DiscountListArrayAdapter extends ArrayAdapter<DiscountItem> {
         private final Context context;
         private final ArrayList<DiscountItem> values;
 
-        public DiscountListArrayAdapter(Context context, ArrayList<DiscountItem> values){
+        public DiscountListArrayAdapter(Context context, ArrayList<DiscountItem> values) {
             super(context, R.layout.item_list_saved_discounts, values);
 
             this.context = context;
@@ -85,7 +84,7 @@ public class SavedDiscountsFragment extends Fragment {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent){
+        public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -100,7 +99,7 @@ public class SavedDiscountsFragment extends Fragment {
             DiscountItem item = values.get(position);
 
             String discountName = item.getDiscountName();
-            if(discountName != null){
+            if (discountName != null) {
                 itemName.setText(discountName);
                 itemName.setVisibility(View.VISIBLE);
             }
@@ -113,11 +112,11 @@ public class SavedDiscountsFragment extends Fragment {
                             ((DiscountItemDifference) item).getPercentageDiscount())
                     .concat(getResources().getString(R.string.percent_off));
             String strSavings = CurrencyProvider.getFormattedAmount(
-                                    item.getSavings()
-                                    , true);
+                    item.getSavings()
+                    , true);
 
 
-                    itemPriceBefore.setPaintFlags(itemPriceBefore.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            itemPriceBefore.setPaintFlags(itemPriceBefore.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
             itemPriceBefore.setText(strPriceBefore);
 
             itemPriceAfter.setText(strPriceAfter);

@@ -40,11 +40,11 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
 
         editPriceBefore = (EditText) rootView.findViewById(R.id.editPriceBefore);
         editPriceBefore.addTextChangedListener(new ListenerEditTextChange(this));
-        editPriceBefore.setFilters(new InputFilter[]{ new priceEditInputFilter() });
+        editPriceBefore.setFilters(new InputFilter[]{new priceEditInputFilter()});
 
         editPriceAfter = (EditText) rootView.findViewById(R.id.editPriceAfter);
         editPriceAfter.addTextChangedListener(new ListenerEditTextChange(this));
-        editPriceAfter.setFilters(new InputFilter[]{ new priceEditInputFilter() });
+        editPriceAfter.setFilters(new InputFilter[]{new priceEditInputFilter()});
 
         textCurrencyInlineBefore = (TextView) rootView.findViewById(R.id.textCurrencyInlineBefore);
         textCurrencyInlineBefore.setText(CurrencyProvider.getSymbol());
@@ -73,7 +73,7 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
         Toast confirmationToast = Toast
                 .makeText(getActivity(), R.string.prompt_save_succesful, Toast.LENGTH_SHORT);
 
-        confirmationToast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, ((ActionBarActivity)getActivity()).getSupportActionBar().getHeight() + getResources().getDimensionPixelSize(R.dimen.toastSaveConfirmationMarginTop));
+        confirmationToast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, ((ActionBarActivity) getActivity()).getSupportActionBar().getHeight() + getResources().getDimensionPixelSize(R.dimen.toastSaveConfirmationMarginTop));
         confirmationToast.show();
     }
 
@@ -81,10 +81,10 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
     protected DiscountItemDifference calculateResult() {
         double priceBefore, priceAfter;
 
-        try{
+        try {
             priceBefore = Double.valueOf(getStringFromNumberEditText(editPriceBefore));
             priceAfter = Double.valueOf(getStringFromNumberEditText(editPriceAfter));
-        } catch(Exception e) {
+        } catch (Exception e) {
             Log.i("Slevnicek", e.toString());
             return null;
         }
@@ -107,23 +107,23 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
 
         textDifferencePercentResult.setText(resultPercent);
         textDifferencePercentResult.setTextColor(percentage_discount_double < Constants.DEFAULT_DOUBLE ?
-                                                getResources().getColor(R.color.theme_red) :
-                                               getResources().getColor(R.color.black));
+                getResources().getColor(R.color.theme_red) :
+                getResources().getColor(R.color.black));
 
 
         boolean isSavings = savings_double > Constants.DEFAULT_DOUBLE;
         boolean isZero = savings_double == Constants.DEFAULT_DOUBLE;
 
         textYouSave.setText(isSavings || isZero ?
-                                getResources().getText(R.string.you_save) :
-                                getResources().getText(R.string.you_lose));
+                getResources().getText(R.string.you_save) :
+                getResources().getText(R.string.you_lose));
 
         textYouSaveResult.setText(resultYouSave);
         textYouSaveResult.setTextColor(isSavings ?
-                                          getResources().getColor(R.color.theme_green) :
-                                       isZero ?
-                                          getResources().getColor(R.color.black) :
-                                          getResources().getColor(R.color.theme_red));
+                getResources().getColor(R.color.theme_green) :
+                isZero ?
+                        getResources().getColor(R.color.black) :
+                        getResources().getColor(R.color.theme_red));
 
 
         textPriceBeforeMinusPriceAfter

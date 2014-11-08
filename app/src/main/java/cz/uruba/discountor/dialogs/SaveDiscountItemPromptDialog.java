@@ -4,8 +4,8 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
-import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -54,7 +54,7 @@ public class SaveDiscountItemPromptDialog extends DialogFragment {
                             @Override
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 String optionalName = optionalNameEditText.getText().toString();
-                                ((AbstractCalculatorFragment)getTargetFragment()).saveResultValuesToDB(optionalName.trim());
+                                ((AbstractCalculatorFragment) getTargetFragment()).saveResultValuesToDB(optionalName.trim());
                             }
                         }
                 )

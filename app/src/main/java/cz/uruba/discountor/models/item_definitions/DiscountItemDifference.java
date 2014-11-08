@@ -9,18 +9,18 @@ public class DiscountItemDifference extends DiscountItem {
 
     private double priceBefore, priceAfter, percentageDiscount;
 
-    public DiscountItemDifference(double priceBefore, double priceAfter){
+    public DiscountItemDifference(double priceBefore, double priceAfter) {
         this.priceBefore = priceBefore;
         this.priceAfter = priceAfter;
 
         this.percentageDiscount = DisCalc.roundToDecimals(
-                                            DisCalc
-                                                .percentageFromOrigAndDisc(priceBefore, priceAfter),
-                                            2);
+                DisCalc
+                        .percentageFromOrigAndDisc(priceBefore, priceAfter),
+                2);
         this.db_id = DEFAULT_DB_ID;
     }
 
-    public DiscountItemDifference(int db_id, double priceBefore, double priceAfter, String discountName, int dateCreatedUNIXTimestamp){
+    public DiscountItemDifference(int db_id, double priceBefore, double priceAfter, String discountName, int dateCreatedUNIXTimestamp) {
         this(priceBefore, priceAfter);
 
         this.db_id = db_id;
@@ -29,17 +29,19 @@ public class DiscountItemDifference extends DiscountItem {
     }
 
 
-    public double getPriceBefore(){
+    public double getPriceBefore() {
         return this.priceBefore;
     }
 
-    public double getPriceAfter(){
+    public double getPriceAfter() {
         return this.priceAfter;
     }
 
-    public double getPercentageDiscount() {return this.percentageDiscount; }
+    public double getPercentageDiscount() {
+        return this.percentageDiscount;
+    }
 
-    public double getSavings(){
+    public double getSavings() {
         return this.priceBefore - this.priceAfter;
     }
 }

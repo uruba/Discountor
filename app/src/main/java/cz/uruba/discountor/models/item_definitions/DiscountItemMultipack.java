@@ -1,6 +1,5 @@
 package cz.uruba.discountor.models.item_definitions;
 
-import cz.uruba.discountor.constants.Constants;
 import cz.uruba.discountor.utils.DisCalc;
 
 /**
@@ -11,20 +10,20 @@ public class DiscountItemMultipack extends DiscountItem {
     private double priceSingle, priceMulti, percentageDiscount;
     private int pcsMulti;
 
-    public DiscountItemMultipack(double priceSingle, double priceMulti, int pcsMulti){
+    public DiscountItemMultipack(double priceSingle, double priceMulti, int pcsMulti) {
         this.priceSingle = priceSingle;
         this.priceMulti = priceMulti;
 
         this.pcsMulti = pcsMulti;
 
         this.percentageDiscount = DisCalc.roundToDecimals(
-                                        DisCalc
-                                                .percentageFromOrigAndDisc(this.getPriceBefore(), priceMulti),
-                                        2);
+                DisCalc
+                        .percentageFromOrigAndDisc(this.getPriceBefore(), priceMulti),
+                2);
         this.db_id = DEFAULT_DB_ID;
     }
 
-    public DiscountItemMultipack(int db_id, double priceSingle, double priceMulti, int pcsMulti, String discountName){
+    public DiscountItemMultipack(int db_id, double priceSingle, double priceMulti, int pcsMulti, String discountName) {
         this(priceSingle, priceMulti, pcsMulti);
 
         this.db_id = db_id;
@@ -39,7 +38,7 @@ public class DiscountItemMultipack extends DiscountItem {
         return this.priceMulti;
     }
 
-    public double getPriceMultiSinglePc(){
+    public double getPriceMultiSinglePc() {
         return this.priceMulti / pcsMulti;
     }
 
@@ -52,11 +51,13 @@ public class DiscountItemMultipack extends DiscountItem {
         return this.percentageDiscount;
     }
 
-    public double getSavingsPerPc(){
+    public double getSavingsPerPc() {
         return this.getSavingsAltogether() / pcsMulti;
     }
 
-    public int getNoOfItems() { return this.pcsMulti; }
+    public int getNoOfItems() {
+        return this.pcsMulti;
+    }
 
     @Override
     public double getPriceBefore() {

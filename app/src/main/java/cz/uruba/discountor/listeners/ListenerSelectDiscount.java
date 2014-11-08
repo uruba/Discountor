@@ -1,18 +1,18 @@
 package cz.uruba.discountor.listeners;
 
-import cz.uruba.discountor.DiscountCalculatorPercentageFragment;
-
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
+import cz.uruba.discountor.DiscountCalculatorPercentageFragment;
+
 public class ListenerSelectDiscount implements Spinner.OnItemSelectedListener {
-	DiscountCalculatorPercentageFragment fragment;
-	
-	
-	public ListenerSelectDiscount(DiscountCalculatorPercentageFragment fragment){
-		this.fragment = fragment;
-	}
+    DiscountCalculatorPercentageFragment fragment;
+
+
+    public ListenerSelectDiscount(DiscountCalculatorPercentageFragment fragment) {
+        this.fragment = fragment;
+    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

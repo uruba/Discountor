@@ -14,10 +14,10 @@ public class DiscountItemPercentage extends DiscountItem {
 
 
     // START constructors
-    public DiscountItemPercentage(boolean isPriceBefore, double priceValue, int discountValue){
+    public DiscountItemPercentage(boolean isPriceBefore, double priceValue, int discountValue) {
         this.isPriceBefore = isPriceBefore;
 
-        if(isPriceBefore) {
+        if (isPriceBefore) {
             this.priceBefore = priceValue;
         } else {
             this.priceAfter = priceValue;
@@ -27,12 +27,12 @@ public class DiscountItemPercentage extends DiscountItem {
         this.db_id = DEFAULT_DB_ID;
     }
 
-    public DiscountItemPercentage(boolean isPriceBefore, double priceValue, int discountValue, String discountName){
+    public DiscountItemPercentage(boolean isPriceBefore, double priceValue, int discountValue, String discountName) {
         this(isPriceBefore, priceValue, discountValue);
         this.setDiscountName(discountName);
     }
 
-    public DiscountItemPercentage(int db_id, boolean isPriceBefore, double priceValue, int discountValue, String discountName, int dateCreatedUNIXTimestamp){
+    public DiscountItemPercentage(int db_id, boolean isPriceBefore, double priceValue, int discountValue, String discountName, int dateCreatedUNIXTimestamp) {
         this(isPriceBefore, priceValue, discountValue, discountName);
 
         this.db_id = db_id;
@@ -44,8 +44,8 @@ public class DiscountItemPercentage extends DiscountItem {
     // START Getters and setters
 
     public double getPriceBefore() {
-        if (priceBefore == Constants.DEFAULT_DOUBLE && !isPriceBefore){
-           return DisCalc.origFromPercentage(priceAfter, discountValue);
+        if (priceBefore == Constants.DEFAULT_DOUBLE && !isPriceBefore) {
+            return DisCalc.origFromPercentage(priceAfter, discountValue);
         }
 
         return priceBefore;
@@ -56,7 +56,7 @@ public class DiscountItemPercentage extends DiscountItem {
     }
 
     public double getPriceAfter() {
-        if (priceAfter == Constants.DEFAULT_DOUBLE){
+        if (priceAfter == Constants.DEFAULT_DOUBLE) {
             return DisCalc.discFromPercentage(priceBefore, discountValue);
         }
 
@@ -67,11 +67,11 @@ public class DiscountItemPercentage extends DiscountItem {
         return isPriceBefore;
     }
 
-    public double getSavings(){
+    public double getSavings() {
         return DisCalc.amountSavedFromOrigAndDisc(this.getPriceBefore(), this.getPriceAfter());
     }
 
-    public int getDateCreatedUNIXTimestamp(){
+    public int getDateCreatedUNIXTimestamp() {
         return dateCreatedUNIXTimestamp;
     }
     // END Getters and setters

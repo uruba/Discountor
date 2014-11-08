@@ -21,9 +21,9 @@ public class ActivitySavedDiscounts extends ActionBarActivity {
 
 
         if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new SavedDiscountsFragment()).commit();
-		}
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new SavedDiscountsFragment()).commit();
+        }
     }
 
 

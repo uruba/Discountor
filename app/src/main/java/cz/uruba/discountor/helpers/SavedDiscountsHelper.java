@@ -20,10 +20,7 @@ import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 public class SavedDiscountsHelper extends SQLiteOpenHelper {
 
     private static final int DB_VERSION = 2;
-    private SQLiteDatabase db;
-
     private static final String DB_NAME = "discountor_data";
-
     private static final String TABLE_PERCENTAGE_DISCOUNT_RECORDS = "percentage_discount_records";
     private static final String COLUMN_ID = "_id";
     private static final String PRICE_BEFORE = "price_before";
@@ -31,23 +28,16 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
     private static final String DISCOUNT_VALUE = "discount_value";
     private static final String DISPLAYED_NAME = "displayed_name";
     private static final String DATE_CREATED = "date_created";
-
-    private static final String TABLE_DIFFERENCE_DISCOUNT_RECORDS = "difference_discount_records";
-    private static final String PRICE_BEFORE_VALUE = "price_before_value";
-    private static final String PRICE_AFTER_VALUE = "price_after_value";
-
-
     private static final String QUERY_CREATE_TABLE_PERCENTAGE_DISCOUNTS
             = "CREATE TABLE " + TABLE_PERCENTAGE_DISCOUNT_RECORDS
             + "("
-               + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-               + PRICE_BEFORE + " INTEGER, "
-               + PRICE_VALUE + " TEXT, "
-               + DISCOUNT_VALUE + " INTEGER, "
-               + DISPLAYED_NAME + " TEXT,"
-               + DATE_CREATED + " DATETIME DEFAULT CURRENT_TIMESTAMP"
+            + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + PRICE_BEFORE + " INTEGER, "
+            + PRICE_VALUE + " TEXT, "
+            + DISCOUNT_VALUE + " INTEGER, "
+            + DISPLAYED_NAME + " TEXT,"
+            + DATE_CREATED + " DATETIME DEFAULT CURRENT_TIMESTAMP"
             + ")";
-
     private static final String QUERY_READ_ALL_PERCENTAGE_DISCOUNTS
             = "SELECT "
             + COLUMN_ID + ", "
@@ -57,8 +47,9 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
             + DISPLAYED_NAME + ", "
             + "strftime('%s', " + DATE_CREATED + ") "
             + "FROM " + TABLE_PERCENTAGE_DISCOUNT_RECORDS;
-
-
+    private static final String TABLE_DIFFERENCE_DISCOUNT_RECORDS = "difference_discount_records";
+    private static final String PRICE_BEFORE_VALUE = "price_before_value";
+    private static final String PRICE_AFTER_VALUE = "price_after_value";
     private static final String QUERY_CREATE_TABLE_DIFFERENCE_DISCOUNTS
             = "CREATE TABLE " + TABLE_DIFFERENCE_DISCOUNT_RECORDS
             + "("
@@ -68,7 +59,6 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
             + DISPLAYED_NAME + " TEXT,"
             + DATE_CREATED + " DATETIME DEFAULT CURRENT_TIMESTAMP"
             + ")";
-
     private static final String QUERY_READ_ALL_DIFFERENCE_DISCOUNTS
             = "SELECT "
             + COLUMN_ID + ", "
@@ -77,11 +67,19 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
             + DISPLAYED_NAME + ", "
             + "strftime('%s', " + DATE_CREATED + ") "
             + "FROM " + TABLE_DIFFERENCE_DISCOUNT_RECORDS;
-
-
     private static final String TABLE_VERSION_ONE_DEPRECATED = "discount_records";
-
     private static SavedDiscountsHelper mDBHelper;
+    private SQLiteDatabase db;
+
+    private SavedDiscountsHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+
+        this.db = getWritableDatabase();
+    }
+
+    private SavedDiscountsHelper(Context context) {
+        this(context, DB_NAME, null, DB_VERSION);
+    }
 
     public static SavedDiscountsHelper getInstance(Context ctx) {
 
@@ -90,16 +88,6 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
         }
 
         return mDBHelper;
-    }
-
-    private SavedDiscountsHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-
-        this.db = getWritableDatabase();
-    }
-
-    private SavedDiscountsHelper(Context context){
-        this(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
@@ -123,32 +111,32 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertNew(DiscountItem item){
-       if(item instanceof DiscountItemPercentage) {
-           this.insertNew((DiscountItemPercentage) item);
-       }
-       if(item instanceof DiscountItemDifference) {
-           this.insertNew((DiscountItemDifference) item);
-       }
+    public void insertNew(DiscountItem item) {
+        if (item instanceof DiscountItemPercentage) {
+            this.insertNew((DiscountItemPercentage) item);
+        }
+        if (item instanceof DiscountItemDifference) {
+            this.insertNew((DiscountItemDifference) item);
+        }
 
-       return;
+        return;
     }
 
-    public void insertNew(DiscountItemPercentage item){
+    public void insertNew(DiscountItemPercentage item) {
         ContentValues insertedValues = new ContentValues();
         insertedValues.put(PRICE_BEFORE, item.isPriceBefore() ?
-                                            1 :
-                                            0);
+                1 :
+                0);
         insertedValues.put(PRICE_VALUE, item.isPriceBefore() ?
-                                            item.getPriceBefore() :
-                                            item.getPriceAfter());
+                item.getPriceBefore() :
+                item.getPriceAfter());
         insertedValues.put(DISCOUNT_VALUE, item.getDiscountValue());
         insertedValues.put(DISPLAYED_NAME, item.getDiscountName());
 
         db.insert(TABLE_PERCENTAGE_DISCOUNT_RECORDS, null, insertedValues);
     }
 
-    public void insertNew(DiscountItemDifference item){
+    public void insertNew(DiscountItemDifference item) {
         ContentValues insertedValues = new ContentValues();
         insertedValues.put(PRICE_BEFORE_VALUE, item.getPriceBefore());
         insertedValues.put(PRICE_AFTER_VALUE, item.getPriceAfter());
@@ -157,22 +145,22 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
         db.insert(TABLE_DIFFERENCE_DISCOUNT_RECORDS, null, insertedValues);
     }
 
-    public List<DiscountItem> retrieveAll(){
+    public List<DiscountItem> retrieveAll() {
         List<DiscountItem> discountItems = new ArrayList<DiscountItem>();
 
         String query = QUERY_READ_ALL_PERCENTAGE_DISCOUNTS;
 
         Cursor cursor = db.rawQuery(query, null);
 
-        if (cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             do {
                 DiscountItemPercentage discountItem = new DiscountItemPercentage(cursor.getInt(0),
-                                                             cursor.getInt(1) > 0,
-                                                             cursor.getDouble(2),
-                                                             cursor.getInt(3),
-                                                             cursor.getString(4),
-                                                             cursor.getInt(5)
-                                                             );
+                        cursor.getInt(1) > 0,
+                        cursor.getDouble(2),
+                        cursor.getInt(3),
+                        cursor.getString(4),
+                        cursor.getInt(5)
+                );
                 discountItems.add(discountItem);
             } while (cursor.moveToNext());
         }
@@ -184,7 +172,7 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
 
         cursor = db.rawQuery(query, null);
 
-        if (cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             do {
                 DiscountItemDifference discountItem = new DiscountItemDifference(cursor.getInt(0),
                         cursor.getDouble(1),
@@ -201,23 +189,20 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
         return discountItems;
     }
 
-    private void deleteByID(int id, String tableName){
+    private void deleteByID(int id, String tableName) {
         db.delete(tableName,
-                    COLUMN_ID + " = ?",
-                    new String[] { String.valueOf(id) } );
+                COLUMN_ID + " = ?",
+                new String[]{String.valueOf(id)});
     }
 
-    public void deleteByID(DiscountItem item){
+    public void deleteByID(DiscountItem item) {
         String tableName;
 
-        if(item instanceof DiscountItemPercentage){
+        if (item instanceof DiscountItemPercentage) {
             tableName = TABLE_PERCENTAGE_DISCOUNT_RECORDS;
-        }
-        else
-        if(item instanceof DiscountItemDifference){
+        } else if (item instanceof DiscountItemDifference) {
             tableName = TABLE_DIFFERENCE_DISCOUNT_RECORDS;
-        }
-        else {
+        } else {
             return;
         }
 

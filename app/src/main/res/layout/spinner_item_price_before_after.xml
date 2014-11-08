@@ -4,7 +4,6 @@
     android:id="@+id/spinner_item_price_before_after_text"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textSize="@dimen/valueLabelsTextSize"
     android:gravity="right"
     android:textColor="@color/dark_grey"
-    />
+    android:textSize="@dimen/valueLabelsTextSize" />

@@ -13,36 +13,34 @@
         <item name="android:actionModeCloseDrawable">@drawable/abc_ic_ab_back_holo_light</item>
         <item name="android:textColorHighlight">#50c70000</item>
         <item name="android:textSelectHandleLeft">@drawable/apptheme_text_select_handle_left</item>
-        <item name="android:textSelectHandleRight">@drawable/apptheme_text_select_handle_right</item>
+        <item name="android:textSelectHandleRight">@drawable/apptheme_text_select_handle_right
+        </item>
         <item name="android:textSelectHandle">@drawable/apptheme_text_select_handle_middle</item>
+    </style>
+
+    <!-- @Override – Default ActionBar style -->
+    <style name="ActionBarSlevnicek" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/theme_red</item>
+        <item name="android:titleTextStyle">@style/TitleTextStyle</item>
+        <item name="android:displayOptions">showHome|showTitle</item>
+    </style>
+
+    <style name="DialogText"></style>
+
+
+    <!--
+   <style name="TitleTextStyle"
+          parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+       <item name="android:textColor">@color/white</item>
    </style>
+   -->
 
-   <!-- @Override – Default ActionBar style -->
-    <style name="ActionBarSlevnicek"
-           parent="@android:style/Widget.Holo.Light.ActionBar">
-        	<item name="android:background">@color/theme_red</item>
-        	<item name="android:titleTextStyle">@style/TitleTextStyle</item>
-        	<item name="android:displayOptions">showHome|showTitle</item>
-    </style>
-
-    <style name="DialogText">
-    </style>
-
- 
- 	<!-- 
-    <style name="TitleTextStyle"
-           parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <item name="android:textColor">@color/white</item>
-    </style>  
-    -->
-    
     <!-- @Override - Settings screen style  -->
     <style name="SettingsTheme" parent="@style/AppTheme">
         <item name="android:actionBarStyle">@style/ActionBarSettings</item>
     </style>
-    
-    <style name="ActionBarSettings"
-           parent="@style/ActionBarSlevnicek">
+
+    <style name="ActionBarSettings" parent="@style/ActionBarSlevnicek">
         <item name="android:displayOptions">showTitle</item>
     </style>
 

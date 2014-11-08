@@ -32,15 +32,15 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
 
         editPriceSingle = (EditText) rootView.findViewById(R.id.editPriceSingle);
         editPriceSingle.addTextChangedListener(new ListenerEditTextChange(this));
-        editPriceSingle.setFilters(new InputFilter[]{ new priceEditInputFilter() });
+        editPriceSingle.setFilters(new InputFilter[]{new priceEditInputFilter()});
 
         editPriceMultipack = (EditText) rootView.findViewById(R.id.editPriceMultipack);
         editPriceMultipack.addTextChangedListener(new ListenerEditTextChange(this));
-        editPriceMultipack.setFilters(new InputFilter[]{ new priceEditInputFilter() });
+        editPriceMultipack.setFilters(new InputFilter[]{new priceEditInputFilter()});
 
         editMultipackPcs = (EditText) rootView.findViewById(R.id.editMultipackPcs);
         editMultipackPcs.addTextChangedListener(new ListenerEditTextChange(this));
-        editMultipackPcs.setFilters(new InputFilter[]{ new discountEditInputFilter() });
+        editMultipackPcs.setFilters(new InputFilter[]{new discountEditInputFilter()});
 
         textWouldCost = (TextView) rootView.findViewById(R.id.textWouldCost);
 
@@ -61,10 +61,10 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
         return rootView;
     }
 
-	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
-		inflater.inflate(R.menu.discount_multipack, menu);
-	}
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.discount_multipack, menu);
+    }
 
     @Override
     public void saveResultValuesToDB(String optionalName) {
@@ -76,11 +76,11 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
         double priceSingle, priceMultipack;
         int multipackPcs;
 
-        try{
+        try {
             priceSingle = Double.valueOf(getStringFromNumberEditText(editPriceSingle));
             priceMultipack = Double.valueOf(getStringFromNumberEditText(editPriceMultipack));
             multipackPcs = Integer.valueOf(getStringFromNumberEditText(editMultipackPcs));
-        } catch(Exception e) {
+        } catch (Exception e) {
             Log.i("Slevnicek", e.toString());
             return null;
         }
@@ -90,7 +90,7 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
 
     @Override
     public void setTextResult() {
-		DiscountItemMultipack result = calculateResult();
+        DiscountItemMultipack result = calculateResult();
 
         String resultSavedPercentage;
         String resultSavedAmount;
@@ -105,8 +105,8 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
         resultSavedAmount = CurrencyProvider.getFormattedAmount(saved_amount_double, true);
 
         textSavedPercentage.setText(isSavings || isZero ?
-                                    getResources().getText(R.string.saved_percentage) :
-                                    getResources().getText(R.string.lost_percentage));
+                getResources().getText(R.string.saved_percentage) :
+                getResources().getText(R.string.lost_percentage));
 
         textSavedPercentageResult.setText(resultSavedPercentage);
         textSavedPercentageResult.setTextColor(saved_percentage_double < Constants.DEFAULT_DOUBLE ?
@@ -114,9 +114,9 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
                 getResources().getColor(R.color.black));
 
         textSavedAmount.setText(isSavings || isZero ?
-                                    getResources().getText(R.string.saved_total) :
-                                    getResources().getText(R.string.lost_total)
-                                    );
+                        getResources().getText(R.string.saved_total) :
+                        getResources().getText(R.string.lost_total)
+        );
 
         textSavedAmountResult.setText(resultSavedAmount);
         textSavedAmountResult.setTextColor(isSavings ?
@@ -127,12 +127,12 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
 
         textWouldCost.setText(
                 Html.fromHtml(
-                    String.format(
-                            getActivity().getResources().getString(R.string.when_purchased_separately_it_would_cost),
-                            String.valueOf(result.getNoOfItems()),
-                            CurrencyProvider.getFormattedAmount(result.getPriceSingle(), true),
-                            CurrencyProvider.getFormattedAmount(result.getNoOfItems() * result.getPriceSingle(), true)
-                    )
+                        String.format(
+                                getActivity().getResources().getString(R.string.when_purchased_separately_it_would_cost),
+                                String.valueOf(result.getNoOfItems()),
+                                CurrencyProvider.getFormattedAmount(result.getPriceSingle(), true),
+                                CurrencyProvider.getFormattedAmount(result.getNoOfItems() * result.getPriceSingle(), true)
+                        )
                 )
 
         );
@@ -140,16 +140,16 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
         textPriceBeforeMinusPriceAfter.setText(getStringPriceBeforeMinusPriceAfter(result));
 
 
-	}
+    }
 
-	@Override
+    @Override
     public void resetEditValues(boolean showKeyboard) {
         editPriceMultipack.setText(Constants.EMPTY_STRING);
         editMultipackPcs.setText(Constants.EMPTY_STRING);
         editPriceSingle.setText(Constants.EMPTY_STRING);
 
         focusAndShowKeyboard(editPriceMultipack, showKeyboard);
-	}
-	
-	
+    }
+
+
 }

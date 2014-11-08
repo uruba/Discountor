@@ -19,7 +19,7 @@ public class CustomizedFragmentTabHost extends FragmentTabHost {
         setFocusableFalse();
     }
 
-    private void setFocusableFalse(){
+    private void setFocusableFalse() {
         setFocusable(false);
         setFocusableInTouchMode(false);
     }

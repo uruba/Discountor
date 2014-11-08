@@ -21,11 +21,11 @@ public class ListenerListSavedDiscountOnItemLongClick implements AdapterView.OnI
     private int position;
     private android.support.v7.view.ActionMode actionMode;
 
-    public ListenerListSavedDiscountOnItemLongClick(SavedDiscountsFragment fragment){
+    public ListenerListSavedDiscountOnItemLongClick(SavedDiscountsFragment fragment) {
         this.fragment = fragment;
     }
 
-    private ListenerListSavedDiscountOnItemLongClick(){
+    private ListenerListSavedDiscountOnItemLongClick() {
 
     }
 
@@ -55,7 +55,7 @@ public class ListenerListSavedDiscountOnItemLongClick implements AdapterView.OnI
 
         @Override
         public boolean onActionItemClicked(android.support.v7.view.ActionMode actionMode, MenuItem menuItem) {
-            switch(menuItem.getItemId()){
+            switch (menuItem.getItemId()) {
                 case R.id.action_delete_item:
                     DiscountItem clickedItem = (DiscountItem) fragment.getListView().getItemAtPosition(position);
 
@@ -65,8 +65,8 @@ public class ListenerListSavedDiscountOnItemLongClick implements AdapterView.OnI
                     ((SavedDiscountsFragment.DiscountListArrayAdapter) fragment.getListView().getAdapter()).remove(clickedItem);
 
                     Toast
-                        .makeText(fragment.getActivity(), R.string.saved_discount_item_delete, Toast.LENGTH_SHORT)
-                        .show();
+                            .makeText(fragment.getActivity(), R.string.saved_discount_item_delete, Toast.LENGTH_SHORT)
+                            .show();
 
                     actionMode.finish();
                     return true;

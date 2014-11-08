@@ -28,37 +28,36 @@ import cz.uruba.discountor.utils.DisCalc;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFragment{
+public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFragment {
 
-	// TextView declaration
-	private TextView textPriceResultLabel, textPriceResultValue, textYouSaveResultValue, textCurrencyInline, textPriceBeforeMinusPriceAfter;
-	// EditText declaration
-	private EditText editPrice, editDiscountValue;
-	// RadioGroup declaration
-	private Spinner selectBeforeAfterDiscount;
-	
-	
-	
-	// --- CONSTRUCTOR ---
-	public DiscountCalculatorPercentageFragment() {
-	}
-	
-	@Override
-	public void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);
-	}
+    // TextView declaration
+    private TextView textPriceResultLabel, textPriceResultValue, textYouSaveResultValue, textCurrencyInline, textPriceBeforeMinusPriceAfter;
+    // EditText declaration
+    private EditText editPrice, editDiscountValue;
+    // RadioGroup declaration
+    private Spinner selectBeforeAfterDiscount;
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		
-		View rootView = inflater.inflate(R.layout.fragment_discount_calculator, container,
-				false);
-		
-				
-		// init selectBeforeAfterDiscount Spinner and set onSelectItem listener
+
+    // --- CONSTRUCTOR ---
+    public DiscountCalculatorPercentageFragment() {
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View rootView = inflater.inflate(R.layout.fragment_discount_calculator, container,
+                false);
+
+
+        // init selectBeforeAfterDiscount Spinner and set onSelectItem listener
         ArrayList<String> itemList = new ArrayList<String>();
-        for(String[] item: Values.price_before_after){
+        for (String[] item : Values.price_before_after) {
             itemList.add(this.getString(getResources().getIdentifier(item[1], "string", this.getActivity().getPackageName())));
         }
         DiscountBeforeAfterAdapter spinAdapt = new DiscountBeforeAfterAdapter(this.getActivity(), R.layout.spinner_item_price_before_after, itemList);
@@ -68,82 +67,82 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
         selectBeforeAfterDiscount.setAdapter(spinAdapt);
         selectBeforeAfterDiscount.setOnItemSelectedListener(new ListenerSelectDiscount(this));
 
-		
-		// init textPriceResultLabel
-		textPriceResultLabel = (TextView) rootView.findViewById(R.id.textPrice2);
-		setTextBeforeAfter(selectBeforeAfterDiscount.getSelectedItemId());
-		
-		textPriceResultValue = (TextView) rootView.findViewById(R.id.textPriceResult);
-		textYouSaveResultValue = (TextView) rootView.findViewById(R.id.textYouSaveResult);
+
+        // init textPriceResultLabel
+        textPriceResultLabel = (TextView) rootView.findViewById(R.id.textPrice2);
+        setTextBeforeAfter(selectBeforeAfterDiscount.getSelectedItemId());
+
+        textPriceResultValue = (TextView) rootView.findViewById(R.id.textPriceResult);
+        textYouSaveResultValue = (TextView) rootView.findViewById(R.id.textYouSaveResult);
         textPriceBeforeMinusPriceAfter = (TextView) rootView.findViewById(R.id.textPriceBeforeMinusPriceAfter);
 
-		
-		//init editPrice EditText and set onChange listener and init its label (with currency symbol)
-		editPrice = (EditText) rootView.findViewById(R.id.editPrice);
-		editPrice.addTextChangedListener(new ListenerEditTextChange(this));
-		editPrice.setFilters(new InputFilter[]{ new priceEditInputFilter() });
-		
-		textCurrencyInline = (TextView) rootView.findViewById(R.id.textCurrencyInline);
-		textCurrencyInline.setText(CurrencyProvider.getSymbol());
+
+        //init editPrice EditText and set onChange listener and init its label (with currency symbol)
+        editPrice = (EditText) rootView.findViewById(R.id.editPrice);
+        editPrice.addTextChangedListener(new ListenerEditTextChange(this));
+        editPrice.setFilters(new InputFilter[]{new priceEditInputFilter()});
+
+        textCurrencyInline = (TextView) rootView.findViewById(R.id.textCurrencyInline);
+        textCurrencyInline.setText(CurrencyProvider.getSymbol());
 
         //((TextView) rootView.findViewById(R.id.textDiscountValue)).append(":");
 
-		// init editDiscountValue EditText
-		editDiscountValue = (EditText) rootView.findViewById(R.id.editDiscountValue);
-		editDiscountValue.addTextChangedListener(new ListenerEditTextChange(this));
-		editDiscountValue.setFilters(new InputFilter[]{ new discountEditInputFilter() });
+        // init editDiscountValue EditText
+        editDiscountValue = (EditText) rootView.findViewById(R.id.editDiscountValue);
+        editDiscountValue.addTextChangedListener(new ListenerEditTextChange(this));
+        editDiscountValue.setFilters(new InputFilter[]{new discountEditInputFilter()});
 
-		resetEditValues(false);
+        resetEditValues(false);
 
-		return rootView;
-	}
+        return rootView;
+    }
 
-	//----- START Text Before/After Discount manipulation
-	
-	private String formatTextBeforeAfter(long id){
-		String price_formatted_append = 
-				id == 0 ?
-				this.getString(R.string.price_after) : 
-				this.getString(R.string.price_before);
+    //----- START Text Before/After Discount manipulation
 
-		return String.format(this.getString(R.string.price_formatted), price_formatted_append);
-	}
-	
-	public void setTextBeforeAfter(long id){
-		textPriceResultLabel
-			.setText(formatTextBeforeAfter(id));
-	}
-	
-	//----- END Text Before/After Discount manipulation
+    private String formatTextBeforeAfter(long id) {
+        String price_formatted_append =
+                id == 0 ?
+                        this.getString(R.string.price_after) :
+                        this.getString(R.string.price_before);
 
-    private boolean isCheckedPriceBefore(){
+        return String.format(this.getString(R.string.price_formatted), price_formatted_append);
+    }
+
+    public void setTextBeforeAfter(long id) {
+        textPriceResultLabel
+                .setText(formatTextBeforeAfter(id));
+    }
+
+    //----- END Text Before/After Discount manipulation
+
+    private boolean isCheckedPriceBefore() {
         return selectBeforeAfterDiscount.getSelectedItemId() == 0;
     }
 
-	protected DiscountItemPercentage calculateResult(){
-		double price;
-		int discount;
-		
-		
-		try{
-			price = Double.valueOf(getStringFromNumberEditText(editPrice));
-			discount = Integer.valueOf(getStringFromNumberEditText(editDiscountValue));
-		} catch(Exception e) {
-			Log.i("Slevnicek", e.toString());
-			return null;
-		}
+    protected DiscountItemPercentage calculateResult() {
+        double price;
+        int discount;
+
+
+        try {
+            price = Double.valueOf(getStringFromNumberEditText(editPrice));
+            discount = Integer.valueOf(getStringFromNumberEditText(editDiscountValue));
+        } catch (Exception e) {
+            Log.i("Slevnicek", e.toString());
+            return null;
+        }
 
         boolean isPriceBefore = isCheckedPriceBefore();
 
 
         return new DiscountItemPercentage(isPriceBefore, price, discount);
-	}
+    }
 
-	public void setTextResult(){
-		DiscountItemPercentage result = calculateResult();
-		
-		String resultPrice;
-		String resultYouSave;
+    public void setTextResult() {
+        DiscountItemPercentage result = calculateResult();
+
+        String resultPrice;
+        String resultYouSave;
 
         Double savings_double = result.getSavings();
         Double resultPrice_double = result.isPriceBefore() ? result.getPriceAfter() : result.getPriceBefore();
@@ -153,33 +152,33 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
         resultYouSave = CurrencyProvider.getFormattedAmount(savings_double, true);
 
         editPrice.setTextColor(result.isPriceBefore() ?
-                                    getResources().getColor(R.color.theme_red) :
-                                    getResources().getColor(R.color.black));
-		textPriceResultValue
-			.setText(resultPrice);
+                getResources().getColor(R.color.theme_red) :
+                getResources().getColor(R.color.black));
+        textPriceResultValue
+                .setText(resultPrice);
         textPriceResultValue.setTextColor(!result.isPriceBefore() && resultPrice_double > Constants.DEFAULT_DOUBLE ?
-                                                getResources().getColor(R.color.theme_red) :
-                                                getResources().getColor(R.color.black));
-		textYouSaveResultValue
-			.setText(resultYouSave);
-        textYouSaveResultValue.setTextColor(DisCalc.roundToDecimals(savings_double,2) > Constants.DEFAULT_DOUBLE ?
-                                                getResources().getColor(R.color.theme_green) :
-                                                getResources().getColor(R.color.black));
+                getResources().getColor(R.color.theme_red) :
+                getResources().getColor(R.color.black));
+        textYouSaveResultValue
+                .setText(resultYouSave);
+        textYouSaveResultValue.setTextColor(DisCalc.roundToDecimals(savings_double, 2) > Constants.DEFAULT_DOUBLE ?
+                getResources().getColor(R.color.theme_green) :
+                getResources().getColor(R.color.black));
 
         textPriceBeforeMinusPriceAfter
                 .setText(getStringPriceBeforeMinusPriceAfter(result));
-		
-		result = null;
-	}
 
-	public void resetEditValues(boolean showKeyboard){
-		editPrice.setText(Constants.EMPTY_STRING);
-		editDiscountValue.setText(Constants.EMPTY_STRING);
-		
-	    focusAndShowKeyboard(editPrice, showKeyboard);
-	}
+        result = null;
+    }
 
-    public void saveResultValuesToDB(String optionalName){
+    public void resetEditValues(boolean showKeyboard) {
+        editPrice.setText(Constants.EMPTY_STRING);
+        editDiscountValue.setText(Constants.EMPTY_STRING);
+
+        focusAndShowKeyboard(editPrice, showKeyboard);
+    }
+
+    public void saveResultValuesToDB(String optionalName) {
         DiscountItemPercentage savedItem = calculateResult();
 
         if (optionalName != null && !optionalName.isEmpty()) {
@@ -191,10 +190,9 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
         Toast confirmationToast = Toast
                 .makeText(getActivity(), R.string.prompt_save_succesful, Toast.LENGTH_SHORT);
 
-        confirmationToast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, ((ActionBarActivity)getActivity()).getSupportActionBar().getHeight() + getResources().getDimensionPixelSize(R.dimen.toastSaveConfirmationMarginTop));
+        confirmationToast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, ((ActionBarActivity) getActivity()).getSupportActionBar().getHeight() + getResources().getDimensionPixelSize(R.dimen.toastSaveConfirmationMarginTop));
         confirmationToast.show();
     }
-	
-	
-	
+
+
 }

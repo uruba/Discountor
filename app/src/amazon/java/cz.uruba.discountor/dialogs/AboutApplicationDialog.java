@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
@@ -103,7 +102,7 @@ public class AboutApplicationDialog extends DialogFragment {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 Intent i = new Intent(Intent.ACTION_SEND);
                                 i.setType("message/rfc822");
-                                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"apps@uruba.me"});
+                                i.putExtra(Intent.EXTRA_EMAIL, new String[]{"apps@uruba.me"});
                                 i.putExtra(Intent.EXTRA_SUBJECT, "[Discountor] ");
                                 try {
                                     startActivity(Intent.createChooser(i, res.getString(R.string.prompt_email_title)));
