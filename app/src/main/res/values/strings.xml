@@ -99,5 +99,8 @@
         <![CDATA[
         %1$s items at %2$s/pc. would cost <b>%3$s</b>
         ]]></string>
+    <string name="saved_total_past_label">Total money saved</string>
+    <string name="saved_discounts_list_tab_label">List</string>
+    <string name="saved_discounts_stats_tab_label">Stats</string>
 
 </resources>

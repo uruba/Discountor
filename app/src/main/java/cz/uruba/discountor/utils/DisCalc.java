@@ -1,6 +1,9 @@
 package cz.uruba.discountor.utils;
 
+import java.util.ArrayList;
+
 import cz.uruba.discountor.constants.Constants;
+import cz.uruba.discountor.models.item_definitions.DiscountItem;
 
 public class DisCalc {
 
@@ -46,5 +49,15 @@ public class DisCalc {
         }
 
         return Constants.ONE_HUNDRED - (discPrice / (origPrice / Constants.ONE_HUNDRED));
+    }
+
+    public static double getTotalSavedFromDiscountItems(ArrayList<DiscountItem> discountItems) {
+        double savedTotal = Constants.DEFAULT_DOUBLE;
+
+        for (DiscountItem discountItem : discountItems) {
+            savedTotal += discountItem.getSavings();
+        }
+
+        return savedTotal;
     }
 }
