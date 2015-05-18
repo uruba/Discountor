@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General strings -->
+    <string name="app_name">Discountor</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_reset">Reset values</string>
+    <string name="action_about">About</string>
+    <string name="action_delete_item">Delete item</string>
+
+
+    <!-- Discount strings -->
+    <string name="before_discount">Before discount</string>
+    <string name="after_discount">After discount</string>
+    <string name="discount_percentage">Discount value</string>
+    <string name="discount_percentage_explicit">Discount percentage</string>
+    <string name="percent">%</string>
+
+    <!-- Price strings -->
+    <string name="price">Price</string>
+    <string name="price_formatted">Price %s</string>
+    <string name="price_before">before discount</string>
+    <string name="price_after">after discount</string>
+    <string name="zero">0</string>
+    <string name="zero_float">0.00</string>
+    <string name="na">–</string>
+    <string name="you_save">You save</string>
+    <string name="you_lose">You lose</string>
+    <string name="amount_saved">Amount saved</string>
+    <string name="percent_off">% off</string>
+
+    <!-- Mode strings -->
+    <string name="mode_percentage">Percentage</string>
+    <string name="mode_difference">Difference</string>
+    <string name="mode_multipack">Multipack</string>
+
+    <!-- Price before/after strings -->
+    <string name="spinner_price_before">Original price</string>
+    <string name="spinner_price_after">Discounted price</string>
+
+    <!-- Preference strings
+    <string name="toast_settings">This is Settings</string>
+    <string name="currency_category">Application defaults</string>
+    <string name="miscellaneous_category">Miscellaneous</string>
+    <string name="pref_title_default_currency">Displayed currency</string>
+    <string name="pref_title_default_mode">Default mode</string>
+    <string name="pref_summary_default_mode">Preffered application mode on application startup</string>
+
+    <string name="pref_title_about">About</string>
+    <string name="pref_summary_about">Info about this app</string>
+    
+    <string name="pref_title_preserve">Save state on exit</string>
+    <string name="pref_summary_preserve">Preserve currently input values</string>
+    
+    <string name="pref_title_activate_keyboard">Activate keyboard on deleting values</string>
+	<string name="pref_summary_on_activate_keyboard">Shows keyboard after pressing the "Delete" button (if hidden)</string>
+	<string name="pref_summary_off_activate_keyboard">Doesn\'t show keyboard after pressing the "Delete" button (if hidden)</string>
+	 -->
+
+    <string name="prompt_save">Save</string>
+    <string name="prompt_cancel">Cancel</string>
+    <string name="prompt_save_discount_title">Save discount</string>
+    <string name="prompt_name_optional">Optional name</string>
+    <string name="prompt_save_succesful">Discount saved succesfuly</string>
+
+    <string name="title_fragment_list_discounts">Saved discounts</string>
+    <string name="menu_title_about">About this app</string>
+    <string name="saved_discount_item_delete">Discount deleted</string>
+    <string name="list_saved_discounts_list_empty">You\'ve not saved any discounts yet</string>
+    <string name="prompt_email">Email me</string>
+    <string name="prompt_rate">Rate me</string>
+
+    <string name="about_title">About Discountor</string>
+    <string name="about_text">
+        <![CDATA[
+        <i>Discounts + calculator = Discountor.</i><br/> Quick and easy tool for your shopping needs.<br/><br/>
+        <b>This app is being made for you</b>, so your honest opinion is very important to me.<br/>
+        If you have any questions, comments, concerns or suggestions (as to how to make this app better for you), let\'s hear them!<br/>
+        ]]>
+    </string>
+    <string name="about_thank_you">Thank you for using Discountor.</string>
+    <string name="about_version_name">Application version:</string>
+    <string name="about_build_date">Build date:</string>
+    <string name="prompt_email_title">Send with</string>
+    <string name="toast_no_email_client">There is no e-mail client installed</string>
+
+    <string name="price_single">Price of single item</string>
+    <string name="price_multipack">Price of multipack</string>
+    <string name="pieces_multipack">Multipack size</string>
+    <string name="pcs">pcs.</string>
+    <string name="price_single_when_bought_separately">(when bought separately)</string>
+    <string name="saved_percentage">Saved in percent</string>
+    <string name="lost_percentage">Lost in percent</string>
+    <string name="saved_total">Saved by buying the multipack</string>
+    <string name="lost_total">Lost by buying the multipack</string>
+    <string name="when_purchased_separately_it_would_cost">
+        <![CDATA[
+        %1$s items at %2$s/pc. would cost <b>%3$s</b>
+        ]]></string>
+
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Slevkulačka</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Nastavení</string>
+    <string name="action_reset">Vymazat hodnoty</string>
+    <string name="action_about">O aplikaci</string>
+    <string name="action_delete_item">Smazat slevu</string>
+
+
+    <string name="before_discount">Před slevou</string>
+    <string name="after_discount">Po slevě</string>
+    <string name="discount_percentage">Výše slevy</string>
+    <string name="discount_percentage_explicit">Výše slevy v procentech</string>
+    <string name="percent">%</string>
+
+
+    <string name="price">Cena</string>
+    <string name="price_formatted">Cena %s</string>
+    <string name="price_before">před slevou</string>
+    <string name="price_after">po slevě</string>
+    <string name="zero">0</string>
+    <string name="zero_float">0.00</string>
+    <string name="na">–</string>
+    <string name="you_save">Ušetříte</string>
+    <string name="you_lose">Proděláte</string>
+    <string name="amount_saved">Ušetřeno</string>
+    <string name="percent_off">% sleva</string>
+
+    <string name="mode_percentage">Procento</string>
+    <string name="mode_difference">Rozdíl</string>
+    <string name="mode_multipack">Multipack</string>
+
+    <!-- Price before/after strings -->
+    <string name="spinner_price_before">Původní cena</string>
+    <string name="spinner_price_after">Cena po slevě</string>
+
+    <!-- Preference strings
+    <string name="currency_category">Application defaults</string>
+    <string name="miscellaneous_category">Miscellaneous</string>
+    <string name="pref_title_default_currency">Displayed currency</string>
+    <string name="pref_title_default_mode">Default mode</string>
+    <string name="pref_summary_default_mode">Preffered application mode on application startup</string>
+
+    <string name="pref_title_about">About</string>
+    <string name="pref_summary_about">Info about this app</string>
+
+    <string name="pref_title_preserve">Save state on exit</string>
+    <string name="pref_summary_preserve">Preserve currently input values</string>
+
+    <string name="pref_title_activate_keyboard">Activate keyboard on deleting values</string>
+    <string name="pref_summary_on_activate_keyboard">Shows keyboard after pressing the "Delete" button (if hidden)</string>
+    <string name="pref_summary_off_activate_keyboard">Doesn\'t show keyboard after pressing the "Delete" button (if hidden)</string>
+ -->
+
+
+    <string name="prompt_save">Uložit</string>
+    <string name="prompt_cancel">Zrušit</string>
+    <string name="prompt_save_discount_title">Uložit slevu</string>
+    <string name="prompt_name_optional">Poznámka (nepovinné)</string>
+    <string name="prompt_save_succesful">Sleva byla úspěšně uložena</string>
+
+    <string name="title_fragment_list_discounts">Uložené slevy</string>
+    <string name="menu_title_about">O aplikaci</string>
+    <string name="saved_discount_item_delete">Sleva smazána</string>
+    <string name="list_saved_discounts_list_empty">Ještě jste neuložili žádnou slevu</string>
+    <string name="prompt_email">Napsat e-mail</string>
+    <string name="prompt_rate">Ohodnotit</string>
+
+    <string name="about_title">O Slevkulačce</string>
+    <string name="about_text">
+        <![CDATA[
+        <i>Slevy + kalkulačka = Slevkulačka.</i><br/> Malý pomocník pro vaše nakupování.<br/><br/>
+        <b>Tato aplikace byla vytvořena pro vás</b>, váš názor je pro mě tedy velice důležitý.<br/>
+        Pokud máte jakékoli otázky, připomínky nebo návrhy, neváhejte mi napsat.<br/>
+        ]]>
+    </string>
+    <string name="about_thank_you">Děkuji, že používáte Slevkulačku.</string>
+    <string name="about_version_name">Verze aplikace:</string>
+    <string name="about_build_date">Datum sestavení:</string>
+    <string name="prompt_email_title">Odeslat skrze</string>
+    <string name="toast_no_email_client">E-mailový klient není nainstalován</string>
+
+    <string name="price_single">Cena jednoho kusu</string>
+    <string name="price_multipack">Cena multipacku</string>
+    <string name="pieces_multipack">Velikost multipacku</string>
+    <string name="pcs">ks</string>
+    <string name="price_single_when_bought_separately">(kupovaného samostatně)</string>
+    <string name="saved_percentage">Ušetříte procent</string>
+    <string name="lost_percentage">Proděláte procent</string>
+    <string name="saved_total">Koupí multipacku ušetříte</string>
+    <string name="lost_total">Koupí multipacku proděláte</string>
+    <string name="when_purchased_separately_it_would_cost">
+        <![CDATA[
+        %1$s kusů zboží v ceně %2$s/ks by stálo <b>%3$s</b>
+        ]]></string>
+</resources>

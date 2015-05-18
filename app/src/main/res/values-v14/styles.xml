@@ -1,0 +1,37 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    -->
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
+        <!--   your app branding color for the app bar -->
+        <item name="colorPrimary">@color/theme_red</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">#50c70000</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/theme_red</item>
+
+        <!-- API 14 theme customizations can go here. -->
+        <item name="android:actionModeBackground">@drawable/cab_bckg</item>
+        <!-- <item name="android:actionModeCloseDrawable">@drawable/abc_ic_ab_back_holo_light</item> -->
+        <item name="android:textColorHighlight">#50c70000</item>
+        <item name="android:textSelectHandleLeft">@drawable/apptheme_text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/apptheme_text_select_handle_right
+        </item>
+        <item name="android:textSelectHandle">@drawable/apptheme_text_select_handle_middle</item>
+    </style>
+
+    <style name="DialogText"></style>
+
+    <!-- @Override - Settings screen style  -->
+    <style name="SettingsTheme" parent="@style/AppTheme">
+        <item name="android:actionBarStyle">@style/ActionBarSettings</item>
+    </style>
+
+    <style name="ActionBarSettings" parent="@ActionBarDiscountor">
+        <item name="android:displayOptions">showTitle</item>
+    </style>
+
+</resources>

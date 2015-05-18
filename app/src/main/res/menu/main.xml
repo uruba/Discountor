@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cz.uruba.discountor.ActivityMain">
+
+    <item
+        android:id="@+id/action_list_discounts"
+        android:orderInCategory="99"
+        android:title="@string/title_fragment_list_discounts"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+        android:title="@string/menu_title_about"
+        app:showAsAction="never" />
+
+    <!--
+   <item
+    android:id="@+id/action_settings"
+    android:orderInCategory="100"
+    android:title="@string/action_settings"
+    app:showAsAction="never"/>
+      -->
+    <!--
+<item
+    android:id="@+id/action_about"
+    android:title="@string/menu_title_about"
+    android:orderInCategory="100"
+    app:showAsAction="never"
+    />
+-->
+</menu>

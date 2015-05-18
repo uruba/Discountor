@@ -1,0 +1,87 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    //------- Styles overriden in styles.xml for newer APIs
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+        <!--   your app branding color for the app bar -->
+        <item name="colorPrimary">@color/theme_red</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">#50c70000</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/theme_red</item>
+
+        <item name="actionBarStyle">@style/ActionBarDiscountor</item>
+        <item name="android:textColorHighlight">#99c70000</item>
+
+        <item name="android:spinnerStyle">@style/SpinnerTheme</item>
+        <item name="android:listViewStyle">@style/ListViewSpinnerTheme</item>
+        <item name="android:listViewWhiteStyle">@style/ListViewSpinnerTheme.White</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItemTheme</item>
+        <item name="actionModeBackground">@drawable/cab_bckg</item>
+    </style>
+
+    <style name="ActionBarDiscountor" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="titleTextStyle">@style/TitleTextStyle</item>
+        <item name="displayOptions">showHome|showTitle</item>
+    </style>
+
+    <style name="TitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/spinner_background_holo_light</item>
+        <item name="android:dropDownSelector">@drawable/list_selector_holo_light</item>
+    </style>
+
+    <style name="ListViewSpinnerTheme" parent="android:Widget.ListView">
+        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
+    </style>
+
+    <style name="ListViewSpinnerTheme.White" parent="android:Widget.ListView.White">
+        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
+    </style>
+
+    <style name="SpinnerItemTheme" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="DialogText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    //------------------------------------------------------------------------------------------------------------------------------
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:editTextStyle">@style/EditTextAppTheme</item>
+    </style>
+
+
+    <style name="EditTextAppTheme" parent="android:Widget.EditText">
+        <item name="android:background">@drawable/apptheme_edit_text_holo_light</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColorHint">@color/light_grey</item>
+    </style>
+
+    <!-- Settings screen style -->
+    <style name="SettingsTheme" parent="@style/AppTheme">
+        <item name="actionBarStyle">@style/ActionBarSettings</item>
+    </style>
+
+    <style name="ActionBarSettings" parent="ActionBarDiscountor">
+        <item name="displayOptions">showTitle</item>
+    </style>
+
+
+</resources>
