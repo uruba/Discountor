@@ -1,13 +1,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/listSavedDiscounts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white" />
+        android:background="@color/white"
+        android:divider="@color/super_light_grey"
+        android:dividerHeight="1dp"/>
 
 
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"

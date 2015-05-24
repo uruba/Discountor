@@ -189,13 +189,13 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
         return discountItems;
     }
 
-    private void deleteByID(int id, String tableName) {
-        db.delete(tableName,
+    private boolean deleteByID(int id, String tableName) {
+        return db.delete(tableName,
                 COLUMN_ID + " = ?",
-                new String[]{String.valueOf(id)});
+                new String[]{String.valueOf(id)}) != 0;
     }
 
-    public void deleteByID(DiscountItem item) {
+    public boolean deleteByID(DiscountItem item) {
         String tableName;
 
         if (item instanceof DiscountItemPercentage) {
@@ -203,11 +203,11 @@ public class SavedDiscountsHelper extends SQLiteOpenHelper {
         } else if (item instanceof DiscountItemDifference) {
             tableName = TABLE_DIFFERENCE_DISCOUNT_RECORDS;
         } else {
-            return;
+            return false;
         }
 
 
-        deleteByID(item.getDB_ID(), tableName);
+        return deleteByID(item.getDB_ID(), tableName);
     }
 
 }

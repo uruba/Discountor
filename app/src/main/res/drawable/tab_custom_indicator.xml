@@ -27,10 +27,11 @@
 
     <!-- Pressed -->
     <!--    Non focused states -->
-    <item android:drawable="@drawable/tab_unselected_pressed_example" android:state_focused="false" android:state_pressed="true" android:state_selected="false" />
-    <item android:drawable="@drawable/tab_selected_pressed_example" android:state_focused="false" android:state_pressed="true" android:state_selected="true" />
+    <item android:drawable="@drawable/tab_selected_example" android:state_focused="false" android:state_pressed="true" android:state_selected="false" />
+    <item android:drawable="@android:color/transparent" android:state_focused="false" android:state_pressed="true" android:state_selected="true" />
 
-    <!--    Focused states -->
+    <!--    Focused states
     <item android:drawable="@drawable/tab_unselected_pressed_example" android:state_focused="true" android:state_pressed="true" android:state_selected="false" />
     <item android:drawable="@drawable/tab_selected_pressed_example" android:state_focused="true" android:state_pressed="true" android:state_selected="true" />
+    -->
 </selector>

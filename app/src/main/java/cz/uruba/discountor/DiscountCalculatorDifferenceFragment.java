@@ -1,7 +1,7 @@
 package cz.uruba.discountor;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.Gravity;
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,8 +31,10 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_difference_discount, container,
+        rootView = inflater.inflate(R.layout.fragment_difference_discount, container,
                 false);
+
+        layoutMain = (RelativeLayout) rootView.findViewById(R.id.layout_main);
 
         textDifferencePercentResult = (TextView) rootView.findViewById(R.id.textDifferencePercentResult);
         textYouSave = (TextView) rootView.findViewById(R.id.textYouSave);
@@ -54,8 +57,7 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
 
         textPriceBeforeMinusPriceAfter = (TextView) rootView.findViewById(R.id.textPriceBeforeMinusPriceAfter);
 
-
-        resetEditValues(false);
+        populateEligibleEditTextsList();
 
         return rootView;
     }
@@ -73,7 +75,7 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
         Toast confirmationToast = Toast
                 .makeText(getActivity(), R.string.prompt_save_succesful, Toast.LENGTH_SHORT);
 
-        confirmationToast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, ((ActionBarActivity) getActivity()).getSupportActionBar().getHeight() + getResources().getDimensionPixelSize(R.dimen.toastSaveConfirmationMarginTop));
+        confirmationToast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, ((AppCompatActivity) getActivity()).getSupportActionBar().getHeight() + getResources().getDimensionPixelSize(R.dimen.toastSaveConfirmationMarginTop));
         confirmationToast.show();
     }
 
@@ -132,10 +134,13 @@ public class DiscountCalculatorDifferenceFragment extends AbstractCalculatorFrag
     }
 
     @Override
-    public void resetEditValues(boolean showKeyboard) {
+    public void resetEditValues() {
         editPriceBefore.setText(Constants.EMPTY_STRING);
         editPriceAfter.setText(Constants.EMPTY_STRING);
+    }
 
+    @Override
+    public void focusDefaultEditText(boolean showKeyboard) {
         focusAndShowKeyboard(editPriceBefore, showKeyboard);
     }
 }

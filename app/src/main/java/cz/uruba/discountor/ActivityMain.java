@@ -1,11 +1,12 @@
 package cz.uruba.discountor;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.FragmentTabHost;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,10 +16,12 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import cz.uruba.discountor.dialogs.AboutApplicationDialog;
+import cz.uruba.discountor.interfaces.onDiscountSaveListener;
 import cz.uruba.discountor.views.CustomizedFragmentTabHost;
 
-public class ActivityMain extends ActionBarActivity {
-    private FragmentTabHost tabHost;
+public class ActivityMain extends AppCompatActivity implements onDiscountSaveListener {
+    private CustomizedFragmentTabHost tabHost;
+    private SavedDiscountsFragment savedDiscountsFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,28 +33,84 @@ public class ActivityMain extends ActionBarActivity {
 
         if ((mask == Configuration.SCREENLAYOUT_SIZE_LARGE) ||
                 (mask == Configuration.SCREENLAYOUT_SIZE_XLARGE)) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 
-            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+            } else {
+                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+            }
         }
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         tabHost = (CustomizedFragmentTabHost) findViewById(R.id.tabhost);
         tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
         tabHost.getTabWidget().setDividerDrawable(R.drawable.tab_divider);
+        // TODO – resolve focusability issues when the tab changes
+        /*
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
-            public void onTabChanged(String s) {
+            public void onTabChanged(String tabId) {
+                for (String fragmentTag : tabHost.getFragmentTags()) {
+                    AbstractCalculatorFragment fragment = (AbstractCalculatorFragment) getSupportFragmentManager().findFragmentByTag(fragmentTag);
+
+                    if (fragment != null) {
+                        if (fragmentTag == tabId) {
+                            fragment.setEligibleEditTextsFocusableInTouchMode(true);
+                        } else {
+                            fragment.setEligibleEditTextsFocusableInTouchMode(false);
+                        }
+
+                    }
+                }
+
                 return;
             }
         });
+        */
 
 
         addTab(getResources().getString(R.string.mode_percentage), R.drawable.icon_percentage_discount, DiscountCalculatorPercentageFragment.class);
         addTab(getResources().getString(R.string.mode_difference), R.drawable.icon_difference_discount, DiscountCalculatorDifferenceFragment.class);
         addTab(getResources().getString(R.string.mode_multipack), R.drawable.icon_multipack_discount, DiscountCalculatorMultipackFragment.class);
 
+    }
+
+    @Override
+    protected  void onResume() {
+        if (isDualPane()) {
+            savedDiscountsFragment = new SavedDiscountsFragment();
+
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, savedDiscountsFragment).commit();
+        }
+
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        if (isDualPane()) {
+            getSupportFragmentManager().beginTransaction()
+                    .remove(savedDiscountsFragment).commit();
+        }
+
+        super.onPause();
+    }
+
+    private boolean isDualPane() {
+        return findViewById(R.id.left_pane) != null;
+    }
+
+    @Override
+    public void onDiscountSave() {
+        if (isDualPane() && savedDiscountsFragment != null) {
+            savedDiscountsFragment.listAll();
+        }
     }
 
     private void addTab(String label, int drawableId, Class<?> targetClass) {

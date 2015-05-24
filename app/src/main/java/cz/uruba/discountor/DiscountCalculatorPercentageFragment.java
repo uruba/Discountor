@@ -1,7 +1,7 @@
 package cz.uruba.discountor;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.Gravity;
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,9 +52,10 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_discount_calculator, container,
+        rootView = inflater.inflate(R.layout.fragment_discount_calculator, container,
                 false);
 
+        layoutMain = (RelativeLayout) rootView.findViewById(R.id.layout_main);
 
         // init selectBeforeAfterDiscount Spinner and set onSelectItem listener
         ArrayList<String> itemList = new ArrayList<String>();
@@ -77,7 +79,7 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
         textPriceBeforeMinusPriceAfter = (TextView) rootView.findViewById(R.id.textPriceBeforeMinusPriceAfter);
 
 
-        //init editPrice EditText and set onChange listener and init its label (with currency symbol)
+        //init editPrice EditText and set onChange listener and init its label (with the currency symbol)
         editPrice = (EditText) rootView.findViewById(R.id.editPrice);
         editPrice.addTextChangedListener(new ListenerEditTextChange(this));
         editPrice.setFilters(new InputFilter[]{new priceEditInputFilter()});
@@ -85,14 +87,13 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
         textCurrencyInline = (TextView) rootView.findViewById(R.id.textCurrencyInline);
         textCurrencyInline.setText(CurrencyProvider.getSymbol());
 
-        //((TextView) rootView.findViewById(R.id.textDiscountValue)).append(":");
 
         // init editDiscountValue EditText
         editDiscountValue = (EditText) rootView.findViewById(R.id.editDiscountValue);
         editDiscountValue.addTextChangedListener(new ListenerEditTextChange(this));
         editDiscountValue.setFilters(new InputFilter[]{new discountEditInputFilter()});
 
-        resetEditValues(false);
+        populateEligibleEditTextsList();
 
         return rootView;
     }
@@ -171,13 +172,18 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
         result = null;
     }
 
-    public void resetEditValues(boolean showKeyboard) {
+    @Override
+    public void resetEditValues() {
         editPrice.setText(Constants.EMPTY_STRING);
         editDiscountValue.setText(Constants.EMPTY_STRING);
+    }
 
+    @Override
+    public void focusDefaultEditText(boolean showKeyboard) {
         focusAndShowKeyboard(editPrice, showKeyboard);
     }
 
+    @Override
     public void saveResultValuesToDB(String optionalName) {
         DiscountItemPercentage savedItem = calculateResult();
 
@@ -190,9 +196,7 @@ public class DiscountCalculatorPercentageFragment extends AbstractCalculatorFrag
         Toast confirmationToast = Toast
                 .makeText(getActivity(), R.string.prompt_save_succesful, Toast.LENGTH_SHORT);
 
-        confirmationToast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, ((ActionBarActivity) getActivity()).getSupportActionBar().getHeight() + getResources().getDimensionPixelSize(R.dimen.toastSaveConfirmationMarginTop));
+        confirmationToast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, ((AppCompatActivity) getActivity()).getSupportActionBar().getHeight() + getResources().getDimensionPixelSize(R.dimen.toastSaveConfirmationMarginTop));
         confirmationToast.show();
     }
-
-
 }

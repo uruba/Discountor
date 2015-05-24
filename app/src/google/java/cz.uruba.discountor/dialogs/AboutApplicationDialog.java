@@ -11,7 +11,7 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
@@ -30,7 +30,7 @@ import cz.uruba.discountor.R;
 public class AboutApplicationDialog extends DialogFragment {
 
     private Resources res;
-    private ActionBarActivity parentActivity;
+    private AppCompatActivity parentActivity;
 
     @Override
     public void onStart() {
@@ -58,7 +58,7 @@ public class AboutApplicationDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         res = getResources();
-        parentActivity = (ActionBarActivity) getActivity();
+        parentActivity = (AppCompatActivity) getActivity();
 
         View dialogView = View.inflate(parentActivity, R.layout.dialog_about_application, null);
 

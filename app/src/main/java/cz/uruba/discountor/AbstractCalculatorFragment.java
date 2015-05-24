@@ -1,17 +1,23 @@
 package cz.uruba.discountor;
 
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+
 import cz.uruba.discountor.dialogs.SaveDiscountItemPromptDialog;
+import cz.uruba.discountor.listeners.ListenerEditTextInFragmentFocus;
 import cz.uruba.discountor.models.ModelDiscountItem;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
 import cz.uruba.discountor.utils.CurrencyProvider;
@@ -23,6 +29,13 @@ public abstract class AbstractCalculatorFragment extends Fragment {
 
     protected ModelDiscountItem modelDiscountItem;
 
+    protected View rootView;
+    protected ArrayList<EditText> eligibleEditTexts;
+    protected EditText activeEditText;
+    protected boolean paused;
+
+    protected ViewGroup layoutMain;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +45,66 @@ public abstract class AbstractCalculatorFragment extends Fragment {
         imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
 
         modelDiscountItem = new ModelDiscountItem(this.getActivity());
+
+        paused = false;
+        activeEditText = null;
+    }
+
+    protected void populateEligibleEditTextsList() {
+        // find all the EditText components in the rootView and bind a focus change listener to them
+        if (rootView != null) {
+            eligibleEditTexts = new ArrayList<>();
+
+            traverseViewGroupForEditTexts((ViewGroup) rootView);
+        }
+    }
+
+    protected void traverseViewGroupForEditTexts(ViewGroup viewGroup) {
+        for (int i = 0, count = viewGroup.getChildCount(); i < count; i++) {
+            View view = viewGroup.getChildAt(i);
+            if (view instanceof EditText) {
+                view.setOnFocusChangeListener(new ListenerEditTextInFragmentFocus(this));
+                eligibleEditTexts.add((EditText) view);
+            }
+            else if (view instanceof ViewGroup) {
+                traverseViewGroupForEditTexts((ViewGroup) view);
+            }
+        }
+    }
+
+    public void setEligibleEditTextsFocusableInTouchMode(boolean requestedValue) {
+        if (eligibleEditTexts != null) {
+            for (EditText editText : eligibleEditTexts) {
+                editText.setFocusable(requestedValue);
+                editText.setFocusableInTouchMode(requestedValue);
+            }
+        }
+    }
+
+    @Override
+    public void onResume(){
+        if ((paused == true) && (activeEditText != null)) {
+            // TODO focus previously active EditText instead of the default one
+            // focusAndShowKeyboard(activeEditText, true);
+            focusDefaultEditText(false);
+        } else {
+            if (paused == false) {
+                resetEditValues();
+            }
+            focusDefaultEditText(true);
+        }
+
+        paused = false;
+
+        super.onResume();
+    }
+
+    @Override
+    public void onPause(){
+
+        paused = true;
+
+        super.onPause();
     }
 
     @Override
@@ -48,10 +121,12 @@ public abstract class AbstractCalculatorFragment extends Fragment {
         switch (id) {
             case R.id.action_reset:
                 boolean showKeyboard = sharedPref.getBoolean("settings_show_keyboard_on_delete", true);
-                resetEditValues(showKeyboard);
+                resetEditValues();
+                focusDefaultEditText(showKeyboard);
                 break;
             case R.id.action_save:
                 SaveDiscountItemPromptDialog dialog = new SaveDiscountItemPromptDialog();
+                dialog.addOnDiscountSaveListener((ActivityMain) getActivity());
                 dialog.setTargetFragment(this, 0);
                 dialog.show(getActivity().getSupportFragmentManager(), null);
                 break;
@@ -76,7 +151,9 @@ public abstract class AbstractCalculatorFragment extends Fragment {
     }
 
     protected void focusAndShowKeyboard(EditText edit, boolean showKeyboard) {
-        edit.requestFocus();
+        if (edit != null) {
+            edit.requestFocus();
+        }
 
 
         if (showKeyboard) {
@@ -84,9 +161,16 @@ public abstract class AbstractCalculatorFragment extends Fragment {
         }
     }
 
+    public void setActiveEditText(EditText editText) {
+        if (eligibleEditTexts.contains(editText)) {
+            activeEditText = editText;
+        }
+    }
+
     abstract protected DiscountItem calculateResult();
 
     abstract public void setTextResult();
 
-    abstract public void resetEditValues(boolean showKeyboard);
+    abstract public void resetEditValues();
+    abstract public void focusDefaultEditText(boolean ShowKeyboard);
 }

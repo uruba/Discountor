@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cz.uruba.discountor"
-    android:versionCode="6"
-    android:versionName="1.13">
+    package="cz.uruba.discountor">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -35,11 +33,8 @@
             android:name=".ActivitySavedDiscounts"
             android:label="@string/title_fragment_list_discounts"
             android:parentActivityName="cz.uruba.discountor.ActivityMain"
-            android:windowSoftInputMode="stateAlwaysHidden">
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="cz.uruba.discountor.ActivityMain" />
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity

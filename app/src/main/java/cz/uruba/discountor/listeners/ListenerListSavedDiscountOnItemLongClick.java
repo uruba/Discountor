@@ -1,6 +1,6 @@
 package cz.uruba.discountor.listeners;
 
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -32,7 +32,7 @@ public class ListenerListSavedDiscountOnItemLongClick implements AdapterView.OnI
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        actionMode = ((ActionBarActivity) fragment.getActivity()).startSupportActionMode(new AMCallback());
+        actionMode = ((AppCompatActivity) fragment.getActivity()).startSupportActionMode(new AMCallback());
         this.position = position;
 
         return true;
@@ -60,9 +60,12 @@ public class ListenerListSavedDiscountOnItemLongClick implements AdapterView.OnI
                     DiscountItem clickedItem = (DiscountItem) fragment.getListView().getItemAtPosition(position);
 
                     SavedDiscountsHelper helper = SavedDiscountsHelper.getInstance(fragment.getActivity());
-                    helper.deleteByID(clickedItem);
 
-                    ((SavedDiscountsFragment.DiscountListArrayAdapter) fragment.getListView().getAdapter()).remove(clickedItem);
+                    if (!helper.deleteByID(clickedItem)) {
+                        return false;
+                    }
+
+                    fragment.listAll();
 
                     Toast
                             .makeText(fragment.getActivity(), R.string.saved_discount_item_delete, Toast.LENGTH_SHORT)

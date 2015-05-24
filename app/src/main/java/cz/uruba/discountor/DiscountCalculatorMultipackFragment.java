@@ -27,7 +27,7 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_multipack_discount, container,
+        rootView = inflater.inflate(R.layout.fragment_multipack_discount, container,
                 false);
 
         editPriceSingle = (EditText) rootView.findViewById(R.id.editPriceSingle);
@@ -56,7 +56,7 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
         textCurrencyInlineMultipack = (TextView) rootView.findViewById(R.id.textCurrencyInlineMultipack);
         textCurrencyInlineMultipack.setText(CurrencyProvider.getSymbol());
 
-        resetEditValues(false);
+        populateEligibleEditTextsList();
 
         return rootView;
     }
@@ -143,13 +143,14 @@ public class DiscountCalculatorMultipackFragment extends AbstractCalculatorFragm
     }
 
     @Override
-    public void resetEditValues(boolean showKeyboard) {
+    public void resetEditValues() {
         editPriceMultipack.setText(Constants.EMPTY_STRING);
         editMultipackPcs.setText(Constants.EMPTY_STRING);
         editPriceSingle.setText(Constants.EMPTY_STRING);
-
-        focusAndShowKeyboard(editPriceMultipack, showKeyboard);
     }
 
-
+    @Override
+    public void focusDefaultEditText(boolean showKeyboard) {
+        focusAndShowKeyboard(editPriceMultipack, showKeyboard);
+    }
 }

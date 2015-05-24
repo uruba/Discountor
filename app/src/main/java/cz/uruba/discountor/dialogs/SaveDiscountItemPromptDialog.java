@@ -10,13 +10,22 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import cz.uruba.discountor.AbstractCalculatorFragment;
 import cz.uruba.discountor.R;
+import cz.uruba.discountor.interfaces.onDiscountSaveListener;
 
 /**
  * Created by Temp on 27.7.2014.
  */
 public class SaveDiscountItemPromptDialog extends DialogFragment {
+
+    private ArrayList<onDiscountSaveListener> onDiscountSaveListeners;
+
+    public SaveDiscountItemPromptDialog() {
+        this.onDiscountSaveListeners = new ArrayList<>();
+    }
 
     @Override
     public void onStart() {
@@ -55,6 +64,7 @@ public class SaveDiscountItemPromptDialog extends DialogFragment {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 String optionalName = optionalNameEditText.getText().toString();
                                 ((AbstractCalculatorFragment) getTargetFragment()).saveResultValuesToDB(optionalName.trim());
+                                invokeOnDiscountSaveAtListeners();
                             }
                         }
                 )
@@ -67,5 +77,19 @@ public class SaveDiscountItemPromptDialog extends DialogFragment {
                         }
                 )
                 .create();
+    }
+
+    public void addOnDiscountSaveListener(onDiscountSaveListener listener) {
+        if(this.onDiscountSaveListeners.contains(listener)) {
+            return;
+        }
+
+        this.onDiscountSaveListeners.add(listener);
+    }
+
+    public void invokeOnDiscountSaveAtListeners() {
+        for (onDiscountSaveListener listener : onDiscountSaveListeners) {
+            listener.onDiscountSave();
+        }
     }
 }
