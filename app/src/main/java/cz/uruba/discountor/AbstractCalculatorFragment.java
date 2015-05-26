@@ -50,6 +50,12 @@ public abstract class AbstractCalculatorFragment extends Fragment {
         activeEditText = null;
     }
 
+    @Override
+    public void  onActivityCreated (Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setRetainInstance(true);
+    }
+
     protected void populateEligibleEditTextsList() {
         // find all the EditText components in the rootView and bind a focus change listener to them
         if (rootView != null) {
