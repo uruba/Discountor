@@ -199,86 +199,97 @@
         android:layerType="software" />
 
 
-
-    <LinearLayout
-        android:id="@+id/layout_saved_amount_result"
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_below="@+id/layout_divider"
-        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/component_margin">
 
-        android:layout_marginBottom="@dimen/component_margin"
-
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textSavedAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:includeFontPadding="false" />
-
-        <TextView
-            android:id="@+id/textSavedAmountResult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="@string/na"
-            android:textSize="@dimen/valueResultYouSaveTextSize"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
+        <TableRow>
+            <LinearLayout
+                android:id="@+id/layout_saved_amount_result"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
 
-                android:text=" = "
-                android:textColor="@color/light_grey"
-                android:textSize="@dimen/valueResultYouSaveTextSizeCalculation" />
+                android:gravity="center_horizontal"
 
-            <TextView
-                android:id="@+id/textPriceBeforeMinusPriceAfter"
-                android:layout_width="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textSavedAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false" />
+
+                <TextView
+                    android:id="@+id/textSavedAmountResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/na"
+                    android:textSize="@dimen/valueResultYouSaveTextSize"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text=" = "
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/valueResultYouSaveTextSizeCalculation" />
+
+                    <TextView
+                        android:id="@+id/textPriceBeforeMinusPriceAfter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/valueResultYouSaveTextSizeCalculation" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_saved_percentage_result"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
 
-                android:textColor="@color/light_grey"
-                android:textSize="@dimen/valueResultYouSaveTextSizeCalculation" />
-        </LinearLayout>
+                android:gravity="center_horizontal"
 
+                android:orientation="vertical">
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/textSavedPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saved_percentage" />
 
+                <TextView
+                    android:id="@+id/textSavedPercentageResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-    <LinearLayout
-        android:id="@+id/layout_saved_percentage_result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_saved_amount_result"
-        android:gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:text="@string/na"
+                    android:textSize="@dimen/textResultPrice"
+                    android:textStyle="bold" />
 
-        android:orientation="vertical">
+            </LinearLayout>
+        </TableRow>
 
-        <TextView
-            android:id="@+id/textSavedPercentage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/saved_percentage" />
+    </TableLayout>
 
-        <TextView
-            android:id="@+id/textSavedPercentageResult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:includeFontPadding="false"
-            android:text="@string/na"
-            android:textSize="@dimen/textResultPrice"
-            android:textStyle="bold" />
-
-    </LinearLayout>
 
 
 </RelativeLayout>

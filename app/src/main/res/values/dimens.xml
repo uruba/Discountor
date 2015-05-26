@@ -7,9 +7,9 @@
 
     <dimen name="action_bar_text_size">18sp</dimen>
 
-    <dimen name="component_margin">10dp</dimen>
-    <dimen name="component_margin_less">7dp</dimen>
-    <dimen name="layout_vertical_caption_margin">-6dp</dimen>
+    <dimen name="component_margin">16dp</dimen>
+    <dimen name="component_margin_less">8dp</dimen>
+    <dimen name="layout_vertical_caption_margin">-10dp</dimen>
 
     <dimen name="inline_symbol_margin">8dp</dimen>
     <dimen name="inline_number_margin">6dp</dimen>
@@ -19,11 +19,12 @@
     <dimen name="formSpinnerPadding">18dp</dimen>
 
     <dimen name="valueLabelsTextSize">18sp</dimen>
+    <dimen name="valueLabelsSmallerTextSize">17sp</dimen>
     <dimen name="valueLabelHintTextSize">12sp</dimen>
     <dimen name="valueEditableFieldsTextSize">25sp</dimen>
     <dimen name="valueInlineTextSize">20sp</dimen>
     <dimen name="valueResultYouSaveTextSize">20sp</dimen>
-    <dimen name="valueResultYouSaveTextSizeCalculation">18sp</dimen>
+    <dimen name="valueResultYouSaveTextSizeCalculation">14sp</dimen>
     <dimen name="valueResultWouldCost">13sp</dimen>
 
     <dimen name="textResultPrice">32sp</dimen>

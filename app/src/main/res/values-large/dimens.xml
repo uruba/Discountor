@@ -11,6 +11,7 @@
 
     <dimen name="inline_symbol_margin">8dp</dimen>
     <dimen name="inline_number_margin">6dp</dimen>
+    <dimen name="margin_divider">10dp</dimen>
 
     <dimen name="valueLabelsTextSize">20sp</dimen>
     <dimen name="valueLabelHintTextSize">15sp</dimen>

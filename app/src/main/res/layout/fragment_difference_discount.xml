@@ -43,6 +43,7 @@
                     android:inputType="numberDecimal"
                     android:textColor="@color/theme_red"
                     android:textSize="@dimen/valueEditableFieldsTextSize"
+                    android:includeFontPadding="false"
                      />
 
                 <TextView
@@ -83,7 +84,8 @@
                     android:hint="@string/zero_float"
                     android:imeOptions="flagNoExtractUi|actionDone"
                     android:inputType="numberDecimal"
-                    android:textSize="@dimen/valueEditableFieldsTextSize" />
+                    android:textSize="@dimen/valueEditableFieldsTextSize"
+                    android:includeFontPadding="false"/>
 
                 <TextView
                     android:id="@+id/textCurrencyInlineAfter"

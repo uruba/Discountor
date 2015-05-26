@@ -91,7 +91,7 @@ public abstract class AbstractCalculatorFragment extends Fragment {
             if (paused == false) {
                 resetEditValues();
             }
-            focusDefaultEditText(true);
+            focusDefaultEditText(false);
         }
 
         paused = false;
