@@ -9,7 +9,6 @@
 
     <dimen name="component_margin">16dp</dimen>
     <dimen name="component_margin_less">8dp</dimen>
-    <dimen name="layout_vertical_caption_margin">-10dp</dimen>
 
     <dimen name="inline_symbol_margin">8dp</dimen>
     <dimen name="inline_number_margin">6dp</dimen>

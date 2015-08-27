@@ -33,8 +33,7 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/layout_vertical_caption_margin">
+                    android:layout_height="wrap_content">
 
                     <EditText
                         android:id="@+id/editPriceMultipack"
@@ -76,8 +75,7 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/layout_vertical_caption_margin">
+                    android:layout_height="wrap_content">
 
                     <EditText
                         android:id="@+id/editMultipackPcs"
