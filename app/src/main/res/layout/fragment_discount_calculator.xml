@@ -102,7 +102,7 @@
     <View
         android:id="@+id/layout_divider"
         android:layout_width="fill_parent"
-        android:layout_height="1dp"
+        android:layout_height="4dp"
         android:layout_below="@+id/layout_first_row"
         android:layout_marginBottom="@dimen/component_margin"
         android:background="@drawable/gradient_divider"
