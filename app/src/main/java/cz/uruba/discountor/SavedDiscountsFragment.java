@@ -28,8 +28,6 @@ import cz.uruba.discountor.utils.NumberFormatter;
 
 public class SavedDiscountsFragment extends Fragment {
     private ListView listView;
-    private ArrayList<DiscountItem> discountList;
-    private View rootView;
 
     public SavedDiscountsFragment() {
     }
@@ -46,7 +44,7 @@ public class SavedDiscountsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // initialize main view container
-        rootView = inflater.inflate(R.layout.fragment_list_saved_discounts, container,
+        View rootView = inflater.inflate(R.layout.fragment_list_saved_discounts, container,
                 false);
 
         // initialize list view
@@ -60,7 +58,7 @@ public class SavedDiscountsFragment extends Fragment {
     }
 
     public void listAll() {
-        discountList = ModelDiscountItem.getAll(this.getActivity(), true);
+        ArrayList<DiscountItem> discountList = ModelDiscountItem.getAll(this.getActivity(), true);
 
         DiscountListArrayAdapter adapter = new DiscountListArrayAdapter(this.getActivity(), discountList);
 

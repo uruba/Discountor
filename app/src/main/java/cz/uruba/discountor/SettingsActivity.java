@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.view.MenuItem;
 
-// Min. API version = 11
-@SuppressLint("NewApi")
 public class SettingsActivity extends PreferenceActivity {
 
     @Override

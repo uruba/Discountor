@@ -93,7 +93,7 @@ public class AboutApplicationDialog extends DialogFragment {
         TextView thankyouAbout = (TextView) dialogView.findViewById(R.id.about_thank_you);
         thankyouAbout.setText(R.string.about_thank_you);
 
-        return new AlertDialog.Builder(getActivity())
+        return new AlertDialog.Builder(getActivity(), R.style.AlertDialogStyle)
                 .setView(dialogView)
                 .setTitle(R.string.about_title)
                 .setIcon(R.drawable.ic_launcher)

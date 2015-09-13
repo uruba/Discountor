@@ -19,17 +19,18 @@
         <!--   your app branding color for the app bar -->
         <item name="colorPrimary">@color/theme_red</item>
         <!--   darker variant for the status bar and contextual app bars -->
-        <item name="colorPrimaryDark">#50c70000</item>
+        <item name="colorPrimaryDark">@color/theme_red_dark</item>
         <!--   theme UI controls like checkboxes and text fields -->
         <item name="colorAccent">@color/theme_red</item>
+        <item name="android:textColorHighlight">@color/theme_red_dark</item>
+        <item name="android:editTextStyle">@style/EditTextAppTheme</item>
 
-        <!--   <item name="actionBarStyle">@style/ActionBarDiscountor</item> -->
-        <item name="android:textColorHighlight">#50c70000</item>
-        
-        <item name="android:listViewStyle">@style/ListViewSpinnerTheme</item>
-        <item name="android:listViewWhiteStyle">@style/ListViewSpinnerTheme.White</item>
-        <item name="android:spinnerItemStyle">@style/SpinnerItemTheme</item>
+        <!-- alert dialogs -->
+        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
+
+        <!-- action mode -->
         <item name="actionModeBackground">@drawable/cab_bckg</item>
+        <item name="android:actionMenuTextColor">#ffffff</item>
 
         <item name="android:textSelectHandleLeft">@drawable/apptheme_text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/apptheme_text_select_handle_right
@@ -46,31 +47,11 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="ListViewSpinnerTheme" parent="android:Widget.ListView">
-        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
-    </style>
-
-    <style name="ListViewSpinnerTheme.White" parent="android:Widget.ListView.White">
-        <item name="android:listSelector">@drawable/list_selector_holo_light</item>
-    </style>
-
-    <style name="SpinnerItemTheme" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
-        <item name="android:textColor">#000000</item>
-    </style>
-
-
     <style name="DialogText">
         <item name="android:textColor">@color/black</item>
     </style>
 
     //------------------------------------------------------------------------------------------------------------------------------
-
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <item name="android:editTextStyle">@style/EditTextAppTheme</item>
-    </style>
-
 
     <style name="EditTextAppTheme" parent="android:Widget.EditText">
         <item name="android:textColor">#000000</item>
@@ -79,16 +60,21 @@
     </style>
 
     <!-- Settings screen style -->
-    <style name="SettingsTheme" parent="@style/AppTheme">
+    <style name="SettingsTheme" parent="@style/AppBaseTheme">
         <item name="actionBarStyle">@style/ActionBarSettings</item>
     </style>
 
+    <!-- ActionBar settings style -->
     <style name="ActionBarSettings" parent="ActionBarDiscountor">
         <item name="displayOptions">showTitle</item>
     </style>
 
-    <!-- Action Bar/Toolbar style. -->
+    <!-- AlertDialog style -->
+    <style name="AlertDialogStyle" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/theme_red</item>
+    </style>
 
+    <!-- Action Bar/Toolbar style. -->
     <style name="Widget.Discountor.ActionBar" parent="Widget.AppCompat.ActionBar">
         <item name="theme">@style/ThemeOverlay.Discountor.ActionBar</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>

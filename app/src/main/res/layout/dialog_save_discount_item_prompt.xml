@@ -12,7 +12,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:ems="10"
+        android:ems="18"
         android:hint="@string/prompt_name_optional"
         android:maxLength="48"
         android:singleLine="true" />

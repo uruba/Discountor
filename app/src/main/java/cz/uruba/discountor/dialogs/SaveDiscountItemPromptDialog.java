@@ -55,7 +55,7 @@ public class SaveDiscountItemPromptDialog extends DialogFragment {
         final View dialogView = View.inflate(this.getActivity(), R.layout.dialog_save_discount_item_prompt, null);
         final EditText optionalNameEditText = (EditText) dialogView.findViewById(R.id.optionalNameEditText);
 
-        return new AlertDialog.Builder(getActivity())
+        return new AlertDialog.Builder(getActivity(), R.style.AlertDialogStyle)
                 .setView(dialogView)
                 .setTitle(R.string.prompt_save_discount_title)
                 .setPositiveButton(R.string.prompt_save,
