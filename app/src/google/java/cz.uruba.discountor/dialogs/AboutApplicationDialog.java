@@ -103,7 +103,7 @@ public class AboutApplicationDialog extends DialogFragment {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 Intent i = new Intent(Intent.ACTION_SEND);
                                 i.setType("message/rfc822");
-                                i.putExtra(Intent.EXTRA_EMAIL, new String[]{"apps@uruba.me"});
+                                i.putExtra(Intent.EXTRA_EMAIL, new String[]{"uruba@outlook.com"});
                                 i.putExtra(Intent.EXTRA_SUBJECT, "[Discountor] ");
                                 try {
                                     startActivity(Intent.createChooser(i, res.getString(R.string.prompt_email_title)));
