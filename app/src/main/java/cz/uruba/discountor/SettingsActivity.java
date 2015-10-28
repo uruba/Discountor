@@ -1,6 +1,5 @@
 package cz.uruba.discountor;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.view.MenuItem;
