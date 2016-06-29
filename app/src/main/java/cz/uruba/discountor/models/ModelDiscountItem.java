@@ -10,9 +10,6 @@ import cz.uruba.discountor.helpers.SavedDiscountsHelper;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
 import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 
-/**
- * Created by Vaclav on 6.7.2014.
- */
 public class ModelDiscountItem {
     SavedDiscountsHelper helper;
 
@@ -23,7 +20,7 @@ public class ModelDiscountItem {
     public static ArrayList<DiscountItem> getAll(Context context, boolean desc) {
         SavedDiscountsHelper helper = SavedDiscountsHelper.getInstance(context);
 
-        ArrayList<DiscountItem> items = (ArrayList) helper.retrieveAll();
+        ArrayList<DiscountItem> items = (ArrayList<DiscountItem>) helper.retrieveAll();
 
         Collections.sort(items, new Comparator<DiscountItem>() {
             // compare by date of creation
