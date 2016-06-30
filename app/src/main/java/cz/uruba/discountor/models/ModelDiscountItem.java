@@ -22,13 +22,7 @@ public class ModelDiscountItem {
 
         ArrayList<DiscountItem> items = (ArrayList<DiscountItem>) helper.retrieveAll();
 
-        Collections.sort(items, new Comparator<DiscountItem>() {
-            // compare by date of creation
-            @Override
-            public int compare(DiscountItem discountItem, DiscountItem discountItem2) {
-                return Integer.signum(discountItem2.getDateCreatedUNIXTimestamp() - discountItem.getDateCreatedUNIXTimestamp());
-            }
-        });
+        Collections.sort(items, (discountItem, discountItem2) -> Integer.signum(discountItem2.getDateCreatedUNIXTimestamp() - discountItem.getDateCreatedUNIXTimestamp()));
 
         if (!desc) {
             Collections.reverse(items);
