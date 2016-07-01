@@ -31,12 +31,6 @@ public class ModelDiscountItem {
         return items;
     }
 
-    public void addNew(float price, boolean isPriceBeforeAfter, int discount, String displayedName) {
-        DiscountItemPercentage insertedItem = new DiscountItemPercentage(isPriceBeforeAfter, price, discount, displayedName);
-
-        this.addNew(insertedItem);
-    }
-
     public void addNew(DiscountItem insertedItem) {
         helper.insertNew(insertedItem);
     }
