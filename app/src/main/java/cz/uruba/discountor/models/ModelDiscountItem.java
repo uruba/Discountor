@@ -4,11 +4,9 @@ import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 import cz.uruba.discountor.helpers.SavedDiscountsHelper;
 import cz.uruba.discountor.models.item_definitions.DiscountItem;
-import cz.uruba.discountor.models.item_definitions.DiscountItemPercentage;
 
 public class ModelDiscountItem {
     SavedDiscountsHelper helper;
